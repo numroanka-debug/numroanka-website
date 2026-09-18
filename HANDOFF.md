@@ -55,6 +55,10 @@ India" strip + "Top searched" pills mark the 5 traffic drivers.
 - Cross-sell system: `nextSteps([...])` helper in calculators.html renders
 a "Where to next?" card after 17 tool results; a "Your numbers, connected"
 journeys section closes the page.
+- Header layout (all 12 pages): brand अ + name, injected nav (#main-nav),
+"Free Reading" CTA to calculator.html (on 9 tool/reading pages; deliberately
+absent on about, contact, reports), burger (below 1100px). The burger sets
+aria-expanded; the nav carries aria-label="Primary" (since v1.2).
 
 ## 4. ENGINE (numerology.js) — FUNCTIONS & DATA
 
@@ -187,10 +191,14 @@ honest tone, privacy (client-side), cross-sell journeys.
   numerology.js end-to-end.
 - Repo ↔ live-site sync: MANUAL for now (upload code changes to GitHub
   separately). Becomes automatic once Netlify is linked (see section 10).
+  NOTE: as of v1.2 the repo is AHEAD of the live site — the v1.2 header
+  fixes exist only in the repo until the changed files are also uploaded
+  to the live host or Netlify is linked.
 
 ## 12. VERSION LOG
 
 | Version | Date | Commit | Change |
 | --- | --- | --- | --- |
 | v1.0 | 18 Sep 2026 | f2a9436 | Initial launch: all 17 site files uploaded |
-| v1.1 | 18 Sep 2026 | (this commit) | Added HANDOFF.md to repo; removed stray empty 'request' file; recorded actual repo details (numroanka-debug/numroanka-website) |
+| v1.1 | 18 Sep 2026 | 106cd12 | Added HANDOFF.md to repo; removed stray empty 'request' file; recorded actual repo details (numroanka-debug/numroanka-website) |
+| v1.2 | 18 Sep 2026 | 7b26795, 4525b1e | Header fixes: added "Free Reading" CTA to chart, compatibility and daily pages (9 of 12 pages now carry it; about/contact/reports deliberately clean); renderChrome a11y — burger now sets aria-expanded, nav gets aria-label="Primary", burger handler guards nav null |
