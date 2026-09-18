@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practical Numerology Forecasts — Daily, Monthly & Yearly | Numro Anka</title>
+<meta name="description" content="Numerology forecasts you can plan with: your personal day, personal month and personal year numbers with practical month-by-month directives for the next twelve months.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Azeret+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .fc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 26px 0; }
+  .fc-tile { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 22px; text-align: center; }
+  .fc-tile .scope { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); }
+  .fc-tile .v { font-family: var(--font-display); font-size: 3rem; color: var(--accent); line-height: 1.15; }
+  .fc-tile .t { font-weight: 700; margin: 2px 0 6px; }
+  .fc-tile p { font-size: 0.88rem; color: var(--text-dim); }
+  .power-chip { display: inline-block; background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; margin: 4px 6px 4px 0; font-size: 0.85rem; }
+  @media (max-width: 960px) { .fc-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap nav-row">
+    <a class="brand" href="index.html"><span class="logo">अ</span><span><span class="name">Numro Anka</span><br><span class="tag">Chaldean Numerology</span></span></a>
+    <nav class="main" id="main-nav"></nav>
+    <a href="core5.html" class="btn btn-dark btn-sm nav-cta">Core 5 Reading</a>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="section-label">Practical Forecasts</span>
+    <h1>Forecasts you can actually plan with</h1>
+    <p class="sub">Not "good things will happen" — but which month to launch, which to negotiate, which to rest. Your birthday sets three nested clocks: a personal day (today's mood and move), a personal month (this month's job) and a personal year (the season of your life). One birthday, your whole planning layer.</p>
+  </div>
+</section>
+
+<!-- UNIVERSAL TODAY -->
+<section style="padding-top:26px">
+  <div class="wrap">
+    <div class="card today-card fade-in" id="fc-today"></div>
+  </div>
+</section>
+
+<!-- PERSONAL FORECAST -->
+<section style="padding-top:34px">
+  <div class="wrap" style="max-width:900px">
+    <div class="form-card fade-in">
+      <span class="section-label">Your planning layer</span>
+      <h2 style="font-size:1.7rem;margin-bottom:6px">Add your birthday</h2>
+      <p style="color:var(--text-dim);margin-bottom:18px;font-size:.95rem">Personal day, month, year and a twelve-month planner — recomputed fresh every time you visit.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <input type="date" id="fc-dob" style="flex:1;min-width:210px;padding:13px 16px;border:1.5px solid var(--border);border-radius:12px;font:inherit;background:#fff;color:var(--text)">
+        <button class="btn btn-primary" id="fc-go">Build my forecast</button>
+      </div>
+      <p class="form-error" id="fc-err"></p>
+    </div>
+  </div>
+</section>
+
+<section id="fc-out-wrap" style="display:none;padding-top:34px"></section>
+
+<!-- HOW TO USE -->
+<section>
+  <div class="wrap" style="max-width:760px">
+    <div class="card" style="background:var(--surface-2)">
+      <h3>How to use these forecasts</h3>
+      <p style="margin-top:8px">A personal year shapes the season, the month sets the job, the day suggests the mood — none of it overrides your judgement. Use the calendar the way farmers use almanacs: dates worth favouring, not commands to obey. And if a launch-month arrives and the product isn't ready, ship in the next 1-month — the cycle forgives.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="numerology.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const DAYS = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+/* universal today */
+(function () {
+  const now = new Date();
+  const uDay = universalDayNumber(now);
+  const d = NUMBER_DATA[uDay];
+  $("fc-today").innerHTML = `
+    <span class="section-label">Today for everyone · Universal day</span>
+    <h3>${uDay} · ${d.title}</h3>
+    <p class="date">${DAYS[now.getDay()]}, ${now.getDate()} ${now.toLocaleString("en-IN", { month: "long" })} ${now.getFullYear()}</p>
+    <p style="margin-top:16px;font-size:1.04rem">${DAILY_GUIDE[uDay]}</p>
+    <div class="lucky-strip">
+      <div class="cell"><div class="k">Lucky number</div><div class="v">${uDay}</div></div>
+      <div class="cell"><div class="k">Lucky colour</div><div class="v"><span class="swatch" style="background:${d.colours[0]};border-color:rgba(255,255,255,.4)"></span>${d.colourNames[0]}</div></div>
+      <div class="cell"><div class="k">Wear / carry</div><div class="v">${d.gem}</div></div>
+    </div>`;
+})();
+
+$("fc-go").addEventListener("click", () => {
+  const v = $("fc-dob").value;
+  const err = $("fc-err");
+  if (!v) { err.style.display = "block"; err.textContent = "Please enter your date of birth."; return; }
+  err.style.display = "none";
+
+  const now = new Date();
+  const pDay = personalDayNumber(v, now);
+  const pMonth = personalMonthNumber(v, now);
+  const pYear = personalYearNumber(v, now);
+  const yD = P_YEAR_DATA[pYear];
+  const lp = lifePathNumber(v);
+  const lpD = NUMBER_DATA[lp];
+
+  // twelve-month planner starting this month
+  const months = [];
+  for (let i = 0; i < 12; i++) {
+    const dt = new Date(now.getFullYear(), now.getMonth() + i, 1);
+    months.push({ dt, n: personalMonthNumber(v, dt) });
+  }
+  const powerM = theme => months.filter(m => m.n === theme)
+    .map(m => m.dt.toLocaleString("en-IN", { month: "short" })).join(", ") || "none this year";
+  const thisMonthKey = `${now.getFullYear()}-${now.getMonth()}`;
+
+  $("fc-out-wrap").style.display = "block";
+  $("fc-out-wrap").innerHTML = `
+  <div class="wrap" style="max-width:900px">
+    <div class="card fade-in">
+
+      <div class="fc-grid">
+        <div class="fc-tile"><span class="scope">Today · personal day</span><div class="v">${pDay}</div><div class="t">${DAILY_GUIDE[pDay].split(".")[0]}</div><p>${DAILY_GUIDE[pDay]}</p></div>
+        <div class="fc-tile"><span class="scope">This month · personal month</span><div class="v">${pMonth}</div><div class="t">${MONTH_THEME[pMonth].tag}</div><p>${MONTH_THEME[pMonth].directive}</p></div>
+        <div class="fc-tile" style="border-color:var(--accent)"><span class="scope">This year · personal year</span><div class="v">${pYear}</div><div class="t">${yD.title}</div><p>${yD.focus}</p></div>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card" style="background:var(--teal-dim)"><h3>Make this year's moves</h3><p style="margin-top:8px">${yD.do}</p></div>
+        <div class="card" style="background:var(--gold-dim)"><h3>Skip this year's traps</h3><p style="margin-top:8px">${yD.avoid}</p></div>
+      </div>
+
+      <div class="divider"></div>
+      <h3>Your power months</h3>
+      <p style="margin-top:10px">
+        <span class="power-chip"><strong>Launch months (1):</strong> ${powerM(1)}</span>
+        <span class="power-chip"><strong>Money months (8):</strong> ${powerM(8)}</span>
+        <span class="power-chip"><strong>Love & family months (6):</strong> ${powerM(6)}</span>
+        <span class="power-chip"><strong>Rest & study months (7):</strong> ${powerM(7)}</span>
+      </p>
+
+      <div class="divider"></div>
+      <h3>The next twelve months</h3>
+      <div class="table-wrap" style="margin-top:12px">
+        <table class="nice">
+          <thead><tr><th>Month</th><th>Personal month</th><th>Theme</th><th>What to schedule</th></tr></thead>
+          <tbody>
+          ${months.map(m => {
+            const key = `${m.dt.getFullYear()}-${m.dt.getMonth()}`;
+            return `<tr${key === thisMonthKey ? ' style="background:var(--accent-dim)"' : ""}>
+              <td>${m.dt.toLocaleString("en-IN", { month: "long", year: "numeric" })}${key === thisMonthKey ? ' <span class="pill warm" style="font-size:.68rem">now</span>' : ""}</td>
+              <td class="num">${m.n}</td>
+              <td><strong>${MONTH_THEME[m.n].tag}</strong></td>
+              <td style="font-size:.9rem">${MONTH_THEME[m.n].directive}</td>
+            </tr>`;
+          }).join("")}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="divider"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap">
+        <p style="font-size:.9rem;color:var(--text-dim)">Life Path ${lp} · ${lpD.title} · lucky colour today: <span class="swatch" style="background:${lpD.colours[0]}"></span>${lpD.colourNames[0]}</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn btn-ghost btn-sm" href="daily.html">Lucky colours table →</a>
+          <a class="btn btn-primary btn-sm" href="reports.html">Year-ahead premium report →</a>
+        </div>
+      </div>
+    </div>
+  </div>`;
+  $("fc-out-wrap").scrollIntoView({ behavior: "smooth" });
+});
+</script>
+</body>
+</html>

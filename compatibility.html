@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Compatibility Calculator — Numro Anka</title>
+<meta name="description" content="Free Chaldean numerology love compatibility: compare life path and name numbers for a resonance score and honest reading.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Azeret+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap nav-row">
+    <a class="brand" href="index.html"><span class="logo">अ</span><span><span class="name">Numro Anka</span><br><span class="tag">Chaldean Numerology</span></span></a>
+    <nav class="main" id="main-nav"></nav>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="section-label">Love Compatibility</span>
+    <h1>Do your numbers resonate?</h1>
+    <p class="sub">Enter two names and birthdays. The engine compares life path and Chaldean name vibrations to score the pairing — and, more usefully, to tell you exactly where the bond will flow and where it will need work.</p>
+  </div>
+</section>
+
+<section style="padding-top:26px">
+  <div class="wrap" style="max-width:860px">
+    <div class="form-card fade-in">
+      <div class="grid grid-2" style="gap:18px">
+        <div class="field"><label for="a-name">Your name</label><input id="a-name" type="text" placeholder="Your full name"></div>
+        <div class="field"><label for="a-dob">Your date of birth</label><input id="a-dob" type="date"></div>
+        <div class="field"><label for="b-name">Their name</label><input id="b-name" type="text" placeholder="Their full name"></div>
+        <div class="field"><label for="b-dob">Their date of birth</label><input id="b-dob" type="date"></div>
+      </div>
+      <p class="form-error" id="xerr"></p>
+      <button class="btn btn-primary" id="xgo" style="width:100%">Calculate our compatibility</button>
+    </div>
+  </div>
+</section>
+
+<section id="xresult" style="display:none;padding-top:34px"></section>
+
+<section>
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Numbers open the conversation.</h2>
+        <p>A premium couples report maps both charts in full — shared cycles, best years ahead, and name-vibration advice.</p>
+      </div>
+      <a class="btn btn-primary" href="reports.html">See couples reports →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="numerology.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+
+$("xgo").addEventListener("click", () => {
+  const aName = $("a-name").value.trim().replace(/[^a-zA-Z ]/g, "");
+  const bName = $("b-name").value.trim().replace(/[^a-zA-Z ]/g, "");
+  const aDob = $("a-dob").value, bDob = $("b-dob").value;
+  const err = $("xerr");
+  if (aName.length < 2 || bName.length < 2) { err.style.display = "block"; err.textContent = "Please enter both names."; return; }
+  if (!aDob || !bDob) { err.style.display = "block"; err.textContent = "Please enter both dates of birth."; return; }
+  err.style.display = "none";
+
+  const A = { lifePath: lifePathNumber(aDob), destiny: destinyNumber(aName) };
+  const B = { lifePath: lifePathNumber(bDob), destiny: destinyNumber(bName) };
+  const sLP = compatScore(A.lifePath, B.lifePath);
+  const sDN = compatScore(A.destiny, B.destiny);
+  const score = Math.round(sLP * 0.6 + sDN * 0.4);
+  const dA = NUMBER_DATA[A.lifePath], dB = NUMBER_DATA[B.lifePath];
+  const first = aName.split(" ")[0], second = bName.split(" ")[0];
+  const flowText = score >= 85
+    ? `The ${dA.title.toLowerCase()} and the ${dB.title.toLowerCase()} sit on each other's harmony lists — a natural, unforced understanding that other pairs have to build by hand. Shared rhythm in daily life comes quickly to this pairing.`
+    : score >= 70
+    ? `There is real harmony here — the ${dA.title.toLowerCase()} and the ${dB.title.toLowerCase()} understand each other's rhythms with only occasional translation needed. With one honest conversation per season, this pairing compounds.`
+    : `This is a pairing of contrast: the ${dA.title.toLowerCase()} and the ${dB.title.toLowerCase()} are wired differently, and that difference is the work. Handle it consciously and it becomes complementary rather than conflicting.`;
+
+  $("xresult").style.display = "block";
+  $("xresult").innerHTML = `
+  <div class="wrap" style="max-width:860px">
+    <div class="card fade-in">
+      <div class="versus">
+        <div class="side card" style="border:none">
+          <div class="medallion"><span class="big" style="font-size:2.6rem">${A.lifePath}</span></div>
+          <h3>${esc(first)}</h3>
+          <p>${dA.title}</p>
+          <p style="font-family:var(--font-mono);font-size:.75rem;color:var(--text-dim);margin-top:6px">Name vibration: ${A.destiny}</p>
+        </div>
+        <div class="vs"><span>VS</span></div>
+        <div class="side card" style="border:none">
+          <div class="medallion" style="background:linear-gradient(150deg,var(--teal) 0%,#1e4a40 100%)"><span class="big" style="font-size:2.6rem">${B.lifePath}</span></div>
+          <h3>${esc(second)}</h3>
+          <p>${dB.title}</p>
+          <p style="font-family:var(--font-mono);font-size:.75rem;color:var(--text-dim);margin-top:6px">Name vibration: ${B.destiny}</p>
+        </div>
+      </div>
+
+      <div class="score-ring">
+        <svg width="190" height="190" viewBox="0 0 190 190">
+          <circle cx="95" cy="95" r="84" fill="none" stroke="var(--surface-2)" stroke-width="12"/>
+          <circle cx="95" cy="95" r="84" fill="none" stroke="var(--accent)" stroke-width="12" stroke-linecap="round"
+                  stroke-dasharray="${2 * Math.PI * 84}" stroke-dashoffset="${2 * Math.PI * 84 * (1 - score / 100)}"/>
+        </svg>
+        <div class="val"><span class="n">${score}%</span><span class="l">Resonance</span></div>
+      </div>
+
+      <h3 style="text-align:center;margin:16px 0 8px">${compatVerdict(score)}</h3>
+
+      <div class="divider"></div>
+
+      <div class="grid grid-2">
+        <div>
+          <p class="pill warm">${esc(first)} in love</p>
+          <p style="margin-top:10px">${dA.love}</p>
+        </div>
+        <div>
+          <p class="pill cool">${esc(second)} in love</p>
+          <p style="margin-top:10px">${dB.love}</p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="grid grid-2">
+        <div class="card" style="background:var(--teal-dim)">
+          <h3>Where you flow</h3>
+          <p>${flowText}</p>
+        </div>
+        <div class="card" style="background:var(--gold-dim)">
+          <h3>Where to be careful</h3>
+          <p>${dA.watchOut.split(".")[0]} meets ${dB.watchOut.split(".")[0].toLowerCase()} — the friction in this pairing comes from each partner's blind spot colliding with the other's. Name it early and it becomes a strength.</p>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:26px">
+        <a class="btn btn-primary" href="reports.html">Get our full couples report →</a>
+      </div>
+    </div>
+  </div>`;
+  $("xresult").scrollIntoView({ behavior: "smooth" });
+});
+</script>
+</body>
+</html>

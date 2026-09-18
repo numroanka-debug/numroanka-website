@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Numerology Chart Generator — Printable | Numro Anka</title>
+<meta name="description" content="Generate a free, printable numerology chart: all your core numbers — Life Path, Expression, Soul Urge, Personality, Birthday, Mulank, Bhagyank, pinnacles, challenges and Lo Shu grid — mapped on one page.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Azeret+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .chart-doc { background: var(--surface); border: 1px solid var(--border); border-radius: 22px; padding: 44px; box-shadow: var(--shadow-lg); }
+  .chart-head { display: flex; justify-content: space-between; gap: 24px; align-items: center; border-bottom: 2px solid var(--text); padding-bottom: 22px; flex-wrap: wrap; }
+  .chart-head .who h2 { font-size: 2rem; margin-bottom: 4px; }
+  .chart-head .meta { font-family: var(--font-mono); font-size: .78rem; color: var(--text-dim); line-height: 1.7; text-align: right; }
+  .chart-block { margin-top: 28px; }
+  .chart-block > .bt { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: 14px; display: flex; justify-content: space-between; }
+  .chart-block > .bt span:last-child { color: var(--text-dim); }
+  .c5-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .c5-cell { text-align: center; border: 1px solid var(--border); border-radius: 14px; padding: 16px 8px; background: #fff; }
+  .c5-cell .n { font-family: var(--font-display); font-size: 2.2rem; color: var(--accent); line-height: 1.1; }
+  .c5-cell .t { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-dim); margin-top: 4px; }
+  .c5-cell .r { font-size: .8rem; margin-top: 4px; color: var(--text); }
+  .pair-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .pair-cell { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; border-bottom: 1px dashed var(--border); padding: 8px 2px; font-size: .92rem; }
+  .pair-cell .k { color: var(--text-dim); }
+  .pair-cell .v { font-family: var(--font-display); font-size: 1.3rem; color: var(--accent); }
+  .mini-loshu { display: grid; grid-template-columns: repeat(3, 52px); gap: 5px; }
+  .mini-loshu .c { height: 52px; border: 1px solid var(--border); border-radius: 8px; background: #fff; display: grid; place-items: center; font-family: var(--font-display); font-size: 1rem; color: var(--accent); position: relative; }
+  .mini-loshu .c.empty { border-style: dashed; color: var(--text-dim); }
+  .mini-loshu .c i { position: absolute; top: 2px; left: 5px; font-size: .55rem; font-style: normal; font-family: var(--font-mono); color: var(--text-dim); }
+  .chart-two { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+  .synth-row { padding: 12px 0; border-bottom: 1px dashed var(--border); }
+  .synth-row .pair { font-family: var(--font-mono); font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; color: var(--teal); display: block; margin-bottom: 4px; }
+  @media (max-width: 900px) { .c5-row { grid-template-columns: repeat(3, 1fr); } .chart-two { grid-template-columns: 1fr; } .chart-doc { padding: 26px; } }
+  @media print {
+    header.site-nav, .cat-nav, footer.site-footer, .no-print, #gen-form-section { display: none !important; }
+    body { background: #fff; font-size: 12px; }
+    .chart-doc { border: none; box-shadow: none; padding: 0; border-radius: 0; }
+    section { padding: 10px 0; }
+    .fade-in { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap nav-row">
+    <a class="brand" href="index.html"><span class="logo">अ</span><span><span class="name">Numro Anka</span><br><span class="tag">Chaldean Numerology</span></span></a>
+    <nav class="main" id="main-nav"></nav>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="page-hero" id="gen-form-section">
+  <div class="wrap">
+    <span class="section-label">Chart Generator · Free & Printable</span>
+    <h1>Every number, one page</h1>
+    <p class="sub">A visual map of your complete numerology chart — the Core 5, Vedic numbers, timing cycles, karmic lessons and your Lo Shu grid — laid out for printing or saving as PDF. Computed in your browser; nothing is uploaded.</p>
+  </div>
+</section>
+
+<section style="padding-top:20px" id="gen-form-section-2">
+  <div class="wrap" style="max-width:760px">
+    <div class="form-card fade-in">
+      <div class="grid grid-2" style="gap:18px">
+        <div class="field"><label for="ch-name">Full name at birth</label><input type="text" id="ch-name" placeholder="As on your birth certificate"></div>
+        <div class="field"><label for="ch-dob">Date of birth</label><input type="date" id="ch-dob"></div>
+      </div>
+      <p class="form-error" id="ch-err"></p>
+      <button class="btn btn-primary" id="ch-go" style="width:100%">Generate my chart</button>
+      <button class="btn btn-dark no-print" id="ch-print" style="width:100%;display:none;margin-top:10px">🖨 Print / Save as PDF</button>
+    </div>
+  </div>
+</section>
+
+<section id="chart-out" style="display:none;padding-top:34px">
+  <div class="wrap" style="max-width:920px">
+    <div class="chart-doc" id="doc"></div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="numerology.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const DAYS = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+$("ch-go").addEventListener("click", () => {
+  const name = $("ch-name").value.trim().replace(/[^a-zA-Z ]/g, "");
+  const dob = $("ch-dob").value;
+  const err = $("ch-err");
+  if (name.length < 2) { err.style.display = "block"; err.textContent = "Please enter your full birth name."; return; }
+  if (!dob) { err.style.display = "block"; err.textContent = "Please enter your date of birth."; return; }
+  err.style.display = "none";
+
+  const n = allNumbers(name, dob);
+  const mul = mulankNumber(dob), bha = bhagyankNumber(dob);
+  const pn = pinnacleNumbers(dob), cn = challengeNumbers(dob);
+  const lp_ = lifePeriods(dob), bal = balanceNumber(name);
+  const kl = karmicLessons(name), py = personalYearNumber(dob);
+  const pyNext = personalYearNumber(dob, new Date(new Date().getFullYear() + 1, 0, 1));
+  const ls = loShuCounts(dob), els = loShuElements(ls);
+  const synth = core5Synthesis(n);
+  const now = new Date();
+  const pDay = personalDayNumber(dob);
+  const wp = WEEKDAY_PLANETS[now.getDay()];
+
+  const c5 = [
+    { v: n.lifePath, t: "Life Path", r: "the road" },
+    { v: n.expression, t: "Expression", r: "the talent" },
+    { v: n.soulUrge, t: "Soul Urge", r: "the heart" },
+    { v: n.personality, t: "Personality", r: "the doorway" },
+    { v: n.birthday, t: "Birthday", r: "the gift" }
+  ];
+  const miniGrid = LOSHU_GRID.map(row => row.map(x => {
+    const c = ls[x];
+    return `<div class="c ${c === 0 ? "empty" : ""}"><i>${x}</i>${c > 0 ? String(x).repeat(Math.min(c, 3)) + (c > 3 ? "×" + c : "") : "—"}</div>`;
+  }).join("")).join("");
+  const pair = (k, v, extra) => `<div class="pair-cell"><span class="k">${k}</span><span class="v">${v}</span>${extra ? `<span style="font-size:.72rem;color:var(--text-dim)">${extra}</span>` : ""}</div>`;
+
+  $("doc").innerHTML = `
+    <div class="chart-head">
+      <div class="who">
+        <h2>${esc(name)}</h2>
+        <p style="color:var(--text-dim)">${NUMBER_DATA[n.lifePath].title} · ${fmtDOB(dob)} · ${NUMBER_DATA[n.lifePath].keywords.join(", ").toLowerCase()}</p>
+      </div>
+      <div class="meta">
+        ANKA · CHALDEAN NUMEROLOGY CHART<br>
+        Generated ${DAYS[now.getDay()]}, ${now.getDate()} ${now.toLocaleString("en-IN",{month:"long"})} ${now.getFullYear()}<br>
+        Personal day ${pDay} · ${wp.planet} rules the day
+      </div>
+    </div>
+
+    <div class="chart-block">
+      <div class="bt"><span>The Core 5 — psychological numbers</span><span>name + date</span></div>
+      <div class="c5-row">
+        ${c5.map(c => `<div class="c5-cell"><div class="n">${c.v}</div><div class="t">${c.t}</div><div class="r">${NUMBER_DATA[c.v].title.split(" ").slice(-1)[0] || c.r}</div></div>`).join("")}
+      </div>
+      <p style="font-size:.8rem;color:var(--text-dim);margin-top:10px">Life Path is the road; Expression the talent; Soul Urge the heart's want; Personality the doorway; Birthday the gift. ${[11,22,33].includes(n.lifePath) || [11,22,33].includes(n.expression) ? "Master numbers present — see synthesis below." : ""}</p>
+    </div>
+
+    <div class="chart-two">
+      <div class="chart-block">
+        <div class="bt"><span>Vedic numbers</span><span>date</span></div>
+        ${pair("Mulank (root)", mul, NUMBER_DATA[mul].title)}
+        ${pair("Bhagyank (fortune)", bha, NUMBER_DATA[bha].title)}
+        ${pair("Personal year " + now.getFullYear(), py, P_YEAR_DATA[py].title)}
+        ${pair("Personal year " + (now.getFullYear() + 1), pyNext, P_YEAR_DATA[pyNext].focus)}
+        ${pair("Today's lucky digit", pDay)}
+        ${pair("Balance number", bal, "crisis reflex")}
+        ${pair("Inner dream (consonants)", n.personality, NUMBER_DATA[n.personality].title)}
+      </div>
+      <div class="chart-block">
+        <div class="bt"><span>Pinnacles & challenges</span><span>date</span></div>
+        ${pair("First pinnacle (0–" + pn.p1.to + ")", pn.p1.num)}
+        ${pair("Second pinnacle (" + pn.p2.from + "–" + pn.p2.to + ")", pn.p2.num)}
+        ${pair("Third pinnacle (" + pn.p3.from + "–" + pn.p3.to + ")", pn.p3.num)}
+        ${pair("Fourth pinnacle (" + pn.p4.from + "+)", pn.p4.num)}
+        ${pair("Main challenge (lifelong)", cn.c3.num)}
+        ${pair("Early-life challenge", cn.c1.num, "to ~30")}
+        ${pair("Mid-life challenge", cn.c2.num, "~30–60")}
+        ${pair("Later-life challenge", cn.c4.num, "60+")}
+      </div>
+    </div>
+
+    <div class="chart-two">
+      <div class="chart-block">
+        <div class="bt"><span>Life periods</span><span>month · day · year</span></div>
+        ${lp_.spans.map(s => `${pair(s.name + " (" + s.age + ")", s.num, NUMBER_DATA[s.num].title)}`).join("")}
+      </div>
+      <div class="chart-block">
+        <div class="bt"><span>Lo Shu grid & elements</span><span>date</span></div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center">
+          <div class="mini-loshu">${miniGrid}</div>
+          <div>
+            ${els.elements.map(e => `<div class="pair-cell"><span class="k" style="text-transform:capitalize">${e.name} (${e.nums.join(",")})</span><span class="v">${e.total}</span></div>`).join("")}
+            <p style="font-size:.76rem;color:var(--text-dim);margin-top:8px">Dominant: ${els.dominant.name} · thinnest: ${els.weakest.name}. Missing: ${Object.keys(ls).filter(k => ls[k] === 0).join(", ") || "none"}.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-block">
+      <div class="bt"><span>Karmic lessons</span><span>name</span></div>
+      <p style="font-size:.92rem">${kl.hasAll ? "None — every value 1–9 appears in the name." : kl.missing.map(x => `<span class="pill warm" style="margin:2px 6px 2px 0">Lesson ${x}</span>`).join("")}</p>
+      ${kl.hasAll ? "" : `<p style="font-size:.85rem;color:var(--text-dim)">${kl.missing.map(x => "<strong>" + x + ":</strong> " + KARMIC_LESSON[x]).join(" &nbsp; ")}</p>`}
+    </div>
+
+    <div class="chart-block">
+      <div class="bt"><span>How your numbers work together</span><span>synthesis</span></div>
+      ${synth.map(s => `<div class="synth-row"><span class="pair">${s.pair}</span><p style="font-size:.88rem;color:var(--text-dim)">${s.text}</p></div>`).join("")}
+    </div>
+
+    <div class="chart-block">
+      <div class="bt"><span>Lucky toolkit</span><span>ruling ${mul} · ${NUMBER_DATA[mul].planet}</span></div>
+      <p style="font-size:.92rem">${NUMBER_DATA[n.lifePath].colours.map((c, i) => `<span class="swatch" style="background:${c}"></span>${NUMBER_DATA[n.lifePath].colourNames[i]}`).join(" · ")} &nbsp;·&nbsp; ${NUMBER_DATA[n.lifePath].gem} &nbsp;·&nbsp; power day ${NUMBER_DATA[n.lifePath].day} &nbsp;·&nbsp; friendly digits ${HARMONY[[11,22,33].includes(n.lifePath) ? {11:2,22:4,33:6}[n.lifePath] : n.lifePath].filter(x => x !== ([11,22,33].includes(n.lifePath) ? {11:2,22:4,33:6}[n.lifePath] : n.lifePath)).join(", ")}</p>
+    </div>
+
+    <p style="font-size:.7rem;color:var(--text-dim);margin-top:26px;border-top:1px solid var(--border);padding-top:12px">Prepared in the Chaldean tradition with Vedic (Mulank/Bhagyank), Pythagorean (pinnacles/challenges) and Chinese (Lo Shu) elements. For reflection and entertainment — not a substitute for professional advice. Computed and printed entirely in your browser; no data leaves this device.</p>
+  `;
+
+  $("chart-out").style.display = "block";
+  const pbtn = $("ch-print");
+  pbtn.style.display = "inline-flex";
+  pbtn.onclick = () => window.print();
+  $("chart-out").scrollIntoView({ behavior: "smooth" });
+});
+</script>
+</body>
+</html>

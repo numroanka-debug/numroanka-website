@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Numerology Reports & Pricing — Numro Anka</title>
+<meta name="description" content="Premium Chaldean numerology reports: full life chart, year-ahead forecast, name correction analysis and couples reports.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Azeret+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap nav-row">
+    <a class="brand" href="index.html"><span class="logo">अ</span><span><span class="name">Numro Anka</span><br><span class="tag">Chaldean Numerology</span></span></a>
+    <nav class="main" id="main-nav"></nav>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap center" style="max-width:720px">
+    <span class="section-label">Premium Reports</span>
+    <h1>Go deeper than the free chart</h1>
+    <p class="sub" style="margin:16px auto 0">The free calculator shows your five core numbers. A premium report is a full reading — personal years, name vibration analysis, remedies and the year ahead — prepared in the classical Chaldean method.</p>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section style="padding-top:16px">
+  <div class="wrap">
+    <div class="grid grid-3">
+
+      <div class="card price-card">
+        <h3>Essential Chart</h3>
+        <div class="price">₹199 <small>one-time</small></div>
+        <p class="per">PDF · ~8 pages · delivered instantly</p>
+        <ul>
+          <li>All five core numbers, fully interpreted</li>
+          <li>Lucky colours, gems, days and direction</li>
+          <li>Strengths & blind-spot analysis</li>
+          <li>Printable keepsake layout</li>
+        </ul>
+        <button class="btn btn-ghost" onclick="openCheckout('Essential Chart', 199)">Choose Essential</button>
+      </div>
+
+      <div class="card price-card featured">
+        <span class="flag">Most chosen</span>
+        <h3>Life & Year Ahead</h3>
+        <div class="price">₹499 <small>one-time</small></div>
+        <p class="per">PDF · ~20 pages · 12-month personal year map</p>
+        <ul>
+          <li>Everything in Essential</li>
+          <li>Personal year, month & day cycles for 12 months</li>
+          <li>Best months for career, money, love</li>
+          <li>Name spelling check & correction advice</li>
+          <li>Chaldean remedies: colour, gem & day</li>
+        </ul>
+        <button class="btn btn-primary" onclick="openCheckout('Life & Year Ahead', 499)">Choose Life & Year</button>
+      </div>
+
+      <div class="card price-card">
+        <h3>Couples Report</h3>
+        <div class="price">₹999 <small>one-time</small></div>
+        <p class="per">PDF · ~28 pages · two full charts + synergy</p>
+        <ul>
+          <li>Two complete individual charts</li>
+          <li>Compatibility matrix across all numbers</li>
+          <li>Shared cycles & challenge years ahead</li>
+          <li>Joint name-vibration advice</li>
+          <li>Complimentary re-check after one year</li>
+        </ul>
+        <button class="btn btn-dark" onclick="openCheckout('Couples Report', 999)">Choose Couples</button>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:26px;background:var(--surface-2)">
+      <div style="display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;justify-content:center;text-align:center">
+        <span class="pill warm">Secure checkout</span>
+        <span class="pill cool">UPI · Cards · NetBanking</span>
+        <span class="pill sunny">Instant delivery</span>
+        <span class="pill cool">7-day correction guarantee</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW PREMIUM DIFFERS -->
+<section>
+  <div class="wrap">
+    <div class="center" style="margin-bottom:40px">
+      <span class="section-label">Free vs Premium</span>
+      <h2>What the free chart doesn't tell you</h2>
+    </div>
+    <div class="table-wrap">
+      <table class="nice">
+        <thead><tr><th>What you get</th><th>Free calculator</th><th>Essential ₹199</th><th>Life & Year ₹499</th><th>Couples ₹999</th></tr></thead>
+        <tbody>
+          <tr><td>Five core numbers</td><td>✓</td><td>✓</td><td>✓</td><td>✓ ×2 people</td></tr>
+          <tr><td>Full interpretations</td><td>Summary</td><td>Expanded</td><td>Expanded</td><td>Expanded</td></tr>
+          <tr><td>Lucky colours, gems, days</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+          <tr><td>12-month personal year map</td><td>—</td><td>—</td><td>✓</td><td>✓</td></tr>
+          <tr><td>Name correction analysis</td><td>—</td><td>—</td><td>✓</td><td>✓</td></tr>
+          <tr><td>Compatibility matrix</td><td>—</td><td>—</td><td>—</td><td>✓</td></tr>
+          <tr><td>Printable PDF</td><td>—</td><td>✓</td><td>✓</td><td>✓</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CHECKOUT MODAL -->
+<div class="modal-back" id="checkout">
+  <div class="modal">
+    <button class="close" onclick="closeCheckout()" aria-label="Close">×</button>
+    <span class="section-label">Checkout</span>
+    <h3 id="co-title">Report</h3>
+    <p style="font-family:var(--font-display);font-size:2rem;color:var(--accent);margin:6px 0 2px" id="co-price">₹499</p>
+
+    <div class="field"><label for="co-name">Name for the report</label><input id="co-name" type="text" placeholder="Full name"></div>
+    <div class="field"><label for="co-dob">Date of birth</label><input id="co-dob" type="date"></div>
+
+    <label style="font-size:.85rem;font-weight:600;display:block;margin-bottom:8px">Payment method</label>
+    <div class="pay-methods">
+      <label><input type="radio" name="pay" value="upi" checked><span class="opt">UPI<br><small style="font-weight:400;color:var(--text-dim)">GPay · PhonePe · Paytm</small></span></label>
+      <label><input type="radio" name="pay" value="card"><span class="opt">Card<br><small style="font-weight:400;color:var(--text-dim)">Visa · Mastercard · RuPay</small></span></label>
+      <label><input type="radio" name="pay" value="netbank"><span class="opt">NetBanking<br><small style="font-weight:400;color:var(--text-dim)">All major banks</small></span></label>
+    </div>
+
+    <button class="btn btn-primary" style="width:100%" onclick="processDemoPayment()" id="co-pay">Pay securely</button>
+    <p class="demo-note"><strong>Demo checkout.</strong> This front-end is ready for a live payment gateway — connect your Razorpay or Stripe keys where the checkout script hooks in (see the comment marked <span style="font-family:var(--font-mono)">PAYMENT HOOK</span> in this page's source). In this demo your report unlocks immediately without any charge.</p>
+  </div>
+</div>
+
+<!-- UNLOCKED REPORT -->
+<section id="paid-report" style="display:none">
+  <div class="wrap" style="max-width:860px">
+    <div class="card">
+      <span class="pill warm">Premium unlocked · demo</span>
+      <h2 id="pr-title" style="margin-top:12px"></h2>
+      <p style="color:var(--text-dim)" id="pr-sub"></p>
+      <div id="pr-body"></div>
+      <div class="divider"></div>
+      <p style="font-size:.85rem;color:var(--text-dim)">This is the demo preview of the premium report. With a live payment gateway connected, this section unlocks after successful payment, and the full formatted PDF is emailed to you.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="numerology.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+let currentTier = null;
+
+function openCheckout(title, price) {
+  currentTier = title;
+  $("co-title").textContent = title;
+  $("co-price").textContent = "₹" + price;
+  $("checkout").classList.add("open");
+}
+function closeCheckout() { $("checkout").classList.remove("open"); }
+$("checkout").addEventListener("click", e => { if (e.target === $("checkout")) closeCheckout(); });
+
+/* ============================================================
+   PAYMENT HOOK — connect a live gateway here.
+
+   Example (Razorpay checkout.js):
+   const rzp = new Razorpay({
+     key: 'YOUR_KEY_ID',
+     amount: price * 100,               // paise
+     name: 'Numro Anka',
+     description: tierName,
+     handler: function (response) {
+       // verify the signature on your server, then unlockPremium()
+     }
+   });
+   rzp.open();
+   ============================================================ */
+function processDemoPayment() {
+  const name = $("co-name").value.trim().replace(/[^a-zA-Z ]/g, "");
+  const dob = $("co-dob").value;
+  if (name.length < 2) { alert("Please enter a name for the report."); return; }
+  if (!dob) { alert("Please enter the date of birth for the report."); return; }
+
+  // In production: open the payment gateway here and call unlockPremium()
+  // from its success handler only.
+  closeCheckout();
+  unlockPremium(name, dob);
+}
+
+function unlockPremium(name, dob) {
+  const n = allNumbers(name, dob);
+  const lp = NUMBER_DATA[n.lifePath];
+  const now = new Date();
+  const personalYear = personalYearNumber(dob);
+  const nextYear = personalYearNumber(dob, new Date(now.getFullYear() + 1, 0, 1));
+  const base = m => (m === 11 ? 2 : m === 22 ? 4 : m === 33 ? 6 : m);
+  const nameHarmony = HARMONY[base(n.destiny)] !== undefined && HARMONY[base(n.destiny)].includes(base(n.lifePath));
+  const goodMonths = [3, 6, 9].map(m => new Date(now.getFullYear(), now.getMonth() + m, 1)
+    .toLocaleString("en-IN", { month: "long" }));
+
+  $("pr-title").textContent = `${currentTier} — ${name}`;
+  $("pr-sub").textContent = `Prepared in the Chaldean tradition · ${fmtDOB(dob)} · Personal year ${personalYear}`;
+  $("pr-body").innerHTML = `
+    <div class="stat-row">
+      ${st(n.lifePath,"Life Path")}${st(n.destiny,"Destiny")}${st(n.soulUrge,"Soul Urge")}${st(n.personality,"Personality")}${st(personalYear,"Personal Year")}
+    </div>
+
+    <h3 style="margin-top:20px">Your personal year ahead</h3>
+    <p style="color:var(--text-dim);margin-top:8px">You are moving through a <strong>Personal Year ${personalYear}</strong> — the ${P_YEAR_DATA[personalYear].title.toLowerCase()}: ${P_YEAR_DATA[personalYear].focus.toLowerCase()}. ${P_YEAR_DATA[personalYear].do}</p>
+    <p style="color:var(--text-dim);margin-top:10px">From January you shift into a <strong>Personal Year ${nextYear}</strong> — ${P_YEAR_DATA[nextYear].focus.toLowerCase()}. Plan the big moves accordingly.</p>
+
+    <div class="grid grid-3" style="margin-top:20px">
+      <div class="card" style="background:var(--teal-dim)"><h3>Best months</h3><p>${goodMonths.join(", ")} favour fresh starts. Launch, propose, sign — front-load your courage into these windows.</p></div>
+      <div class="card" style="background:var(--gold-dim)"><h3>Name check</h3><p>Your name vibrates to <strong>${n.destiny}</strong> (${NUMBER_DATA[n.destiny].title}) against a Life Path ${n.lifePath}. ${nameHarmony ? "This is a supportive combination — no correction recommended at this time." : "There is mild friction between name and path; a small spelling adjustment could harmonise them — consult before changing documents."}</p></div>
+      <div class="card" style="background:var(--accent-dim)"><h3>Remedies</h3><p>Strengthen your ruling number with <strong>${lp.colourNames[0].toLowerCase()}</strong> on ${lp.day.toLowerCase()}s, keep ${lp.gem.toLowerCase()} close, and face ${["East","North-East","West","North","South","South-East","North-West","South-West","North"][(n.lifePath === 11 || n.lifePath === 22 || n.lifePath === 33 ? n.lifePath % 10 : n.lifePath) - 1] || "East"} while working on important matters.</p></div>
+    </div>
+
+    <h3 style="margin-top:26px">The twelve months, briefly</h3>
+    <div class="table-wrap" style="margin-top:12px">
+      <table class="nice">
+        <thead><tr><th>Month</th><th>Personal month</th><th>Emphasis</th></tr></thead>
+        <tbody>
+          ${Array.from({length: 12}, (_, i) => {
+            const dt = new Date(now.getFullYear(), now.getMonth() + i, 1);
+            const pm = reduceNumber(personalYear + dt.getMonth() + 1, false);
+            return `<tr><td>${dt.toLocaleString("en-IN", { month: "long", year: "numeric" })}</td><td class="num">${pm}</td><td>${DAILY_GUIDE[pm]}</td></tr>`;
+          }).join("")}
+        </tbody>
+      </table>
+    </div>`;
+  $("paid-report").style.display = "block";
+  $("paid-report").scrollIntoView({ behavior: "smooth" });
+}
+function st(v, k) { return `<div class="stat"><div class="v">${v}</div><div class="k">${k}</div></div>`; }
+</script>
+</body>
+</html>

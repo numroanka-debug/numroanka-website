@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Numro Anka</title>
+<meta name="description" content="Contact the Numro Anka numerology team — questions, feedback, name correction enquiries and press.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Azeret+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap nav-row">
+    <a class="brand" href="index.html"><span class="logo">अ</span><span><span class="name">Numro Anka</span><br><span class="tag">Chaldean Numerology</span></span></a>
+    <nav class="main" id="main-nav"></nav>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="section-label">Contact</span>
+    <h1>Say hello to the numbers team</h1>
+    <p class="sub">Questions about a reading, name-correction enquiries, feedback on the calculators — or press. We read everything, usually within two working days.</p>
+  </div>
+</section>
+
+<section style="padding-top:26px">
+  <div class="wrap grid grid-2" style="align-items:start">
+
+    <div class="form-card">
+      <div class="field">
+        <label for="ct-name">Your name</label>
+        <input id="ct-name" type="text" placeholder="Full name">
+      </div>
+      <div class="field">
+        <label for="ct-email">Email</label>
+        <input id="ct-email" type="email" placeholder="you@example.com">
+      </div>
+      <div class="field">
+        <label for="ct-topic">Topic</label>
+        <select id="ct-topic">
+          <option>Question about a reading</option>
+          <option>Name correction enquiry</option>
+          <option>Feedback on the calculators</option>
+          <option>Premium report support</option>
+          <option>Press / partnership</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="ct-msg">Message</label>
+        <textarea id="ct-msg" rows="6" placeholder="Tell us what's on your mind…"></textarea>
+      </div>
+      <p class="form-error" id="cterr"></p>
+      <button class="btn btn-primary" id="ctgo" style="width:100%">Send message</button>
+      <p class="hint" style="margin-top:12px;text-align:center">This demo form opens your email app with the message pre-filled — connect a form service (Formspree, Google Forms, or your own endpoint) to receive submissions directly.</p>
+    </div>
+
+    <div class="grid" style="gap:18px">
+      <div class="card">
+        <p class="pill warm">Readings</p>
+        <h3 style="margin:10px 0 6px">Personal & couples reports</h3>
+        <p>Browse the premium reports and what each tier includes, including the 12-month year-ahead map.</p>
+        <p style="margin-top:10px"><a href="reports.html">View reports →</a></p>
+      </div>
+      <div class="card">
+        <p class="pill cool">Learn</p>
+        <h3 style="margin:10px 0 6px">How the numbers work</h3>
+        <p>The Chaldean letter table, the five core numbers, and honest answers in the FAQ.</p>
+        <p style="margin-top:10px"><a href="about.html">Read the guide →</a></p>
+      </div>
+      <div class="card">
+        <p class="pill sunny">Reach us</p>
+        <h3 style="margin:10px 0 6px">Direct</h3>
+        <p>Email <a href="mailto:hello@numroanka.com">hello@numroanka.com</a><br>Response time: within 2 working days</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="numerology.js"></script>
+<script>
+document.getElementById("ctgo").addEventListener("click", () => {
+  const name = document.getElementById("ct-name").value.trim();
+  const email = document.getElementById("ct-email").value.trim();
+  const msg = document.getElementById("ct-msg").value.trim();
+  const topic = document.getElementById("ct-topic").value;
+  const err = document.getElementById("cterr");
+  if (!name || !email || !msg) { err.style.display = "block"; err.textContent = "Please fill in your name, email and message."; return; }
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { err.style.display = "block"; err.textContent = "Please enter a valid email address."; return; }
+  err.style.display = "none";
+  const subject = encodeURIComponent("[Numro Anka] " + topic);
+  const body = encodeURIComponent(`${msg}\n\n— ${name} (${email})`);
+  location.href = `mailto:hello@numroanka.com?subject=${subject}&body=${body}`;
+});
+</script>
+</body>
+</html>

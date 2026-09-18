@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Core 5 — Your Psychological Numerology Profile | Numro Anka</title>
+<meta name="description" content="The five core numbers of psychological numerology — Life Path, Expression, Soul Urge, Personality and Birthday — computed and woven together into one reading of who you are.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Azeret+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .core-cards { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  .core-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 18px 14px; text-align: center; }
+  .core-card .med { width: 74px; height: 74px; margin: 0 auto 10px; font-size: 1.9rem; }
+  .core-card .t { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); }
+  .core-card .n { font-family: var(--font-display); font-size: 1.35rem; color: var(--text); }
+  .synth-note { padding: 18px 0; border-bottom: 1px dashed var(--border); }
+  .synth-note .pair { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); display: block; margin-bottom: 6px; }
+  @media (max-width: 1100px) { .core-cards { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 720px) { .core-cards { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap nav-row">
+    <a class="brand" href="index.html"><span class="logo">अ</span><span><span class="name">Numro Anka</span><br><span class="tag">Chaldean Numerology</span></span></a>
+    <nav class="main" id="main-nav"></nav>
+    <a href="forecast.html" class="btn btn-primary btn-sm nav-cta">My Forecasts</a>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="section-label">The Core 5 · Psychological Numerology</span>
+    <h1>Five numbers. One complete psychology of you.</h1>
+    <p class="sub">This is the framework American numerology built its industry on: Life Path, Expression, Soul Urge, Personality and Birthday — the road you walk, the talent you carry, the heart you hide, the face you show, and the gift you arrived with. Read separately, they inform. Read together, they explain.</p>
+  </div>
+</section>
+
+<!-- THE FIVE EXPLAINED -->
+<section style="padding-top:30px">
+  <div class="wrap">
+    <div class="grid grid-3" style="gap:16px">
+      <div class="card"><div class="num-badge">I</div><h3>Life Path — the road</h3><p>From your date of birth. The central lesson of this lifetime and the direction everything else serves. The one number to know if you only know one.</p></div>
+      <div class="card t"><div class="num-badge">II</div><h3>Expression — the talent</h3><p>From your full birth name (also called Destiny). What you are actually built to become — the capabilities you came equipped with, whether or not you've used them yet.</p></div>
+      <div class="card g"><div class="num-badge">III</div><h3>Soul Urge — the heart</h3><p>From the vowels of your name. What you privately want, beneath duty and persona. Ignore it long enough and even success feels hollow.</p></div>
+      <div class="card g"><div class="num-badge">IV</div><h3>Personality — the doorway</h3><p>From the consonants. The impression that walks into the room before you do — the filter through which strangers interpret everything else about you.</p></div>
+      <div class="card t"><div class="num-badge">V</div><h3>Birthday — the gift</h3><p>From the day you were born. A specific, reliable talent available at any moment — the thing you can lean on even when the rest of the chart is under weather.</p></div>
+      <div class="card" style="background:var(--surface-2)"><div class="num-badge">Σ</div><h3>Together — the reading</h3><p>The five numbers answer each other. A heart that fights the road, a mask that undersells the talent — the relationships between your numbers are where the real insight lives.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section>
+  <div class="wrap" style="max-width:820px">
+    <div class="form-card fade-in">
+      <span class="section-label">Your reading</span>
+      <h2 style="font-size:1.7rem;margin-bottom:6px">Run the Core 5</h2>
+      <div class="grid grid-2" style="gap:18px">
+        <div class="field"><label for="c5-name">Full name at birth</label><input type="text" id="c5-name" placeholder="As on your birth certificate"></div>
+        <div class="field"><label for="c5-dob">Date of birth</label><input type="date" id="c5-dob"></div>
+      </div>
+      <p class="form-error" id="c5-err"></p>
+      <button class="btn btn-primary" id="c5-go" style="width:100%">Read my five numbers</button>
+    </div>
+  </div>
+</section>
+
+<section id="c5-out-wrap" style="display:none;padding-top:0"></section>
+
+<!-- honest framing -->
+<section>
+  <div class="wrap" style="max-width:760px">
+    <div class="card" style="background:var(--surface-2)">
+      <h3>A word on how to use this</h3>
+      <p style="margin-top:8px">The Core 5 is a framework for self-reflection, not a psychological assessment. Its questions are good — what do you want, what do you show, what are you built for — and the numbers give them structure. Read it the way you'd read a good prompt in a journal, and take what's useful.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="numerology.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+
+$("c5-go").addEventListener("click", () => {
+  const name = $("c5-name").value.trim().replace(/[^a-zA-Z ]/g, "");
+  const dob = $("c5-dob").value;
+  const err = $("c5-err");
+  if (name.length < 2) { err.style.display = "block"; err.textContent = "Please enter your full birth name."; return; }
+  if (!dob) { err.style.display = "block"; err.textContent = "Please enter your date of birth."; return; }
+  err.style.display = "none";
+
+  const n = allNumbers(name, dob);
+  const lp = NUMBER_DATA[n.lifePath];
+  const synth = core5Synthesis(n);
+
+  const cards = [
+    { v: n.lifePath, t: "Life Path", sub: "the road", d: lp },
+    { v: n.expression, t: "Expression", sub: "the talent", d: NUMBER_DATA[n.expression] },
+    { v: n.soulUrge, t: "Soul Urge", sub: "the heart", d: NUMBER_DATA[n.soulUrge] },
+    { v: n.personality, t: "Personality", sub: "the doorway", d: NUMBER_DATA[n.personality] },
+    { v: n.birthday, t: "Birthday", sub: "the gift", d: NUMBER_DATA[n.birthday] }
+  ].map(c => `
+  <div class="core-card">
+    <div class="medallion med"><span class="big">${c.v}</span></div>
+    <span class="t">${c.t}</span>
+    <div class="n">${c.d.title}</div>
+    <p style="font-size:.78rem;color:var(--text-dim);margin-top:4px">${c.sub}</p>
+  </div>`).join("");
+
+  const detail = [
+    { v: n.lifePath, t: "Life Path — the road you walk", why: "Your date of birth fixes this: the central lesson and direction of the lifetime.", d: lp },
+    { v: n.expression, t: "Expression — what you're built to become", why: "Every letter of your birth name contributes; this is the capability set you arrived with.", d: NUMBER_DATA[n.expression] },
+    { v: n.soulUrge, t: "Soul Urge — what the heart privately wants", why: "Vowels only — the desire beneath the persona, what you want when nobody is scoring.", d: NUMBER_DATA[n.soulUrge] },
+    { v: n.personality, t: "Personality — the doorway others meet", why: "Consonants only — the first-impression filter through which the world reads you.", d: NUMBER_DATA[n.personality] },
+    { v: n.birthday, t: "Birthday — the gift you can always use", why: "The day of the month you were born — a talent that works even on your worst days.", d: NUMBER_DATA[n.birthday] }
+  ].map(x => `
+  <div class="synth-note">
+    <div style="display:flex;align-items:baseline;gap:12px">
+      <span style="font-family:var(--font-display);font-size:1.9rem;color:var(--accent)">${x.v}</span>
+      <div><strong style="font-size:1.05rem">${x.t}</strong><p style="font-size:.8rem;color:var(--text-dim)">${x.why}</p></div>
+    </div>
+    <p style="color:var(--text-dim);margin-top:8px"><strong>${x.d.title}</strong> — ${x.d.keywords.join(", ").toLowerCase()}. ${x.d.summary}</p>
+  </div>`).join("");
+
+  $("c5-out-wrap").style.display = "block";
+  $("c5-out-wrap").innerHTML = `
+  <div class="wrap" style="max-width:860px">
+    <div class="card fade-in">
+      <div class="result-hero">
+        <div class="medallion"><span class="big">${n.lifePath}</span><span class="cap">Life Path</span></div>
+        <div>
+          <span class="pill warm">${[11,22,33].includes(n.lifePath) ? "Master number chart" : "Planet"} · ${lp.planet}</span>
+          <h2 style="margin:10px 0 4px">${esc(name)} — ${lp.title}</h2>
+          <p style="color:var(--text-dim)">Born ${fmtDOB(dob)} · Core 5 profile</p>
+        </div>
+      </div>
+
+      <div class="core-cards" style="margin:26px 0 6px">${cards}</div>
+
+      <div class="divider"></div>
+      <h3>Each number, in your chart</h3>
+      ${detail}
+
+      <div class="divider"></div>
+      <h3>How your numbers work together</h3>
+      ${synth.map(s => `<div class="synth-note"><span class="pair">${s.pair}</span><p style="color:var(--text-dim)">${s.text}</p></div>`).join("")}
+
+      <div class="divider"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap">
+        <div>
+          <h3>Your lucky toolkit</h3>
+          <p style="margin-top:6px">${lp.colours.map((c, i) => `<span class="swatch" style="background:${c}"></span>${lp.colourNames[i]}`).join(" · ")}<br><span style="color:var(--text-dim)">${lp.gem} · best on ${lp.day}s</span></p>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn btn-ghost btn-sm" href="forecast.html">Plan my year ahead →</a>
+          <a class="btn btn-primary btn-sm" href="reports.html">Premium report →</a>
+        </div>
+      </div>
+    </div>
+  </div>`;
+  $("c5-out-wrap").scrollIntoView({ behavior: "smooth" });
+});
+</script>
+</body>
+</html>

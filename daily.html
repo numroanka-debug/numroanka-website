@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Numerology Forecast & Lucky Colours — Numro Anka</title>
+<meta name="description" content="Today's numerology forecast: universal day number, your personal day, guidance, lucky colours, numbers and gemstones.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Azeret+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap nav-row">
+    <a class="brand" href="index.html"><span class="logo">अ</span><span><span class="name">Numro Anka</span><br><span class="tag">Chaldean Numerology</span></span></a>
+    <nav class="main" id="main-nav"></nav>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="section-label">Daily Forecast</span>
+    <h1>Today, by the numbers</h1>
+    <p class="sub">Each date vibrates to a universal day number — and your birthday tunes it into a personal day number. Read today's guidance, then add your birthday for the personal layer.</p>
+  </div>
+</section>
+
+<section style="padding-top:10px">
+  <div class="wrap daily-grid">
+
+    <!-- Universal today card -->
+    <div class="card today-card fade-in" id="today-card">
+      <!-- filled by JS -->
+    </div>
+
+    <!-- Personal day form -->
+    <div class="form-card">
+      <h3 style="font-size:1.4rem">Your personal day</h3>
+      <p style="color:var(--text-dim);margin:6px 0 20px;font-size:.95rem">Your personal day number layers your birth vibration over today's universal number — the forecast written specifically for you.</p>
+      <div class="field">
+        <label for="pd-dob">Your date of birth</label>
+        <input type="date" id="pd-dob">
+      </div>
+      <p class="form-error" id="pderr"></p>
+      <button class="btn btn-primary" id="pdgo" style="width:100%">Get my personal forecast</button>
+      <div id="pd-out" style="display:none;margin-top:22px"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Lucky table -->
+<section>
+  <div class="wrap">
+    <div class="center" style="margin-bottom:40px">
+      <span class="section-label">Quick Reference</span>
+      <h2>Lucky colours, gems & days by number</h2>
+      <p class="lead">The classical toolkit for each ruling number — wear, gift or carry yours on important days.</p>
+    </div>
+    <div class="table-wrap">
+      <table class="nice">
+        <thead><tr><th>Number</th><th>Title</th><th>Ruling planet</th><th>Lucky colours</th><th>Gemstone</th><th>Best day</th></tr></thead>
+        <tbody id="lucky-body"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="numerology.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const DAYS = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+(function renderToday() {
+  const now = new Date();
+  const uDay = universalDayNumber(now);
+  const guide = DAILY_GUIDE[uDay];
+  const d = NUMBER_DATA[uDay];
+  $("today-card").innerHTML = `
+    <span class="section-label">Universal day</span>
+    <h3>${uDay} · ${d.title}</h3>
+    <p class="date">${DAYS[now.getDay()]}, ${now.getDate()} ${now.toLocaleString("en-IN", { month: "long" })} ${now.getFullYear()}</p>
+    <p style="margin-top:18px;font-size:1.05rem">${guide}</p>
+    <div class="lucky-strip">
+      <div class="cell"><div class="k">Lucky number</div><div class="v">${uDay}</div></div>
+      <div class="cell"><div class="k">Lucky colour</div><div class="v"><span class="swatch" style="background:${d.colours[0]};border-color:rgba(255,255,255,.4)"></span>${d.colourNames[0]}</div></div>
+      <div class="cell"><div class="k">Wear / carry</div><div class="v">${d.gem}</div></div>
+    </div>`;
+})();
+
+$("pdgo").addEventListener("click", () => {
+  const dob = $("pd-dob").value;
+  const err = $("pderr");
+  if (!dob) { err.style.display = "block"; err.textContent = "Please enter your date of birth."; return; }
+  err.style.display = "none";
+  const pDay = personalDayNumber(dob);
+  const uDay = universalDayNumber();
+  const lp = lifePathNumber(dob);
+  const d = NUMBER_DATA[lp];
+  const out = $("pd-out");
+  out.style.display = "block";
+  out.innerHTML = `
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;text-align:left">
+      <div class="medallion" style="width:92px"><span class="big" style="font-size:2.6rem">${pDay}</span></div>
+      <div>
+        <span class="pill cool">Personal day ${pDay}</span> <span class="pill warm">Life path ${lp}</span>
+        <p style="margin-top:10px">${DAILY_GUIDE[pDay]}</p>
+        <p style="margin-top:10px;color:var(--text-dim);font-size:.92rem">
+          Your lucky colour today: <span class="swatch" style="background:${d.colours[0]}"></span><strong>${d.colourNames[0]}</strong> ·
+          good hours are early morning on a ${d.day.toLowerCase()}.
+        </p>
+      </div>
+    </div>`;
+});
+</script>
+<script>
+(function fillLucky() {
+  const order = [1,2,3,4,5,6,7,8,9,11,22,33];
+  $("lucky-body").innerHTML = order.map(n => {
+    const d = NUMBER_DATA[n];
+    const swatches = d.colours.map((c, i) =>
+      `<span style="white-space:nowrap"><span class="swatch" style="background:${c}"></span>${d.colourNames[i]}</span>`).join(", ");
+    return `<tr>
+      <td class="num">${n}</td>
+      <td>${d.title}</td>
+      <td>${d.planet}</td>
+      <td>${swatches}</td>
+      <td>${d.gem}</td>
+      <td>${d.day}</td>
+    </tr>`;
+  }).join("");
+})();
+</script>
+</body>
+</html>

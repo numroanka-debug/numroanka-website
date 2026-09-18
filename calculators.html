@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Numerology Calculators — 36 Free Tools | Numro Anka</title>
+<meta name="description" content="Free numerology calculators: Life Path, Destiny, Mulank, Bhagyank, Namank, Personal Year, Life Cycles, Pinnacles, Karmic Lessons, Challenge Numbers, Inner Dream, Balance Number, Lucky Numbers, Compatibility, Lo Shu Grid, Mobile Number and the experimental Pi Lab.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Azeret+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .cat-nav { position: sticky; top: 68px; z-index: 50; background: rgba(250,246,239,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 12px 0; }
+  .cat-nav .wrap { display: flex; gap: 10px; flex-wrap: wrap; }
+  .cat-chip { padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--border); background: var(--surface); font-weight: 600; font-size: .86rem; text-decoration: none !important; color: var(--text); transition: all .15s; }
+  .cat-chip:hover { border-color: var(--text); }
+  .cat-section { padding: 56px 0 8px; }
+  .cat-section > .wrap > .section-label { margin-bottom: 8px; }
+  .tool { padding: 34px 0; border-bottom: 1px dashed var(--border); scroll-margin-top: 128px; }
+  .tool-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 30px; align-items: start; }
+  .tool-num { font-family: var(--font-display); font-style: italic; font-size: 1.1rem; color: var(--accent); }
+  .tool h2 { font-size: 1.75rem; margin: 4px 0 10px; }
+  .tool .blurb { color: var(--text-dim); font-size: .95rem; }
+  .loshu { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; max-width: 340px; margin: 0 auto; background: var(--surface-2); padding: 14px; border-radius: 18px; border: 1px solid var(--border); }
+  .loshu .cell { position: relative; min-height: 88px; background: #fff; border: 1.5px solid var(--border); border-radius: 12px; padding: 8px 6px 6px; display: flex; align-items: flex-end; justify-content: center; }
+  .loshu .cell .idx { position: absolute; top: 6px; left: 8px; font-family: var(--font-mono); font-size: .68rem; color: var(--text-dim); }
+  .loshu .cell strong { font-family: var(--font-display); font-size: 1.15rem; color: var(--accent); }
+  .loshu .cell.empty { background: transparent; border-style: dashed; }
+  .loshu .cell.empty strong { color: var(--text-dim); }
+  .plane-row { display: flex; align-items: baseline; gap: 10px; padding: 7px 0; border-bottom: 1px dashed var(--border); }
+  .plane-row .nm { font-weight: 600; min-width: 150px; font-size: .92rem; }
+  .plane-row .ds { color: var(--text-dim); font-size: .85rem; flex: 1; }
+  .phone-card { font-family: var(--font-mono); font-size: 1.5rem; letter-spacing: .06em; text-align: center; background: var(--text); color: #fff; border-radius: 16px; padding: 18px 12px; }
+  .letter-strip { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 4px; }
+  .letter-cell { min-width: 46px; text-align: center; border: 1px solid var(--border); border-radius: 10px; background: #fff; padding: 6px 4px; }
+  .letter-cell .ch { font-family: var(--font-display); font-size: 1.1rem; }
+  .letter-cell .v { font-family: var(--font-mono); font-size: .78rem; color: var(--accent); }
+  .letter-cell.vw { background: var(--teal-dim); border-color: rgba(44,110,99,.3); }
+  .chain { font-family: var(--font-mono); font-size: .9rem; color: var(--text-dim); margin-top: 10px; }
+  .chain b { color: var(--accent); }
+  .stage-card { display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: center; padding: 14px 0; border-bottom: 1px dashed var(--border); }
+  .stage-card .n { font-family: var(--font-display); font-size: 2.1rem; color: var(--accent); width: 54px; text-align: center; }
+  .stage-card .when { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--text-dim); }
+  @media (max-width: 960px) { .tool-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap nav-row">
+    <a class="brand" href="index.html"><span class="logo">अ</span><span><span class="name">Numro Anka</span><br><span class="tag">Chaldean Numerology</span></span></a>
+    <nav class="main" id="main-nav"></nav>
+    <a href="core5.html" class="btn btn-primary btn-sm nav-cta">Core 5 Reading</a>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<div class="cat-nav">
+  <div class="wrap">
+    <a class="cat-chip" href="#core">Core Identity</a>
+    <a class="cat-chip" href="#timing">Predictive & Timing</a>
+    <a class="cat-chip" href="#karmic">Karmic & Psychological</a>
+    <a class="cat-chip" href="#practical">Practical & Compatibility</a>
+    <a class="cat-chip" href="#extra">Grids & Experimental</a>
+  </div>
+</div>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="section-label">The Complete Collection</span>
+    <h1>36 calculators, five shelves</h1>
+    <p class="sub">From your primary Life Path to today's lucky digit — core identity, timing, karmic lessons, practical daily tools and the grids, all computed privately in your browser. Nothing is uploaded, ever.</p>
+    <div class="top-search">
+      <strong>Most searched in India:</strong>
+      <a href="#t-mk">Mulank</a> ·
+      <a href="#t-bh">Bhagyank</a> ·
+      <a href="#t-bn">Baby Name Calculator</a> ·
+      <a href="#t-veh">Vehicle Number Calculator</a> ·
+      <a href="#t-bz">Business Name Calculator</a> ·
+      <a href="business.html">Full Business Analysis</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORY 1: CORE IDENTITY ============ -->
+<section class="cat-section" id="core">
+  <div class="wrap">
+    <span class="section-label">Shelf 01 · Core Identity</span>
+    <h2>Who you fundamentally are</h2>
+    <p class="lead">The numbers that answer "who am I" — your life purpose, your talents, and the Vedic root and fortune numbers.</p>
+  </div>
+</section>
+
+<section class="tool" id="t-lp"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">01</span>
+    <h2>Life Path Number</h2>
+    <p class="blurb">Your primary life purpose from the full date of birth — the single most important number in any chart.</p>
+    <div class="field"><label for="lp-dob">Your date of birth</label><input type="date" id="lp-dob"></div>
+    <p class="form-error" id="lp-err"></p>
+    <button class="btn btn-primary" id="lp-go" style="width:100%">Calculate my Life Path</button>
+  </div>
+  <div id="lp-out"></div>
+</div></section>
+
+<section class="tool" id="t-de"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">02</span>
+    <h2>Destiny (Expression) Number</h2>
+    <p class="blurb">Your life's potential and talents from the full birth name — what you are built to become.</p>
+    <div class="field"><label for="de-name">Full name at birth</label><input type="text" id="de-name" placeholder="As on your birth certificate"></div>
+    <p class="form-error" id="de-err"></p>
+    <button class="btn btn-primary" id="de-go" style="width:100%">Calculate my Destiny Number</button>
+  </div>
+  <div id="de-out"></div>
+</div></section>
+
+<section class="tool" id="t-su"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">03</span>
+    <h2>Soul Urge (Heart's Desire) Calculator</h2>
+    <p class="blurb">What you secretly want — the vowels of your birth name, the quiet motivation underneath everything you chase.</p>
+    <div class="field"><label for="su-name">Full birth name</label><input type="text" id="su-name" placeholder="Exactly as on your birth certificate"><p class="hint">Only the vowels (A, E, I, O, U) are counted; Y reads as a consonant here.</p></div>
+    <p class="form-error" id="su-err"></p>
+    <button class="btn btn-primary" id="su-go" style="width:100%">Reveal my heart's desire</button>
+  </div>
+  <div id="su-out"></div>
+</div></section>
+
+<section class="tool" id="t-pers"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">04</span>
+    <h2>Personality Number Calculator</h2>
+    <p class="blurb">The you that strangers meet — the consonants of your name, your energetic handshake with the world.</p>
+    <div class="field"><label for="pers-name">Full birth name</label><input type="text" id="pers-name" placeholder="Exactly as on your birth certificate"><p class="hint">Only the consonants are counted here; the vowels belong to your Soul Urge.</p></div>
+    <p class="form-error" id="pers-err"></p>
+    <button class="btn btn-primary" id="pers-go" style="width:100%">See how the world reads me</button>
+  </div>
+  <div id="pers-out"></div>
+</div></section>
+
+<section class="tool" id="t-bday"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">05</span>
+    <h2>Birthday Number Calculator</h2>
+    <p class="blurb">The gift you were handed at the door — the specific day of the month you were born, read with its master vibrations.</p>
+    <div class="field"><label for="bday-dob">Your date of birth</label><input type="date" id="bday-dob"><p class="hint">Born on the 11th or 22nd? The master day stays — the Western cousin of Mulank.</p></div>
+    <p class="form-error" id="bday-err"></p>
+    <button class="btn btn-primary" id="bday-go" style="width:100%">Find my birthday gift</button>
+  </div>
+  <div id="bday-out"></div>
+</div></section>
+
+<section class="tool" id="t-mk"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">06</span>
+    <h2>Mulank (Root Number) <span class="pill hot" style="font-size:.65rem;vertical-align:4px">Top searched</span></h2>
+    <p class="blurb">The Vedic birth number: your foundational personality from the <strong>day</strong> of the month you were born, reduced to a single digit.</p>
+    <div class="field"><label for="mk-dob">Your date of birth</label><input type="date" id="mk-dob"><p class="hint">Only the day matters here — born on the 23rd? 2+3 = Mulank 5.</p></div>
+    <p class="form-error" id="mk-err"></p>
+    <button class="btn btn-primary" id="mk-go" style="width:100%">Calculate my Mulank</button>
+  </div>
+  <div id="mk-out"></div>
+</div></section>
+
+<section class="tool" id="t-bh"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">07</span>
+    <h2>Bhagyank (Fortune Number) <span class="pill hot" style="font-size:.65rem;vertical-align:4px">Top searched</span></h2>
+    <p class="blurb">The Vedic counterpart of the Life Path: your fortune number from the <strong>full date</strong> of birth, reduced to a single digit.</p>
+    <div class="field"><label for="bh-dob">Your date of birth</label><input type="date" id="bh-dob"><p class="hint">Mulank is what you're made of; Bhagyank is where fate points you.</p></div>
+    <p class="form-error" id="bh-err"></p>
+    <button class="btn btn-primary" id="bh-go" style="width:100%">Calculate my Bhagyank</button>
+  </div>
+  <div id="bh-out"></div>
+</div></section>
+
+<section class="tool" id="t-nk"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">08</span>
+    <h2>Namank (Name Number)</h2>
+    <p class="blurb">The hidden vibrational value of your name — computed in <strong>both</strong> traditional systems side by side: Chaldean and Pythagorean.</p>
+    <div class="field"><label for="nk-name">Full name</label><input type="text" id="nk-name" placeholder="Any name — yours, a brand, a child's future name"></div>
+    <p class="form-error" id="nk-err"></p>
+    <button class="btn btn-primary" id="nk-go" style="width:100%">Evaluate this name</button>
+  </div>
+  <div id="nk-out"></div>
+</div></section>
+
+<section class="tool" id="t-chal"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">09</span>
+    <h2>Chaldean Numerology Calculator</h2>
+    <p class="blurb">The complete ancient reading in one place: Psychic number, Chaldean Name number and Destiny number — the trio Indian practice reads together, in the system where <strong>9 is sacred and never assigned to a letter</strong>.</p>
+    <div class="field"><label for="chal-name">Full name</label><input type="text" id="chal-name" placeholder="Your full birth name"></div>
+    <div class="field"><label for="chal-dob">Date of birth</label><input type="date" id="chal-dob"></div>
+    <p class="form-error" id="chal-err"></p>
+    <button class="btn btn-primary" id="chal-go" style="width:100%">Run the Chaldean reading</button>
+  </div>
+  <div id="chal-out"></div>
+</div></section>
+
+<!-- ============ CATEGORY 2: PREDICTIVE & TIMING ============ -->
+<section class="cat-section" id="timing">
+  <div class="wrap">
+    <span class="section-label">Shelf 02 · Predictive & Timing</span>
+    <h2>When things tend to happen</h2>
+    <p class="lead">Cycles, seasons and peak windows — the numerology of timing.</p>
+  </div>
+</section>
+
+<section class="tool" id="t-py"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">10</span>
+    <h2>Personal Year & Cycles</h2>
+    <p class="blurb">The overarching themes, opportunities and challenges of your current calendar year — plus the nine-year rhythm you're moving through.</p>
+    <div class="field"><label for="py-dob">Your date of birth</label><input type="date" id="py-dob"></div>
+    <p class="form-error" id="py-err"></p>
+    <button class="btn btn-primary" id="py-go" style="width:100%">Where am I in the cycle?</button>
+  </div>
+  <div id="py-out"></div>
+</div></section>
+
+<section class="tool" id="t-pmd"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">11</span>
+    <h2>Personal Month & Day Calculator</h2>
+    <p class="blurb">Your year has a theme, each month a mood, each day a task — check any date's personal weather before you plan around it.</p>
+    <div class="field"><label for="pmd-dob">Your date of birth</label><input type="date" id="pmd-dob"></div>
+    <div class="field"><label for="pmd-date">Date to check</label><input type="date" id="pmd-date"><p class="hint">Leave today's date in for your current weather; pick a future date to plan a launch, meeting or trip.</p></div>
+    <p class="form-error" id="pmd-err"></p>
+    <button class="btn btn-primary" id="pmd-go" style="width:100%">Check this date</button>
+  </div>
+  <div id="pmd-out"></div>
+</div></section>
+
+<section class="tool" id="t-lc"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">12</span>
+    <h2>Life Cycles (Periods)</h2>
+    <p class="blurb">Your life in three great periods — Formative, Productive and Harvest — each driven by a different part of your birth date.</p>
+    <div class="field"><label for="lc-dob">Your date of birth</label><input type="date" id="lc-dob"><p class="hint">Formative comes from the month, Productive from the day, Harvest from the year of birth.</p></div>
+    <p class="form-error" id="lc-err"></p>
+    <button class="btn btn-primary" id="lc-go" style="width:100%">Map my life periods</button>
+  </div>
+  <div id="lc-out"></div>
+</div></section>
+
+<section class="tool" id="t-pn"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">13</span>
+    <h2>Pinnacle Numbers</h2>
+    <p class="blurb">The four peak periods of achievement and major milestones in your life — with the ages each peaks through.</p>
+    <div class="field"><label for="pn-dob">Your date of birth</label><input type="date" id="pn-dob"><p class="hint">Pinnacle 1 runs from birth to age 36 minus your life path; then nine-year peaks.</p></div>
+    <p class="form-error" id="pn-err"></p>
+    <button class="btn btn-primary" id="pn-go" style="width:100%">Find my pinnacles</button>
+  </div>
+  <div id="pn-out"></div>
+</div></section>
+
+<!-- ============ CATEGORY 3: KARMIC & PSYCHOLOGICAL ============ -->
+<section class="cat-section" id="karmic">
+  <div class="wrap">
+    <span class="section-label">Shelf 03 · Karmic & Psychological</span>
+    <h2>The hidden curriculum</h2>
+    <p class="lead">Karmic lessons and debts, challenge positions, your Sun Number, Origin & Master, secret dreams and your crisis reflex — the numbers beneath the numbers.</p>
+  </div>
+</section>
+
+<section class="tool" id="t-kl"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">14</span>
+    <h2>Karmic Lesson Numbers</h2>
+    <p class="blurb">Missing numbers in your name reveal weak zones — talents you must consciously develop in this lifetime.</p>
+    <div class="field"><label for="kl-name">Full name at birth</label><input type="text" id="kl-name" placeholder="As on your birth certificate"><p class="hint">We check which of the values 1–9 never appear among your letters, using Pythagorean values (the system this tool comes from — Chaldean never assigns 9 to a letter).</p></div>
+    <p class="form-error" id="kl-err"></p>
+    <button class="btn btn-primary" id="kl-go" style="width:100%">Find my karmic lessons</button>
+  </div>
+  <div id="kl-out"></div>
+</div></section>
+
+<section class="tool" id="t-ch"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">15</span>
+    <h2>Challenge Numbers</h2>
+    <p class="blurb">The specific obstacles you'll face at different stages of life — and how each one is overcome.</p>
+    <div class="field"><label for="ch-dob">Your date of birth</label><input type="date" id="ch-dob"><p class="hint">A 0 challenge is a gift position, not an absence.</p></div>
+    <p class="form-error" id="ch-err"></p>
+    <button class="btn btn-primary" id="ch-go" style="width:100%">Reveal my challenges</button>
+  </div>
+  <div id="ch-out"></div>
+</div></section>
+
+<section class="tool" id="t-om"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">16</span>
+    <h2>Origin & Master Calculator</h2>
+    <p class="blurb">Origin is the self you start as — what shows up unbidden. Master is the self life keeps steering you toward. Two numbers, read against each other.</p>
+    <div class="field"><label for="om-dob">Your date of birth</label><input type="date" id="om-dob"><p class="hint">Origin comes from your birth day; Master from your whole date. Two different questions than your Life Path asks.</p></div>
+    <p class="form-error" id="om-err"></p>
+    <button class="btn btn-primary" id="om-go" style="width:100%">Find my Origin & Master</button>
+  </div>
+  <div id="om-out"></div>
+</div></section>
+
+<section class="tool" id="t-id"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">17</span>
+    <h2>Inner Dream Number</h2>
+    <p class="blurb">The self you privately imagine being — calculated from the consonants of your name. (The vowels hold the Soul Urge, on the Core 5 page.)</p>
+    <div class="field"><label for="id-name">Full name at birth</label><input type="text" id="id-name" placeholder="Your full birth name"></div>
+    <p class="form-error" id="id-err"></p>
+    <button class="btn btn-primary" id="id-go" style="width:100%">Reveal my inner dream</button>
+  </div>
+  <div id="id-out"></div>
+</div></section>
+
+<section class="tool" id="t-ba"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">18</span>
+    <h2>Balance Number</h2>
+    <p class="blurb">How you instinctively react and regain composure in times of stress or crisis — read from the initials of your name.</p>
+    <div class="field"><label for="ba-name">Full name</label><input type="text" id="ba-name" placeholder="e.g. Priya Sharma"><p class="hint">Only the first letter of each name is used.</p></div>
+    <p class="form-error" id="ba-err"></p>
+    <button class="btn btn-primary" id="ba-go" style="width:100%">Find my balance number</button>
+  </div>
+  <div id="ba-out"></div>
+</div></section>
+
+<section class="tool" id="t-sn"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">19</span>
+    <h2>Sun Number Calculator</h2>
+    <p class="blurb">Your outer personality — the self people meet before they know you — from the alignment of your birth day with your sun-sign season (birth month).</p>
+    <div class="field"><label for="sn-dob">Your date of birth</label><input type="date" id="sn-dob"><p class="hint">Day + month, reduced — the solar first impression.</p></div>
+    <p class="form-error" id="sn-err"></p>
+    <button class="btn btn-primary" id="sn-go" style="width:100%">Find my Sun Number</button>
+  </div>
+  <div id="sn-out"></div>
+</div></section>
+
+<section class="tool" id="t-kd"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">20</span>
+    <h2>Karmic Debt Calculator</h2>
+    <p class="blurb">Checks your chart for the four karmic debt numbers — <strong>13, 14, 16, 19</strong> — hidden in the raw sums of your name and date, with the classical remedy for each.</p>
+    <div class="field"><label for="kd-name">Full name at birth <span style="color:var(--text-dim);font-weight:400">(optional)</span></label><input type="text" id="kd-name" placeholder="Leave blank to check the date only"></div>
+    <div class="field"><label for="kd-dob">Date of birth</label><input type="date" id="kd-dob"></div>
+    <p class="form-error" id="kd-err"></p>
+    <button class="btn btn-primary" id="kd-go" style="width:100%">Check for karmic debt</button>
+  </div>
+  <div id="kd-out"></div>
+</div></section>
+
+<!-- ============ CATEGORY 4: PRACTICAL & COMPATIBILITY ============ -->
+<section class="cat-section" id="practical">
+  <div class="wrap">
+    <span class="section-label">Shelf 04 · Practical & Compatibility</span>
+    <h2>For daily life and other people</h2>
+    <p class="lead">Lucky numbers, dates and colours, vehicle and house vibrations, how two charts read together, and names for a newborn.</p>
+  </div>
+</section>
+
+<section class="tool" id="t-lk"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">21</span>
+    <h2>Lucky Number Calculator</h2>
+    <p class="blurb">Personalised lucky numbers for daily use — your permanent numbers plus today's personal-day digit, colours and friendly digits.</p>
+    <div class="field"><label for="lk-dob">Your date of birth</label><input type="date" id="lk-dob"></div>
+    <p class="form-error" id="lk-err"></p>
+    <button class="btn btn-primary" id="lk-go" style="width:100%">Get my lucky numbers</button>
+  </div>
+  <div id="lk-out"></div>
+</div></section>
+
+<section class="tool" id="t-tl"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">22</span>
+    <h2>Today's Lucky Number</h2>
+    <p class="blurb">A daily lucky number from your personal ruling number and today's planetary ruler — with lucky colour, gem and the day's best hours.</p>
+    <div class="field"><label for="tl-dob">Your date of birth</label><input type="date" id="tl-dob"><p class="hint">Your ruling number comes from your birth day; the planet from today's weekday.</p></div>
+    <p class="form-error" id="tl-err"></p>
+    <button class="btn btn-primary" id="tl-go" style="width:100%">Get today's lucky number</button>
+  </div>
+  <div id="tl-out"></div>
+</div></section>
+
+<section class="tool" id="t-cp"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">23</span>
+    <h2>Numerology Compatibility</h2>
+    <p class="blurb">Romantic, friendship or business harmony: compares the core numbers of two individuals for a resonance score and an honest reading.</p>
+    <div class="field"><label for="cp-an">First person — name</label><input type="text" id="cp-an" placeholder="Full name"></div>
+    <div class="field"><label for="cp-ad">First person — date of birth</label><input type="date" id="cp-ad"></div>
+    <div class="divider"></div>
+    <div class="field"><label for="cp-bn">Second person — name</label><input type="text" id="cp-bn" placeholder="Full name"></div>
+    <div class="field"><label for="cp-bd">Second person — date of birth</label><input type="date" id="cp-bd"></div>
+    <p class="form-error" id="cp-err"></p>
+    <button class="btn btn-primary" id="cp-go" style="width:100%">Calculate our resonance</button>
+  </div>
+  <div id="cp-out"></div>
+</div></section>
+
+<section class="tool" id="t-bd"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">24</span>
+    <h2>Birth Date Compatibility</h2>
+    <p class="blurb">Romantic compatibility strictly through birth-date vibrations — all four Vedic pairs: Mulank↔Mulank, Mulank↔Bhagyank and both directions.</p>
+    <div class="field"><label for="bd-a">First person — date of birth</label><input type="date" id="bd-a"></div>
+    <div class="divider"></div>
+    <div class="field"><label for="bd-b">Second person — date of birth</label><input type="date" id="bd-b"></div>
+    <p class="form-error" id="bd-err"></p>
+    <button class="btn btn-primary" id="bd-go" style="width:100%">Compare the two dates</button>
+  </div>
+  <div id="bd-out"></div>
+</div></section>
+
+<section class="tool" id="t-nc"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">25</span>
+    <h2>Name Compatibility</h2>
+    <p class="blurb">Vibrational harmony between two names — for marriage or business partnership. Checks the name numbers (the public contract) and the soul urges (the private wants).</p>
+    <div class="field"><label for="nc-a">First name</label><input type="text" id="nc-a" placeholder="Full name"></div>
+    <div class="divider"></div>
+    <div class="field"><label for="nc-b">Second name</label><input type="text" id="nc-b" placeholder="Full name"></div>
+    <p class="form-error" id="nc-err"></p>
+    <button class="btn btn-primary" id="nc-go" style="width:100%">Check name harmony</button>
+  </div>
+  <div id="nc-out"></div>
+</div></section>
+
+<section class="tool" id="t-hn"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">26</span>
+    <h2>House Number / Address Calculator</h2>
+    <p class="blurb">The vibrational energy of your home or office address — with classical remedies for peace and prosperity.</p>
+    <div class="field"><label for="hn-addr">Your address</label><input type="text" id="hn-addr" placeholder="e.g. 14B Rosewood Lane"><p class="hint">House or flat number is primary; the street name adds its own vibration.</p></div>
+    <div class="field"><label for="hn-kind">This is a…</label>
+      <select id="hn-kind"><option>a home (for living)</option><option>an office / business</option></select>
+    </div>
+    <p class="form-error" id="hn-err"></p>
+    <button class="btn btn-primary" id="hn-go" style="width:100%">Read my address</button>
+  </div>
+  <div id="hn-out"></div>
+</div></section>
+
+<section class="tool" id="t-veh"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">27</span>
+    <h2>Lucky Vehicle Number Calculator <span class="pill hot" style="font-size:.65rem;vertical-align:4px">Top searched</span></h2>
+    <p class="blurb">Buying a car or bike? Check whether the plate's digit total aligns with your birth numbers — and which totals to aim for when choosing.</p>
+    <div class="field"><label for="veh-num">Vehicle number</label><input type="text" id="veh-num" placeholder="e.g. HR 26 DQ 1234"><p class="hint">Letters are ignored; the digits are summed the classical way.</p></div>
+    <div class="field"><label for="veh-dob">Your date of birth <span style="color:var(--text-dim);font-weight:400">(optional)</span></label><input type="date" id="veh-dob"></div>
+    <p class="form-error" id="veh-err"></p>
+    <button class="btn btn-primary" id="veh-go" style="width:100%">Check this vehicle number</button>
+  </div>
+  <div id="veh-out"></div>
+</div></section>
+
+<section class="tool" id="t-ld"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">28</span>
+    <h2>Lucky Date Calculator</h2>
+    <p class="blurb">Your six best dates of any month — the days your personal day number peaks for launching, love, money or rest. Pick the month, get the dates.</p>
+    <div class="field"><label for="ld-dob">Your date of birth</label><input type="date" id="ld-dob"></div>
+    <div class="field"><label for="ld-month">Which month?</label>
+      <select id="ld-month"></select>
+    </div>
+    <p class="form-error" id="ld-err"></p>
+    <button class="btn btn-primary" id="ld-go" style="width:100%">Find my lucky dates</button>
+  </div>
+  <div id="ld-out"></div>
+</div></section>
+
+<section class="tool" id="t-lck"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">29</span>
+    <h2>Lucky Colour Calculator</h2>
+    <p class="blurb">Your permanent lucky colours from your ruling number, today's personal colour, and the shades that drain you — wear the first, schedule around the last.</p>
+    <div class="field"><label for="lcol-dob">Your date of birth</label><input type="date" id="lcol-dob"></div>
+    <p class="form-error" id="lcol-err"></p>
+    <button class="btn btn-primary" id="lcol-go" style="width:100%">Find my lucky colours</button>
+  </div>
+  <div id="lcol-out"></div>
+</div></section>
+
+<section class="tool" id="t-bn"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">30</span>
+    <h2>Baby Name Numerology <span class="pill hot" style="font-size:.65rem;vertical-align:4px">Top searched</span></h2>
+    <p class="blurb">Check candidate names for a newborn against the child's Mulank and Bhagyank — and get the lucky first letters to shortlist from.</p>
+    <div class="field"><label for="bn-dob">Baby's date of birth</label><input type="date" id="bn-dob"></div>
+    <div class="field"><label for="bn-names">Candidate names <span style="color:var(--text-dim);font-weight:400">(comma-separated, up to 3)</span></label><input type="text" id="bn-names" placeholder="e.g. Aarav, Ishaan, Vihaan"></div>
+    <p class="form-error" id="bn-err"></p>
+    <button class="btn btn-primary" id="bn-go" style="width:100%">Check these names</button>
+  </div>
+  <div id="bn-out"></div>
+</div></section>
+
+<section class="tool" id="t-bz"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">31</span>
+    <h2>Business Name Calculator <span class="pill hot" style="font-size:.65rem;vertical-align:4px">Top searched</span></h2>
+    <p class="blurb">The Chaldean commercial reading of a business name — its number, its money vibration, and whether it harmonises with the owner's Life Path. Spelling variants get the full treatment on the Business page.</p>
+    <div class="field"><label for="bz2-name">Business name</label><input type="text" id="bz2-name" placeholder="e.g. Meridian Consulting"></div>
+    <div class="field"><label for="bz2-dob">Owner's date of birth <span style="color:var(--text-dim);font-weight:400">(optional)</span></label><input type="date" id="bz2-dob"></div>
+    <p class="form-error" id="bz2-err"></p>
+    <button class="btn btn-primary" id="bz2-go" style="width:100%">Check this business name</button>
+  </div>
+  <div id="bz2-out"></div>
+</div></section>
+
+<section class="tool" id="t-rk"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">32</span>
+    <h2>Remedy Finder <span class="pill sunny" style="font-size:.65rem;vertical-align:4px">gem & rudraksha</span></h2>
+    <p class="blurb">The classical remedy set for your ruling number: gemstone, rudraksha, power day and lucky colour — information only, nothing sold here.</p>
+    <div class="field"><label for="rk-dob">Your date of birth</label><input type="date" id="rk-dob"></div>
+    <p class="form-error" id="rk-err"></p>
+    <button class="btn btn-primary" id="rk-go" style="width:100%">Find my remedies</button>
+  </div>
+  <div id="rk-out"></div>
+</div></section>
+
+<!-- ============ CATEGORY 5: GRIDS & EXPERIMENTAL ============ -->
+<section class="cat-section" id="extra">
+  <div class="wrap">
+    <span class="section-label">Shelf 05 · Grids & Experimental</span>
+    <h2>Squares, signals and π</h2>
+    <p class="lead">The Chinese birth grid with elemental energies, your phone number's vibration, and one clearly-labelled experiment.</p>
+  </div>
+</section>
+
+<section class="tool" id="t-ls"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">33</span>
+    <h2>Lo Shu Grid</h2>
+    <p class="blurb">The 3,000-year-old Chinese magic square: every digit of your birth date placed in the grid — repetitions as strengths, absences as lessons.</p>
+    <div class="field"><label for="ls-dob">Your date of birth</label><input type="date" id="ls-dob"><p class="hint">Zero is never placed in the grid — it only holds 1–9.</p></div>
+    <p class="form-error" id="ls-err"></p>
+    <button class="btn btn-primary" id="ls-go" style="width:100%">Build my grid</button>
+  </div>
+  <div id="ls-out"></div>
+</div></section>
+
+<section class="tool" id="t-mb"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">34</span>
+    <h2>Mobile Number Compatibility</h2>
+    <p class="blurb">Your phone number's digit total either supports or strains your Life Path — check whether yours is a friend.</p>
+    <div class="field"><label for="mb-num">Your mobile number</label><input type="tel" id="mb-num" placeholder="e.g. 98765 43210"><p class="hint">Country codes are stripped automatically.</p></div>
+    <div class="field"><label for="mb-dob">Your date of birth <span style="color:var(--text-dim);font-weight:400">(optional)</span></label><input type="date" id="mb-dob"></div>
+    <p class="form-error" id="mb-err"></p>
+    <button class="btn btn-primary" id="mb-go" style="width:100%">Analyse my number</button>
+  </div>
+  <div id="mb-out"></div>
+</div></section>
+
+<section class="tool" id="t-gm"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">35</span>
+    <h2>Gematria Calculator <span class="pill sunny" style="font-size:.65rem;vertical-align:4px">esoteric</span></h2>
+    <p class="blurb">The Hebrew-tradition reading of a word: letters valued A=1 through Z=800. Hidden meanings in names, words and phrases — cousin of numerology, not Chaldean.</p>
+    <div class="field"><label for="gm-word">Word or phrase</label><input type="text" id="gm-word" placeholder="e.g. your name, a place, a word that follows you"><p class="hint">Spaces and non-letters are ignored; every letter keeps its full value (S=100, not 1+0+0).</p></div>
+    <p class="form-error" id="gm-err"></p>
+    <button class="btn btn-primary" id="gm-go" style="width:100%">Read this word</button>
+  </div>
+  <div id="gm-out"></div>
+</div></section>
+
+<section class="tool" id="t-pi"><div class="wrap tool-grid">
+  <div class="form-card">
+    <span class="tool-num">36</span>
+    <h2>Pi Lab <span class="pill sunny" style="font-size:.65rem;vertical-align:4px">experimental</span></h2>
+    <p class="blurb">Not classical numerology: each letter's Chaldean value is paired with the digit of π at the same position, summed and reduced.</p>
+    <div class="demo-note" style="margin-top:12px">Experimental system with no classical lineage — the full calculation is shown so you can judge it yourself.</div>
+    <div class="field" style="margin-top:16px"><label for="pi-name">Name to map</label><input type="text" id="pi-name" placeholder="Any name — yours, a brand, a city"></div>
+    <p class="form-error" id="pi-err"></p>
+    <button class="btn btn-dark" id="pi-go" style="width:100%">Run the π mapping</button>
+  </div>
+  <div id="pi-out"></div>
+</div></section>
+
+<section style="padding-top:26px">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>All 36 tools, one birthday.</h2>
+        <p>Or see every number of yours on one printable page — the Chart Generator maps them all.</p>
+      </div>
+      <a class="btn btn-primary" href="chart.html">Generate my chart →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="numerology.js"></script>
+
+<!-- ============ THE NATURAL NEXT STEPS ============ -->
+<section class="cat-section" id="journeys" style="padding-top:44px">
+  <div class="wrap">
+    <span class="section-label">The Natural Next Steps</span>
+    <h2>Your numbers, connected</h2>
+    <p class="lead">One number is a fact; the connected reading is the map. Follow the path yours opens.</p>
+  </div>
+</section>
+<section class="tool" style="border-bottom:none"><div class="wrap">
+  <div class="grid grid-2">
+    <div class="card">
+      <h3>Found your core?</h3>
+      <p style="margin-top:8px;font-size:.92rem;color:var(--text-dim)">Life Path and Destiny are the entrance, not the house. The depth reading joins five numbers into one story.</p>
+      <div class="ns-links" style="margin-top:12px">
+        <a class="ns-link" href="core5.html">The Core 5 reading</a>
+        <a class="ns-link" href="chart.html">Printable full chart</a>
+        <a class="ns-link" href="#t-om">Origin & Master</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Missing something in the name?</h3>
+      <p style="margin-top:8px;font-size:.92rem;color:var(--text-dim)">Absent letters point to karmic lessons; raw sums can hide debt numbers. Then — classically — remedies.</p>
+      <div class="ns-links" style="margin-top:12px">
+        <a class="ns-link" href="#t-kl">Karmic Lessons</a>
+        <a class="ns-link" href="#t-kd">Karmic Debt check</a>
+        <a class="ns-link" href="#t-rk">Remedy Finder</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Naming or buying something?</h3>
+      <p style="margin-top:8px;font-size:.92rem;color:var(--text-dim)">The high-stakes decisions people actually check numbers for — a child, a company, a vehicle, a house.</p>
+      <div class="ns-links" style="margin-top:12px">
+        <a class="ns-link" href="#t-bn">Baby names</a>
+        <a class="ns-link" href="#t-bz">Business names</a>
+        <a class="ns-link" href="#t-veh">Vehicle number</a>
+        <a class="ns-link" href="#t-hn">House number</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Timing a decision?</h3>
+      <p style="margin-top:8px;font-size:.92rem;color:var(--text-dim)">Your year has a theme, your month a mood, your best dates already marked. Time the move.</p>
+      <div class="ns-links" style="margin-top:12px">
+        <a class="ns-link" href="#t-py">Personal Year</a>
+        <a class="ns-link" href="#t-ld">Lucky dates</a>
+        <a class="ns-link" href="forecast.html">12-month planner</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<script>
+const $ = id => document.getElementById(id);
+
+/* ---------- shared renderers ---------- */
+function meaningHTML(n, label) {
+  const d = NUMBER_DATA[n];
+  const isMaster = [11, 22, 33].includes(n);
+  return `
+  <div class="card fade-in">
+    <div class="result-hero">
+      <div class="medallion"><span class="big">${n}</span><span class="cap">${label}</span></div>
+      <div>
+        <span class="pill warm">${isMaster ? "Master number" : "Planet"} · ${d.planet}</span>
+        <h2 style="margin:10px 0 6px;font-size:1.6rem">${d.title}</h2>
+        <div>${d.keywords.map(k => `<span class="pill cool" style="margin:2px 4px 2px 0">${k}</span>`).join("")}</div>
+      </div>
+    </div>
+    <p style="margin:16px 0 4px">${d.summary}</p>
+    <div class="divider"></div>
+    <div class="grid grid-3">
+      <div class="card" style="background:var(--surface-2)"><p class="pill warm">Career</p><p style="margin-top:8px">${d.career}</p></div>
+      <div class="card" style="background:var(--surface-2)"><p class="pill sunny">Love</p><p style="margin-top:8px">${d.love}</p></div>
+      <div class="card" style="background:var(--surface-2)"><p class="pill cool">Watch out</p><p style="margin-top:8px">${d.watchOut}</p></div>
+    </div>
+    <div class="divider"></div>
+    <p style="font-size:.95rem"><strong>Lucky:</strong> ${d.colours.map((c, i) => `<span class="swatch" style="background:${c}"></span>${d.colourNames[i]}`).join(" · ")} · ${d.gem} · best on ${d.day}s</p>
+  </div>`;
+}
+function showErr(id, msg) { const e = $(id); e.style.display = "block"; e.textContent = msg; }
+function hideErr(id) { $(id).style.display = "none"; }
+function nextSteps(items) {
+  return `
+  <div class="next-steps">
+    <h3>Where to next?</h3>
+    <div class="ns-links">${items.map(i => `<a class="ns-link" href="${i[1]}">${i[0]} →</a>`).join("")}</div>
+    <p class="ns-note">All free, instant, nothing uploaded — or <a href="reports.html">get the full written report</a>.</p>
+  </div>`;
+}
+
+const cleanName = v => v.trim().replace(/[^a-zA-Z ]/g, "");
+function lpChain(dobStr) {
+  let total = dobStr.replace(/\D/g, "").split("").reduce((a, d) => a + Number(d), 0);
+  const steps = [total];
+  while (total > 9 && ![11, 22, 33].includes(total)) {
+    total = String(total).split("").reduce((a, d) => a + Number(d), 0);
+    steps.push(total);
+  }
+  return steps;
+}
+function nameStrip(name) {
+  return [...name.replace(/ /g, "")].map(ch => {
+    const v = CHALDEAN[ch.toUpperCase()];
+    const isV = VOWELS.includes(ch.toUpperCase());
+    return `<span class="letter-cell ${isV ? "vw" : ""}"><div class="ch">${ch.toUpperCase()}</div><div class="v">${v}</div></span>`;
+  }).join("");
+}
+
+/* ========== 01 LIFE PATH ========== */
+$("lp-go").addEventListener("click", () => {
+  const v = $("lp-dob").value;
+  if (!v) return showErr("lp-err", "Please enter your date of birth.");
+  hideErr("lp-err");
+  const steps = lpChain(v);
+  $("lp-out").innerHTML = meaningHTML(lifePathNumber(v), "Life Path") + `
+  <div class="card" style="margin-top:20px;background:var(--surface-2)">
+    <h3>How we got there</h3>
+    <p class="chain">${fmtDOB(v)} → every digit added: ${steps.join(" → ")}</p>
+    <p style="font-size:.85rem;color:var(--text-dim);margin-top:8px">Sums landing on 11, 22 or 33 are kept whole — master numbers.</p>
+    ${nextSteps([['My Personal Year', '#t-py'], ['Compatibility with someone', '#t-cp'], ['The full Core 5 reading', 'core5.html']])}
+  </div>`;
+});
+
+/* ========== 02 DESTINY (EXPRESSION) ========== */
+$("de-go").addEventListener("click", () => {
+  const name = cleanName($("de-name").value);
+  if (name.length < 2) return showErr("de-err", "Please enter your full birth name (letters only).");
+  hideErr("de-err");
+  const destiny = destinyNumber(name), soul = soulUrgeNumber(name), pers = personalityNumber(name);
+  const sum = letterTotal(name, "all");
+  $("de-out").innerHTML = meaningHTML(destiny, "Destiny") + `
+  <div class="card" style="margin-top:20px;background:var(--surface-2)">
+    <h3>Your name, letter by letter</h3>
+    <div class="letter-strip">${nameStrip(name)}</div>
+    <p style="font-size:.85rem;color:var(--text-dim);margin-top:8px">Chaldean letter sum ${sum} → ${destiny}. Soul Urge (vowels) <strong>${soul}</strong> · Personality (consonants) <strong>${pers}</strong>.</p>
+    ${nextSteps([['Namank — both systems compared', '#t-nk'], ['Business Name Calculator', '#t-bz'], ['My Soul Urge', '#t-su']])}
+  </div>`;
+});
+
+/* ========== 03 MULANK ========== */
+$("mk-go").addEventListener("click", () => {
+  const v = $("mk-dob").value;
+  if (!v) return showErr("mk-err", "Please enter your date of birth.");
+  hideErr("mk-err");
+  const m = mulankNumber(v);
+  const dob = parseDOB(v);
+  $("mk-out").innerHTML = meaningHTML(m, "Mulank") + `
+  <div class="card" style="margin-top:20px;background:var(--surface-2)">
+    <h3>Vedic root number</h3>
+    <p class="chain">Born on the ${dob.day}${["th","st","nd","rd"][((dob.day%100>10&&dob.day%100<14)?0:(dob.day%10===1?1:(dob.day%10===2?2:(dob.day%10===3?3:0))))]} → ${dob.day} → ${String(dob.day).split("").join(" + ")} = ${m}</p>
+    <p style="font-size:.85rem;color:var(--text-dim);margin-top:8px">Mulank is the day-of-month number fully reduced — your foundational temperament, the "factory settings" personality that shows up before any learning happens.</p>
+    ${nextSteps([['My Bhagyank', '#t-bh'], ['My Lo Shu Grid', '#t-ls'], ['Origin & Master reading', '#t-om']])}
+  </div>`;
+});
+
+/* ========== 04 BHAGYANK ========== */
+$("bh-go").addEventListener("click", () => {
+  const v = $("bh-dob").value;
+  if (!v) return showErr("bh-err", "Please enter your date of birth.");
+  hideErr("bh-err");
+  const b = bhagyankNumber(v);
+  const steps = lpChain(v);
+  const m = mulankNumber(v);
+  $("bh-out").innerHTML = meaningHTML(b, "Bhagyank") + `
+  <div class="card" style="margin-top:20px;background:var(--surface-2)">
+    <h3>Vedic fortune number</h3>
+    <p class="chain">Full birth date ${fmtDOB(v)} → ${steps.join(" → ")}</p>
+    <p style="font-size:.9rem;margin-top:8px">In the Vedic system your two pillars are <strong>Mulank ${m}</strong> (what you're made of — the day) and <strong>Bhagyank ${b}</strong> (where fortune points — the whole date). ${m === b ? "Yours match — a rare single-message chart where nature and destiny pull the same rope." : "When both vibrate to the same number, nature and fate compound; yours differ, which reads as a life of two acts."}</p>
+    ${nextSteps([['My Mulank', '#t-mk'], ['My Personal Year', '#t-py'], ['My Namank', '#t-nk']])}
+  </div>`;
+});
+
+/* ========== 05 NAMANK (DUAL SYSTEM) ========== */
+$("nk-go").addEventListener("click", () => {
+  const name = cleanName($("nk-name").value);
+  if (name.length < 2) return showErr("nk-err", "Please enter a name (letters only).");
+  hideErr("nk-err");
+  const ch = destinyNumber(name), chRaw = letterTotal(name, "all");
+  const py = pythagoreanNameNumber(name), pyRaw = pythagoreanRaw(name);
+  const agree = ch === py;
+  $("nk-out").innerHTML = `
+  <div class="card fade-in">
+    <div class="stat-row" style="grid-template-columns:repeat(2,1fr)">
+      <div class="stat"><div class="v">${ch}</div><div class="k">Chaldean Namank</div></div>
+      <div class="stat"><div class="v">${py}</div><div class="k">Pythagorean</div></div>
+    </div>
+    <p style="margin-top:-6px">${agree
+      ? "Both systems agree on this name — an unusual consonance across the two traditions."
+      : "The two traditions read this name differently — Chaldean values letters by vibration, Pythagorean by alphabet position."}</p>
+    <div class="divider"></div>
+    <h3>Chaldean reading (our house system)</h3>
+    <div class="letter-strip">${nameStrip(name)}</div>
+    <p class="chain">Chaldean sum ${chRaw} → ${ch} · Pythagorean sum ${pyRaw} → ${py}</p>
+    <div class="divider"></div>
+    <p style="font-size:.92rem"><strong>${NUMBER_DATA[ch].title}</strong> — ${NUMBER_DATA[ch].summary}</p>
+    <p style="font-size:.78rem;color:var(--text-dim);margin-top:10px">Most Indian and serious name-analysis practice uses Chaldean; most free Western websites default to Pythagorean. Seeing both tells you which tradition a reading came from.</p>
+  </div>`;
+});
+
+/* ========== 06 PERSONAL YEAR ========== */
+$("py-go").addEventListener("click", () => {
+  const v = $("py-dob").value;
+  if (!v) return showErr("py-err", "Please enter your date of birth.");
+  hideErr("py-err");
+  const now = new Date();
+  const py = personalYearNumber(v, now);
+  const d = P_YEAR_DATA[py];
+  const timeline = personalYearTimeline(v, 9, now);
+  const thisYear = now.getFullYear();
+  $("py-out").innerHTML = `
+  <div class="card fade-in">
+    <div class="result-hero">
+      <div class="medallion"><span class="big">${py}</span><span class="cap">Personal Year</span></div>
+      <div>
+        <span class="pill warm">${thisYear}</span>
+        <h2 style="margin:10px 0 6px;font-size:1.5rem">${d.title}</h2>
+        <p style="color:var(--text-dim)">${d.focus}</p>
+      </div>
+    </div>
+    <div class="grid grid-2" style="margin-top:16px">
+      <div class="card" style="background:var(--teal-dim)"><h3>Make this year's moves</h3><p style="margin-top:8px">${d.do}</p></div>
+      <div class="card" style="background:var(--gold-dim)"><h3>Skip this year's traps</h3><p style="margin-top:8px">${d.avoid}</p></div>
+    </div>
+    <div class="divider"></div>
+    <h3>Your nine-year cycle</h3>
+    <div class="table-wrap" style="margin-top:12px">
+      <table class="nice">
+        <thead><tr><th>Year</th><th>Personal year</th><th>Theme</th></tr></thead>
+        <tbody>
+        ${timeline.map(t => `<tr${t.year === thisYear ? ' style="background:var(--accent-dim)"' : ""}>
+          <td>${t.year}${t.year === thisYear ? ' <span class="pill warm" style="font-size:.68rem">now</span>' : ""}</td>
+          <td class="num">${t.n}</td><td>${P_YEAR_DATA[t.n].focus}</td>
+        </tr>`).join("")}
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:.82rem;color:var(--text-dim);margin-top:12px">Year 1 follows your Year 9: plant after you clear. For a month-by-month planner, see the <a href="forecast.html">Forecasts page</a>.</p>
+  </div>`;
+});
+
+/* ========== 07 LIFE CYCLES ========== */
+$("lc-go").addEventListener("click", () => {
+  const v = $("lc-dob").value;
+  if (!v) return showErr("lc-err", "Please enter your date of birth.");
+  hideErr("lc-err");
+  const lc = lifePeriods(v);
+  const now = new Date();
+  const age = now.getFullYear() - parseDOB(v).year;
+  $("lc-out").innerHTML = `
+  <div class="card fade-in">
+    <div class="stat-row" style="grid-template-columns:repeat(3,1fr)">
+      ${lc.spans.map(s => `<div class="stat"><div class="v">${s.num}</div><div class="k">${s.name}</div></div>`).join("")}
+    </div>
+    ${lc.spans.map(s => {
+      const active = age >= s.from - parseDOB(v).year && (s.to === "—" || age < s.to - parseDOB(v).year);
+      const d = NUMBER_DATA[s.num];
+      return `<div class="stage-card" ${active ? 'style="background:var(--accent-dim);border-radius:14px;padding-left:8px;padding-right:8px"' : ""}>
+        <div class="n">${s.num}</div>
+        <div>
+          <strong>${s.name}</strong> <span class="when">ages ${s.age} · ${s.from}–${s.to}${active ? ' · <span class="pill warm" style="font-size:.68rem">you are here</span>' : ""}</span>
+          <p style="font-size:.9rem;color:var(--text-dim);margin-top:4px"><strong>${d.title}</strong> — ${d.keywords.slice(0,2).join(", ").toLowerCase()} energy. ${s.name === "Formative period" ? "The personality forms under this influence — family, schooling, first identity." : s.name === "Productive period" ? "The middle act: career, family-building and the main life work happen here." : "The harvest: what the first two periods grew is gathered, taught and given away."}</p>
+        </div>
+      </div>`;
+    }).join("")}
+    <p style="font-size:.78rem;color:var(--text-dim);margin-top:12px">Transition ages vary by school (27–29 and 56–58); treat the boundaries as seasons changing, not switches flipping.</p>
+  </div>`;
+});
+
+/* ========== 08 PINNACLES ========== */
+$("pn-go").addEventListener("click", () => {
+  const v = $("pn-dob").value;
+  if (!v) return showErr("pn-err", "Please enter your date of birth.");
+  hideErr("pn-err");
+  const pn = pinnacleNumbers(v);
+  const now = new Date();
+  const age = now.getFullYear() - parseDOB(v).year;
+  const names = ["First Pinnacle", "Second Pinnacle", "Third Pinnacle", "Fourth Pinnacle"];
+  const list = [pn.p1, pn.p2, pn.p3, pn.p4];
+  $("pn-out").innerHTML = `
+  <div class="card fade-in">
+    <div class="stat-row" style="grid-template-columns:repeat(4,1fr)">
+      ${list.map(p => `<div class="stat"><div class="v">${p.num}</div><div class="k">Pinnacle</div></div>`).join("")}
+    </div>
+    ${list.map((p, i) => {
+      const active = age >= p.from && (p.to === null || age < p.to);
+      const d = NUMBER_DATA[p.num];
+      return `<div class="stage-card" ${active ? 'style="background:var(--accent-dim);border-radius:14px;padding-left:8px;padding-right:8px"' : ""}>
+        <div class="n">${p.num}</div>
+        <div>
+          <strong>${names[i]}</strong> <span class="when">ages ${p.from}–${p.to === null ? "onward" : p.to}${active ? ' · <span class="pill warm" style="font-size:.68rem">you are here</span>' : ""}</span>
+          <p style="font-size:.9rem;color:var(--text-dim);margin-top:4px"><strong>${d.title}</strong> — the achievements of this peak tend to be ${d.keywords.join(", ").toLowerCase()}. ${[11,22,33].includes(p.num) ? "A master-number pinnacle: higher stakes, higher ceiling." : ""}</p>
+        </div>
+      </div>`;
+    }).join("")}
+    <p style="font-size:.78rem;color:var(--text-dim);margin-top:12px">Pinnacle 1 runs from birth to age 36 minus your life path (${pn.lifePathBase}); each later pinnacle lasts nine years. Between pinnacles sit the challenge numbers above.</p>
+  </div>`;
+});
+
+/* ========== 09 KARMIC LESSONS ========== */
+$("kl-go").addEventListener("click", () => {
+  const name = cleanName($("kl-name").value);
+  if (name.length < 2) return showErr("kl-err", "Please enter your full birth name (letters only).");
+  hideErr("kl-err");
+  const k = karmicLessons(name);
+  const strip = [...name.replace(/ /g, "")].map(ch => {
+    const v = PYTHAGOREAN[ch.toUpperCase()];
+    const kMissed = k.missing.includes(v);
+    return `<span class="letter-cell" ${kMissed ? 'style="border-style:dashed;opacity:.55"' : ""}><div class="ch">${ch.toUpperCase()}</div><div class="v">${v}</div></span>`;
+  }).join("");
+  $("kl-out").innerHTML = `
+  <div class="card fade-in">
+    <h3 style="margin-bottom:4px">${k.hasAll ? "A complete name" : k.missing.length === 1 ? "One karmic lesson" : k.missing.length + " karmic lessons"}</h3>
+    <p style="color:var(--text-dim);font-size:.92rem;margin-bottom:12px">Values ${k.hasAll ? "1–9 all appear in your name" : "missing from your name: " + k.missing.join(", ")}. ${k.hasAll ? "Nothing karmic to develop — an unusually well-stocked toolkit from birth." : ""}</p>
+    <div class="letter-strip">${strip}</div>
+    ${k.hasAll ? "" : k.missing.map(n => `
+    <div class="stage-card" style="grid-template-columns:auto 1fr">
+      <div class="n">${n}</div>
+      <div><strong>Karmic lesson ${n}</strong>
+      <p style="font-size:.9rem;color:var(--text-dim);margin-top:4px">${KARMIC_LESSON[n]}</p></div>
+    </div>`).join("")}
+    <p style="font-size:.78rem;color:var(--text-dim);margin-top:12px">A karmic lesson is not a weakness you were born with — it's a talent nobody modelled for you. It becomes a strength precisely because it had to be built.</p>
+    ${nextSteps([['Karmic Debt check', '#t-kd'], ['Remedies for my numbers', '#t-rk'], ['Printable full chart', 'chart.html']])}
+  </div>`;
+});
+
+/* ========== 10 CHALLENGES ========== */
+$("ch-go").addEventListener("click", () => {
+  const v = $("ch-dob").value;
+  if (!v) return showErr("ch-err", "Please enter your date of birth.");
+  hideErr("ch-err");
+  const c = challengeNumbers(v);
+  const list = [c.c1, c.c2, c.c3, c.c4];
+  $("ch-out").innerHTML = `
+  <div class="card fade-in">
+    <div class="stat-row" style="grid-template-columns:repeat(4,1fr)">
+      ${list.map(x => `<div class="stat"><div class="v">${x.num}</div><div class="k">Challenge</div></div>`).join("")}
+    </div>
+    ${list.map(x => `
+    <div class="stage-card" ${x === c.c3 ? 'style="background:var(--gold-dim);border-radius:14px;padding-left:8px;padding-right:8px"' : ""}>
+      <div class="n">${x.num}</div>
+      <div><strong>Challenge ${x.num}</strong> <span class="when">${x.stage}</span>
+      <p style="font-size:.9rem;color:var(--text-dim);margin-top:4px">${CHALLENGE_DATA[x.num]}</p></div>
+    </div>`).join("")}
+    <p style="font-size:.78rem;color:var(--text-dim);margin-top:12px">Challenges are derived from the month, day and year of birth: the first from month vs day, the second from day vs year, the lifelong main challenge from the first two, the fourth from month vs year.</p>
+  </div>`;
+});
+
+/* ========== 11 INNER DREAM ========== */
+$("id-go").addEventListener("click", () => {
+  const name = cleanName($("id-name").value);
+  if (name.length < 2) return showErr("id-err", "Please enter your full birth name (letters only).");
+  hideErr("id-err");
+  const n = personalityNumber(name);
+  const d = NUMBER_DATA[n];
+  $("id-out").innerHTML = meaningHTML(n, "Inner Dream") + `
+  <div class="card" style="margin-top:20px;background:var(--surface-2)">
+    <h3>The quiet self</h3>
+    <p style="margin-top:8px">The consonants of your name hold your inner dream — the self you privately imagine being when the day is done and nobody is watching. It is the mask you chose, rather than the one circumstances gave you: <strong>${d.keywords.join(", ").toLowerCase()}</strong>. People sense it in you before they can name it.</p>
+    <p style="font-size:.85rem;color:var(--text-dim);margin-top:8px">The vowels — the other half of your name — hold the Soul Urge, which the <a href="core5.html">Core 5 reading</a> covers.</p>
+  </div>`;
+});
+
+/* ========== 12 BALANCE NUMBER ========== */
+$("ba-go").addEventListener("click", () => {
+  const name = cleanName($("ba-name").value);
+  if (name.length < 2) return showErr("ba-err", "Please enter your full name (letters only).");
+  hideErr("ba-err");
+  const b = balanceNumber(name);
+  if (b === null) return showErr("ba-err", "Could not read initials — please check the name.");
+  const initials = name.trim().toUpperCase().split(/\s+/).map(w => w[0]).join(" · ");
+  $("ba-out").innerHTML = `
+  <div class="card fade-in">
+    <div class="result-hero">
+      <div class="medallion" style="width:120px"><span class="big">${b}</span><span class="cap">Balance</span></div>
+      <div>
+        <h2 style="margin:0 0 4px;font-size:1.5rem">Balance Number ${b}</h2>
+        <p class="chain" style="margin-top:2px">Initials: ${initials} → reduced to ${b}</p>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <h3>How you react in a crisis</h3>
+    <p style="margin-top:8px">${BALANCE_DATA[b]}</p>
+    <p style="font-size:.85rem;color:var(--text-dim);margin-top:10px">The balance number describes the reflex — what you do in the first five minutes of trouble, before strategy exists. Knowing your reflex lets you keep its strengths and watch its edges.</p>
+  </div>`;
+});
+
+/* ========== 13 LUCKY NUMBERS ========== */
+$("lk-go").addEventListener("click", () => {
+  const v = $("lk-dob").value;
+  if (!v) return showErr("lk-err", "Please enter your date of birth.");
+  hideErr("lk-err");
+  const t = luckyToolkit(v);
+  const now = new Date();
+  $("lk-out").innerHTML = `
+  <div class="card fade-in">
+    <div class="stat-row" style="grid-template-columns:repeat(4,1fr)">
+      <div class="stat"><div class="v">${t.lifePath}</div><div class="k">Life Path</div></div>
+      <div class="stat"><div class="v">${t.mulank}</div><div class="k">Mulank</div></div>
+      <div class="stat"><div class="v">${t.bhagyank}</div><div class="k">Bhagyank</div></div>
+      <div class="stat"><div class="v">${t.personalDay}</div><div class="k">Today's digit</div></div>
+    </div>
+    <div class="grid grid-2">
+      <div class="card" style="background:var(--teal-dim)">
+        <h3>Your permanent lucky set</h3>
+        <p style="margin-top:8px">Primary number <strong>${t.bhagyank}</strong> — use it for anything you choose: dates, seats, floors, plates. Friendly digits that harmonise with your path: <strong>${t.friendly.join(", ")}</strong>.</p>
+        <p style="margin-top:8px;font-size:.9rem">Lucky colour <span class="swatch" style="background:${t.d.colours[0]}"></span><strong>${t.d.colourNames[0]}</strong> · gemstone ${t.d.gem} · strongest day ${t.d.day}.</p>
+      </div>
+      <div class="card" style="background:var(--gold-dim)">
+        <h3>Today (${now.getDate()} ${now.toLocaleString("en-IN",{month:"long"})})</h3>
+        <p style="margin-top:8px">Your personal-day digit is <strong>${t.personalDay}</strong> — ${DAILY_GUIDE[t.personalDay]}</p>
+        <p style="margin-top:8px;font-size:.9rem">Dates totalling ${t.personalDay}, ${t.bhagyank} or ${t.friendly[0]} carry your best odds today.</p>
+      </div>
+    </div>
+    <p style="font-size:.78rem;color:var(--text-dim);margin-top:12px">Luck, in the numerological sense, is alignment — days your decisions feel easy. Use these numbers as nudges, not as a substitute for judgement.</p>
+  </div>`;
+});
+
+/* ========== 14 TODAY'S LUCKY NUMBER ========== */
+$("tl-go").addEventListener("click", () => {
+  const v = $("tl-dob").value;
+  if (!v) return showErr("tl-err", "Please enter your date of birth.");
+  hideErr("tl-err");
+  const t = todayLuckyNumber(v);
+  const now = new Date();
+  $("tl-out").innerHTML = `
+  <div class="card fade-in">
+    <div class="result-hero">
+      <div class="medallion"><span class="big">${t.pDay}</span><span class="cap">Today's Lucky</span></div>
+      <div>
+        <span class="pill warm">Ruling number ${t.ruling}</span> <span class="pill cool">${t.wp.day} · ${t.wp.planet} rules</span>
+        <h2 style="margin:10px 0 4px;font-size:1.5rem">${t.pDay} is your number today</h2>
+        <p style="color:var(--text-dim)">${now.getDate()} ${now.toLocaleString("en-IN",{month:"long"})} ${now.getFullYear()}</p>
+      </div>
+    </div>
+    <div class="stat-row" style="grid-template-columns:repeat(3,1fr)">
+      <div class="stat"><div class="v">${t.pDay}</div><div class="k">Primary lucky</div></div>
+      <div class="stat"><div class="v">${t.secondary}</div><div class="k">Secondary</div></div>
+      <div class="stat"><div class="v">${t.wp.num}</div><div class="k">${t.wp.planet}'s number</div></div>
+    </div>
+    <p>${DAILY_GUIDE[t.pDay]}</p>
+    <div class="grid grid-2" style="margin-top:16px">
+      <div class="card" style="background:var(--teal-dim)"><h3>Wear & carry today</h3><p style="margin-top:8px">${t.wp.colour} for the ${t.wp.planet} hour; your ruling number's gemstone ${t.d.gem} stays close all day.</p></div>
+      <div class="card" style="background:var(--gold-dim)"><h3>Good hours & dates</h3><p style="margin-top:8px">Dates totalling ${t.pDay}, ${t.secondary} or ${t.ruling} carry your best odds today. Your ruling planet ${NUMBER_DATA[t.ruling].planet} makes ${t.d.day}s your weekly power day.</p></div>
+    </div>
+    <p style="font-size:.78rem;color:var(--text-dim);margin-top:12px">"Planetary transits" here are the classical weekday rulers (Sun rules Sunday, Moon Monday…), the astro-numerology convention — not live ephemeris positions.</p>
+  </div>`;
+});
+
+/* ========== 15 COMPATIBILITY ========== */
+function smallRing(score) {
+  const r = 62, c = 2 * Math.PI * r;
+  return `
+  <div class="score-ring" style="width:150px;height:150px">
+    <svg width="150" height="150" viewBox="0 0 150 150">
+      <circle cx="75" cy="75" r="${r}" fill="none" stroke="var(--surface-2)" stroke-width="10"/>
+      <circle cx="75" cy="75" r="${r}" fill="none" stroke="var(--accent)" stroke-width="10" stroke-linecap="round"
+              stroke-dasharray="${c}" stroke-dashoffset="${c * (1 - score / 100)}"/>
+    </svg>
+    <div class="val"><span class="n" style="font-size:2.2rem">${score}%</span><span class="l">Resonance</span></div>
+  </div>`;
+}
+$("cp-go").addEventListener("click", () => {
+  const aName = cleanName($("cp-an").value), bName = cleanName($("cp-bn").value);
+  const aDob = $("cp-ad").value, bDob = $("cp-bd").value;
+  if (aName.length < 2 || bName.length < 2) return showErr("cp-err", "Please enter both names.");
+  if (!aDob || !bDob) return showErr("cp-err", "Please enter both dates of birth.");
+  hideErr("cp-err");
+  const aLP = lifePathNumber(aDob), bLP = lifePathNumber(bDob);
+  const score = Math.round(compatScore(aLP, bLP) * 0.6 + compatScore(destinyNumber(aName), destinyNumber(bName)) * 0.4);
+  const first = aName.split(" ")[0], second = bName.split(" ")[0];
+  const dA = NUMBER_DATA[aLP], dB = NUMBER_DATA[bLP];
+  $("cp-out").innerHTML = `
+  <div class="card fade-in">
+    <div style="display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center">
+      <div>
+        <h3 style="font-size:1.4rem">${esc(first)} <span style="color:var(--text-dim)">&</span> ${esc(second)}</h3>
+        <p style="color:var(--text-dim);font-size:.9rem;margin-top:4px">${esc(first)}: Life Path ${aLP} · ${dA.title} &nbsp;|&nbsp; ${esc(second)}: Life Path ${bLP} · ${dB.title}</p>
+      </div>
+      ${smallRing(score)}
+    </div>
+    <div class="divider"></div>
+    <p><strong>${compatVerdict(score)}</strong></p>
+    <div class="grid grid-2" style="margin-top:16px">
+      <div class="card" style="background:var(--teal-dim)"><h3>${esc(first)} brings</h3><p>${dA.keywords.join(", ")} — ${dA.summary.split(".")[0].toLowerCase()}.</p></div>
+      <div class="card" style="background:var(--gold-dim)"><h3>${esc(second)} brings</h3><p>${dB.keywords.join(", ")} — ${dB.summary.split(".")[0].toLowerCase()}.</p></div>
+    </div>
+    <p style="margin-top:18px"><a class="btn btn-primary btn-sm" href="compatibility.html">Open the full compatibility reading →</a></p>
+    ${nextSteps([['Full compatibility reading', 'compatibility.html'], ['Our birth-date match', '#t-bd'], ['The couples report', 'reports.html']])}
+  </div>`;
+});
+
+/* ========== 16 BIRTH DATE COMPATIBILITY ========== */
+$("bd-go").addEventListener("click", () => {
+  const a = $("bd-a").value, b = $("bd-b").value;
+  if (!a || !b) return showErr("bd-err", "Please enter both dates of birth.");
+  hideErr("bd-err");
+  const r = birthDateCompatibility(a, b);
+  $("bd-out").innerHTML = `
+  <div class="card fade-in">
+    <div class="stat-row" style="grid-template-columns:repeat(4,1fr)">
+      <div class="stat"><div class="v">${r.mA}</div><div class="k">Mulank A</div></div>
+      <div class="stat"><div class="v">${r.bA}</div><div class="k">Bhagyank A</div></div>
+      <div class="stat"><div class="v">${r.mB}</div><div class="k">Mulank B</div></div>
+      <div class="stat"><div class="v">${r.bB}</div><div class="k">Bhagyank B</div></div>
+    </div>
+    <div style="display:grid;justify-items:center">${smallRing(r.score)}</div>
+    <h3 style="text-align:center;margin:12px 0 8px">${r.good === 4 ? "A rare full-sweep resonance — every Vedic pair harmonises." : r.good >= 2 ? "Solid date compatibility — the fundamentals hold." : "Friction in the date vibrations — workable, but name both of your needs early."}</h3>
+    ${r.pairs.map(p => `
+    <div class="plane-row">
+      <span class="nm">${p.label} <span style="font-family:var(--font-mono);color:var(--text-dim);font-size:.75rem">${p.a}↔${p.b}</span></span>
+      ${p.harmony ? '<span class="pill cool">Harmony</span>' : '<span class="pill warm">Tension</span>'}
+      <span class="ds">${p.note}</span>
+    </div>`).join("")}
+    <p style="font-size:.78rem;color:var(--text-dim);margin-top:12px">Mulank is the birth-day temperament; Bhagyank the full-date fortune. Checking all four crossings is the classical Vedic match — for the full reading with names, use tool 15 above or the <a href="compatibility.html">full page</a>.</p>
+  </div>`;
+});
+
+/* ========== 17 NAME COMPATIBILITY ========== */
+$("nc-go").addEventListener("click", () => {
+  const a = cleanName($("nc-a").value), b = cleanName($("nc-b").value);
+  if (a.length < 2 || b.length < 2) return showErr("nc-err", "Please enter both names (letters only).");
+  hideErr("nc-err");
+  const r = nameCompatibility(a, b);
+  const first = a.split(" ")[0], second = b.split(" ")[0];
+  $("nc-out").innerHTML = `
+  <div class="card fade-in">
+    <div class="stat-row" style="grid-template-columns:repeat(4,1fr)">
+      <div class="stat"><div class="v">${r.dA}</div><div class="k">${esc(first)}'s name</div></div>
+      <div class="stat"><div class="v">${r.dB}</div><div class="k">${esc(second)}'s name</div></div>
+      <div class="stat"><div class="v">${r.sA}</div><div class="k">${esc(first)}'s soul</div></div>
+      <div class="stat"><div class="v">${r.sB}</div><div class="k">${esc(second)}'s soul</div></div>
+    </div>
+    <div style="display:grid;justify-items:center">${smallRing(r.score)}</div>
+    <h3 style="text-align:center;margin:12px 0 8px">${r.score >= 90 ? "The names themselves are married — or should be in business." : r.checks.every(c => c.harmony) ? "Strong name harmony for both marriage and partnership." : "Name vibrations pull apart — fine for friendship, workable for more with awareness."}</h3>
+    ${r.checks.map(c => `
+    <div class="plane-row">
+      <span class="nm">${c.label} <span style="font-family:var(--font-mono);color:var(--text-dim);font-size:.75rem">${c.a}↔${c.b}</span></span>
+      ${c.harmony ? '<span class="pill cool">Harmony</span>' : '<span class="pill warm">Tension</span>'}
+      <span class="ds">${c.note}</span>
+    </div>`).join("")}
+    <p style="font-size:.9rem;margin-top:12px">${r.dA === r.dB ? "Both names vibrate to " + r.dA + " — the same public contract, which reads as instant recognition and shared methods." : "Between the name numbers " + r.dA + " and " + r.dB + ", the day-to-day " + (r.checks[0].harmony ? "runs smooth" : "needs translation") + "."}</p>
+    <p style="font-size:.78rem;color:var(--text-dim);margin-top:8px">In the classical tradition, marriage matches favour name numbers in harmony with each partner's Bhagyank — check that next with tool 16.</p>
+  </div>`;
+});
+
+/* ========== 18 LO SHU GRID ========== */
+$("ls-go").addEventListener("click", () => {
+  const v = $("ls-dob").value;
+  if (!v) return showErr("ls-err", "Please enter your date of birth.");
+  hideErr("ls-err");
+  const counts = loShuCounts(v);
+  const missing = Object.keys(counts).filter(n => counts[n] === 0).map(Number);
+  const repeated = Object.keys(counts).filter(n => counts[n] > 1).map(Number);
+  const cellsHTML = LOSHU_GRID.map(row => row.map(n => {
+    const c = counts[n];
+    return `<div class="cell ${c === 0 ? "empty" : ""}"><span class="idx">${n}</span><strong>${c > 0 ? String(n).repeat(Math.min(c, 4)) + (c > 4 ? "×" + c : "") : "—"}</strong></div>`;
+  }).join("")).join("");
+  const planesHTML = LOSHU_PLANES.map(p => {
+    const state = loShuPlaneState(counts, p.nums);
+    const pill = state === "full" ? '<span class="pill cool">Full</span>' : state === "partial" ? '<span class="pill sunny">Partial</span>' : '<span class="pill warm">Empty</span>';
+    return `<div class="plane-row"><span class="nm">${p.name} <span style="font-family:var(--font-mono);color:var(--text-dim);font-size:.75rem">${p.nums.join("-")}</span></span>${pill}<span class="ds">${p.desc}</span></div>`;
+  }).join("");
+  const missingHTML = missing.length
+    ? missing.map(n => `<div class="card" style="background:var(--surface-2);margin-top:10px"><strong>Missing ${n}</strong> — ${LOSHU_MISSING[n]}</div>`).join("")
+    : `<div class="card" style="background:var(--teal-dim);margin-top:10px">A complete grid — every number 1–9 present. Rare, and traditionally read as a well-balanced foundation.</div>`;
+  const els = loShuElements(counts);
+  const maxEl = Math.max(1, els.elements[0].total);
+  const elementsHTML = `
+  <div class="divider"></div>
+  <h3>Elemental energies</h3>
+  ${els.elements.map(e => `
+    <div class="plane-row">
+      <span class="nm" style="text-transform:capitalize">${e.name} <span style="font-family:var(--font-mono);color:var(--text-dim);font-size:.75rem">${e.nums.join(",")}</span></span>
+      <span style="min-width:130px">
+        <span style="display:inline-block;height:9px;border-radius:99px;background:linear-gradient(90deg,var(--accent),#d98a5f);width:${Math.round(8 + (e.total / maxEl) * 92)}px;vertical-align:1px"></span>
+        <span style="font-family:var(--font-mono);font-size:.75rem;color:var(--text-dim)"> ${e.total}</span>
+      </span>
+      <span class="ds">${e.read}</span>
+    </div>`).join("")}
+  <p style="font-size:.85rem;color:var(--text-dim);margin-top:10px">Your dominant element is <strong style="text-transform:capitalize">${els.dominant.name}</strong> (${els.dominant.read}); your thinnest is <strong style="text-transform:capitalize">${els.weakest.name}</strong> (${els.weakest.read}). ${els.dominant.total >= 3 ? "Heavy dominance in one element is strength until it hardens — feed the weak element deliberately." : "A fairly even elemental spread — no single element runs the show."}</p>`;
+  const repeatedHTML = repeated.length
+    ? `<p style="font-size:.92rem;margin-top:8px">Repeated: <strong>${repeated.join(", ")}</strong> — repetition is strength, though an overloaded cell can tip into excess.</p>`
+    : `<p style="font-size:.92rem;margin-top:8px;color:var(--text-dim)">No digit repeats — an even, steady grid.</p>`;
+  $("ls-out").innerHTML = `
+  <div class="card fade-in">
+    <div class="result-hero">
+      <div class="loshu" style="max-width:190px">${cellsHTML}</div>
+      <div>
+        <h3 style="font-size:1.35rem">Your birth grid</h3>
+        <p style="color:var(--text-dim);font-size:.92rem;margin-top:6px">Born ${fmtDOB(v)} — digits placed by the 4-9-2 / 3-5-7 / 8-1-6 arrangement. ${missing.length === 0 ? "Nothing missing." : "Missing: " + missing.join(", ") + "."}</p>
+        ${repeatedHTML}
+      </div>
+    </div>
+    <div class="divider"></div>
+    <h3>Your planes</h3>
+    <div style="margin-top:8px">${planesHTML}</div>
+    <div class="divider"></div>
+    <h3>Missing numbers</h3>
+    ${missingHTML}
+    ${elementsHTML}
+    ${nextSteps([['Remedy Finder', '#t-rk'], ['Origin & Master', '#t-om'], ['Printable full chart', 'chart.html']])}
+  </div>`;
+});
+
+/* ========== 19 MOBILE NUMBER — enhanced with birth numbers ========== */
+$("mb-go").addEventListener("click", () => {
+  const num = $("mb-num").value.trim();
+  const dob = $("mb-dob").value;
+  const m = mobileAnalysis(num);
+  if (!m) return showErr("mb-err", "Please enter a valid mobile number (at least 8 digits).");
+  hideErr("mb-err");
+  const d = NUMBER_DATA[m.reduced];
+  const pretty = m.digits.length === 10 ? `${m.digits.slice(0,5)} ${m.digits.slice(5)}` : m.digits;
+  let verdict, compatPill = "";
+  if (dob) {
+    const base = x => (x === 11 ? 2 : x === 22 ? 4 : x === 33 ? 6 : x);
+    const lp = lifePathNumber(dob), mul = mulankNumber(dob), bha = bhagyankNumber(dob);
+    const checks = [
+      { label: "Life Path", n: lp, ok: HARMONY[base(m.reduced)].includes(base(lp)) },
+      { label: "Mulank (birth day)", n: mul, ok: HARMONY[base(m.reduced)].includes(base(mul)) },
+      { label: "Bhagyank (full date)", n: bha, ok: HARMONY[base(m.reduced)].includes(base(bha)) }
+    ];
+    const good = checks.filter(c => c.ok).length;
+    verdict = `
+    <div class="card" style="background:${good === 3 ? "var(--teal-dim)" : good >= 1 ? "var(--gold-dim)" : "var(--accent-dim)"};margin-top:16px">
+      <h3>Verdict: ${good === 3 ? "fully aligned — a keeper" : good >= 1 ? "partially aligned" : "working against your birth numbers"}</h3>
+      <div style="margin-top:10px">
+      ${checks.map(c => `<div class="plane-row"><span class="nm">${c.label} <span style="font-family:var(--font-mono);color:var(--text-dim);font-size:.75rem">${c.n}</span></span>${c.ok ? '<span class="pill cool">Harmony</span>' : '<span class="pill warm">Tension</span>'}<span class="ds">${c.ok ? "supports this number" : "prefers other digits"}</span></div>`).join("")}
+      </div>
+      <p style="font-size:.88rem;margin-top:10px">${good === 3 ? "Your number vibrates in harmony with all three birth numbers — it pulls with your tide, not against it." : good === 0 ? "This number works against your birth numbers. If you keep it, compensate elsewhere; if you're choosing fresh, aim for digits whose total harmonises with your Life Path: " + HARMONY[base(lp)].join(", ") + "." : "A mixed alignment — workable, though a different number could serve better if you are choosing anyway."}</p>
+    </div>`;
+    compatPill = `<span class="pill cool">vs LP ${lp} · Mulank ${mul} · Bhagyank ${bha}</span>`;
+  } else {
+    verdict = `<div class="card" style="background:var(--surface-2);margin-top:16px"><h3>Add your birthday</h3><p>To check alignment with your birth numbers — Life Path, Mulank and Bhagyank — add your date of birth above.</p></div>`;
+  }
+  $("mb-out").innerHTML = `
+  <div class="card fade-in">
+    <div class="phone-card">${pretty}</div>
+    <div class="stat-row" style="grid-template-columns:repeat(3,1fr)">
+      <div class="stat"><div class="v">${m.total}</div><div class="k">Digit total</div></div>
+      <div class="stat"><div class="v">${m.reduced}</div><div class="k">Vibrates to</div></div>
+      <div class="stat"><div class="v">${m.last}</div><div class="k">Last digit</div></div>
+    </div>
+    <div style="margin:-10px 0 4px"><span class="pill warm">${d.title}</span> ${compatPill}</div>
+    <p>${d.summary}</p>
+    <p style="font-size:.85rem;color:var(--text-dim);margin-top:8px">Compound total ${m.total} reduces to ${m.reduced}; the last digit ${m.last} leaves a finishing note of ${NUMBER_DATA[m.last].keywords[0].toLowerCase()} energy.</p>
+    ${verdict}
+    ${nextSteps([['My Lucky Numbers', '#t-lk'], ['My Vehicle Number', '#t-veh'], ['My House Number', '#t-hn']])}
+  </div>`;
+});
+
+/* ========== 06 CHALDEAN NUMEROLOGY READING ========== */
+$("chal-go").addEventListener("click", () => {
+  const name = cleanName($("chal-name").value);
+  const dob = $("chal-dob").value;
+  const err = $("chal-err");
+  if (name.length < 2) { err.style.display = "block"; err.textContent = "Please enter your full name."; return; }
+  if (!dob) { err.style.display = "block"; err.textContent = "Please enter your date of birth."; return; }
+  err.style.display = "none";
+  const psychic = mulankNumber(dob);
+  const nameRaw = letterTotal(name, "all"), nameNo = destinyNumber(name);
+  const destiny = bhagyankNumber(dob);
+  $("chal-out").innerHTML = `
+  <div class="card fade-in">
+    <div class="result-hero">
+      <div class="medallion"><span class="big">${nameNo}</span><span class="cap">Name No.</span></div>
+      <div>
+        <h2 style="margin:0 0 4px;font-size:1.5rem">The Chaldean trio for ${esc(name)}</h2>
+        <p style="color:var(--text-dim);font-size:.92rem">Born ${fmtDOB(dob)} — read the way Indian practice reads: three numbers, one system.</p>
+      </div>
+    </div>
+    <div class="stat-row" style="grid-template-columns:repeat(3,1fr)">
+      <div class="stat"><div class="v">${psychic}</div><div class="k">Psychic (Mulank)</div></div>
+      <div class="stat"><div class="v">${nameNo}</div><div class="k">Name number</div></div>
+      <div class="stat"><div class="v">${destiny}</div><div class="k">Destiny (Bhagyank)</div></div>
+    </div>
+    <div class="letter-strip">${nameStrip(name)}</div>
+    <p class="chain">Chaldean sum ${nameRaw} → ${nameNo}</p>
+    <div class="divider"></div>
+    <div class="grid grid-3">
+      <div class="card" style="background:var(--surface-2)"><h3>Psychic ${psychic}</h3><p style="margin-top:8px">${NUMBER_DATA[psychic].title} — the inner you, from the birth day. ${NUMBER_DATA[psychic].summary.split(".")[0]}.</p></div>
+      <div class="card" style="background:var(--surface-2)"><h3>Name ${nameNo}</h3><p style="margin-top:8px">${NUMBER_DATA[nameNo].title} — what your name builds. ${NUMBER_DATA[nameNo].summary.split(".")[0]}.</p></div>
+      <div class="card" style="background:var(--surface-2)"><h3>Destiny ${destiny}</h3><p style="margin-top:8px">${NUMBER_DATA[destiny].title} — where fortune points. ${NUMBER_DATA[destiny].summary.split(".")[0]}.</p></div>
+    </div>
+    <p style="font-size:.8rem;color:var(--text-dim);margin-top:14px">Why Chaldean and not Pythagorean? In this 4,000-year-old system letters are valued by <em>vibration</em> (A=1, B=2, C=3, D=4, E=5, F=8…), the scale runs only 1–8, and <strong>9 is held sacred — no letter ever carries it</strong>. The full letter table is on the <a href="about.html#chaldean">About page</a>.</p>
+  </div>`;
+});
+
+/* ========== 12 SUN NUMBER ========== */
+$("sn-go").addEventListener("click", () => {
+  const v = $("sn-dob").value;
+  if (!v) return showErr("sn-err", "Please enter your date of birth.");
+  hideErr("sn-err");
+  const s = sunNumber(v);
+  const d = NUMBER_DATA[s];
+  const dob = parseDOB(v);
+  $("sn-out").innerHTML = meaningHTML(s, "Sun Number") + `
+  <div class="card" style="margin-top:20px;background:var(--surface-2)">
+    <h3>How it's read</h3>
+    <p class="chain">Day ${dob.day} + month ${dob.month} = ${dob.day + dob.month} → ${s}</p>
+    <p style="font-size:.88rem;color:var(--text-dim);margin-top:8px">Your Sun Number is the outer layer — the traits people register in the first ten minutes, before they meet your Life Path self. ${d.keywords.slice(0, 2).join(" and ").toLowerCase()} is the weather you walk into a room with; your Life Path is the climate underneath. For the full picture, run the <a href="core5.html">Core 5</a>.</p>
+  </div>`;
+});
+
+/* ========== 13 KARMIC DEBT ========== */
+$("kd-go").addEventListener("click", () => {
+  const dob = $("kd-dob").value;
+  const name = cleanName($("kd-name").value);
+  const err = $("kd-err");
+  if (!dob) { err.style.display = "block"; err.textContent = "Please enter your date of birth."; return; }
+  err.style.display = "none";
+  const debts = karmicDebts(name, dob);
+  $("kd-out").innerHTML = `
+  <div class="card fade-in">
+    <h3 style="margin-bottom:4px">${debts.length === 0 ? "No karmic debt numbers found" : debts.length === 1 ? "One karmic debt found" : debts.length + " karmic debts found"}</h3>
+    <p style="color:var(--text-dim);font-size:.92rem">Checked: birth day, whole-date total, birth-year total${name.length >= 2 ? ", full-name total, vowel total, consonant total" : ""}. ${debts.length === 0 ? "None of the raw sums in your chart land on 13, 14, 16 or 19 — you carry no karmic debt in the classical sense. The work of this life is fresh work." : ""}</p>
+    ${debts.map(x => {
+      const dd = KARMIC_DEBT_DATA[x.raw];
+      return `<div class="stage-card">
+        <div class="n">${x.raw}</div>
+        <div>
+          <strong>${dd.title}</strong> <span class="when">in your ${x.pos.toLowerCase()}</span>
+          <p style="font-size:.9rem;color:var(--text-dim);margin-top:4px">From ${dd.theme}. ${dd.meaning}</p>
+          <p style="font-size:.88rem;margin-top:6px"><span class="pill sunny">Remedy</span> ${dd.remedy}</p>
+        </div>
+      </div>`;
+    }).join("")}
+    <p style="font-size:.78rem;color:var(--text-dim);margin-top:12px">Karmic debt numbers hide in raw sums — the total <em>before</em> reduction. A Life Path of 4 from a raw total of 13 carries the 13's debt; a Life Path of 4 from a raw 22 carries none.</p>
+    ${nextSteps([['Remedy Finder', '#t-rk'], ['My Karmic Lessons', '#t-kl'], ['Printable full chart', 'chart.html']])}
+  </div>`;
+});
+
+/* ========== 20 HOUSE NUMBER ========== */
+$("hn-go").addEventListener("click", () => {
+  const addr = $("hn-addr").value.trim();
+  const kind = $("hn-kind").value;
+  const h = houseAnalysis(addr);
+  const err = $("hn-err");
+  if (!h) { err.style.display = "block"; err.textContent = "Please enter an address with a number or a street name."; return; }
+  err.style.display = "none";
+  const d = NUMBER_DATA[h.reduced];
+  const r = HOUSE_REMEDY[h.reduced];
+  const biz = kind.indexOf("office") > -1;
+  $("hn-out").innerHTML = `
+  <div class="card fade-in">
+    <div class="result-hero">
+      <div class="medallion"><span class="big">${h.reduced}</span><span class="cap">Address</span></div>
+      <div>
+        <span class="pill warm">${biz ? "Office" : "Home"}</span>
+        <h2 style="margin:10px 0 4px;font-size:1.4rem">${esc(addr)}</h2>
+        <p style="color:var(--text-dim);font-size:.9rem">${h.num ? "Number " + h.num + (h.sum !== h.reduced ? " → digits sum " + h.sum + " → " + h.reduced : "") : "Numbered by its name"}</p>
+      </div>
+    </div>
+    <p style="margin-top:14px"><strong>${d.title} energy</strong> — ${r.vibe}. ${biz ? (MONEY_NUMBERS.includes(h.reduced) ? "This number sits on the commercial list (6, 8, 9) — a favourable address for trade." : "Not a classic commerce number; this address suits " + BIZ_FIT[h.reduced].split("—")[0].trim().toLowerCase() + ".") : ""}</p>
+    ${h.nameNo ? `<p style="font-size:.88rem;color:var(--text-dim);margin-top:6px">The street name itself vibrates to ${h.nameNo} (${NUMBER_DATA[h.nameNo].title}) — a secondary colour on the address.</p>` : ""}
+    <div class="card" style="background:var(--teal-dim);margin-top:16px">
+      <h3>Remedy for peace and prosperity</h3>
+      <p style="margin-top:8px">${r.remedy}</p>
+    </div>
+    <p style="font-size:.78rem;color:var(--text-dim);margin-top:12px">If the number clashes with your Mulank or Life Path, the classical fix is not to move house: it's a small correction inside — a number added to the nameplate (e.g. 14/5), colour therapy at the entrance, or a salt bowl by the door. The address sets the mood; the occupants set the home.</p>
+    ${nextSteps([['My Vehicle Number', '#t-veh'], ['My Mobile Number', '#t-mb'], ['Remedy Finder', '#t-rk']])}
+  </div>`;
+});
+
+/* ========== ORIGIN & MASTER ========== */
+$("om-go").addEventListener("click", () => {
+  const v = $("om-dob").value;
+  if (!v) return showErr("om-err", "Please enter your date of birth.");
+  hideErr("om-err");
+  const r = originMaster(v);
+  const o = NUMBER_DATA[r.origin], m = NUMBER_DATA[r.master];
+  const relText = {
+    aligned: "Your inner nature and your driving energy are the same number — nature and destiny pulling one cart. Rare, and a genuine advantage: what comes naturally to you also happens to be where life is taking you. The catch is ease — nothing forces growth, so you must choose it.",
+    supported: "Your Master number harmonises with your Origin — your direction pulls <em>with</em> your grain. Changes tend to arrive gently and stick. You will still be stretched, but in a direction your instincts recognise.",
+    stretch: "Your Master number sits outside your Origin's harmony circle — the direction life wants pulls <em>against</em> what comes naturally. This is the demanding combination: life keeps nudging you toward " + m.title.toLowerCase() + " energy while your reflexes default to " + o.title.toLowerCase() + ". It is not a flaw; it is the engine of your development. Expect the first half of life to feel like uphill practice and the second half to pay it back."
+  };
+  $("om-out").innerHTML = `
+  <div class="card fade-in">
+    <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;margin-top:8px">
+      <div class="c5-cell" style="text-align:center;border:1px solid var(--border);border-radius:14px;padding:16px 8px;background:#fff">
+        <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;color:var(--teal);text-transform:uppercase;margin-bottom:6px">Origin · your nature</div>
+        <div style="font-family:var(--font-display);font-size:3rem;color:var(--accent);line-height:1">${r.origin}</div>
+        <div style="font-size:.85rem;margin-top:6px">${o.title}<br><span style="color:var(--text-dim);font-size:.78rem">who you naturally are</span></div>
+      </div>
+      <div style="font-size:1.6rem;color:var(--text-dim)">→</div>
+      <div class="c5-cell" style="text-align:center;border:1px solid var(--border);border-radius:14px;padding:16px 8px;background:#fff">
+        <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin-bottom:6px">Master · your becoming</div>
+        <div style="font-family:var(--font-display);font-size:3rem;color:var(--gold);line-height:1">${r.master}</div>
+        <div style="font-size:.85rem;margin-top:6px">${m.title}<br><span style="color:var(--text-dim);font-size:.78rem">who you're becoming</span></div>
+      </div>
+    </div>
+    <span class="pill ${r.relation === "stretch" ? "warm" : "cool"}" style="margin-top:14px">${r.relation === "aligned" ? "Fully aligned" : r.relation === "supported" ? "Supported growth" : "Stretch combination"}</span>
+    <p style="margin-top:10px">${relText[r.relation]}</p>
+    <div class="grid grid-2" style="margin-top:14px">
+      <div class="card" style="background:var(--surface-2)"><h3>Living in Origin ${r.origin}</h3><p style="margin-top:8px;font-size:.9rem">${o.summary}</p></div>
+      <div class="card" style="background:var(--surface-2)"><h3>Growing into Master ${r.master}</h3><p style="margin-top:8px;font-size:.9rem">${m.summary}</p></div>
+    </div>
+    <p style="font-size:.78rem;color:var(--text-dim);margin-top:12px">Different from your Life Path: the Life Path charts the whole journey, while Origin & Master describes the traveller — the energy you set out with, and the one life keeps steering you toward.</p>
+    ${nextSteps([['My Personal Year', '#t-py'], ['My Life Cycles', '#t-lc'], ['Core 5 reading', 'core5.html']])}
+  </div>`;
+});
+
+/* ========== LUCKY VEHICLE NUMBER ========== */
+$("veh-go").addEventListener("click", () => {
+  const plate = $("veh-num").value.trim();
+  const dob = $("veh-dob").value;
+  const v = vehicleAnalysis(plate);
+  if (!v) return showErr("veh-err", "Please enter a vehicle number with at least 3 digits.");
+  hideErr("veh-err");
+  let ownerHTML = "";
+  if (dob) {
+    const base = x => (x === 11 ? 2 : x === 22 ? 4 : x === 33 ? 6 : x);
+    const lp = lifePathNumber(dob), mul = mulankNumber(dob), bha = bhagyankNumber(dob);
+    const ok = n => HARMONY[base(v.reduced)].includes(base(n));
+    const good = [ok(lp), ok(mul), ok(bha)].filter(Boolean).length;
+    ownerHTML = `
+    <div class="card" style="background:${good === 3 ? "var(--teal-dim)" : good >= 1 ? "var(--gold-dim)" : "var(--accent-dim)"};margin-top:14px">
+      <h3>Verdict: ${good === 3 ? "strong choice" : good >= 1 ? "acceptable" : "clashes with your birth numbers"}</h3>
+      <p style="font-size:.9rem;margin-top:8px">Checked against Life Path ${lp}, Mulank ${mul} and Bhagyank ${bha} — ${good} of 3 harmonise. ${good === 0 ? "When choosing a plate, aim for digits totalling " + HARMONY[base(lp)].slice(0, 3).join(", ") + "." : ""}</p>
+    </div>`;
+  }
+  $("veh-out").innerHTML = `
+  <div class="card fade-in">
+    <div class="result-hero">
+      <div class="medallion"><span class="big">${v.reduced}</span><span class="cap">Plate</span></div>
+      <div>
+        <h2 style="margin:0 0 4px;font-size:1.3rem">${esc(plate.toUpperCase())}</h2>
+        <p style="color:var(--text-dim);font-size:.9rem">Digits ${v.digits} → total ${v.total} → ${v.reduced}</p>
+      </div>
+    </div>
+    <p style="margin-top:12px"><strong>${NUMBER_DATA[v.reduced].title}</strong> — ${NUMBER_DATA[v.reduced].keywords.slice(0, 3).join(", ").toLowerCase()} energy on the road.</p>
+    ${v.saturn ? `<div class="card" style="background:var(--gold-dim);margin-top:12px"><h3>The 8 caution</h3><p style="font-size:.9rem;margin-top:6px">A plate reducing to 8 (Saturn) is traditionally avoided for vehicles — Saturn's discipline reads as delays and heaviness on machines meant for movement. If this is your assigned number, don't refuse the vehicle over it; treat it as a note, not a verdict.</p></div>` : ""}
+    ${ownerHTML}
+    <p style="font-size:.78rem;color:var(--text-dim);margin-top:10px">Indian practice reads the digits only; the state code letters (HR, MH, KA…) are ignored. When choosing, a plate totalling your Mulank or its harmony set is the classical preference.</p>
+    ${nextSteps([['My Mobile Number', '#t-mb'], ['My House Number', '#t-hn'], ['My lucky dates', '#t-ld']])}
+  </div>`;
+});
+
+/* ========== LUCKY DATE CALCULATOR ========== */
+(function populateMonths() {
+  const sel = $("ld-month");
+  const now = new Date();
+  const M = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  for (let i = 0; i < 14; i++) {
+    const d = new Date(now.getFullYear(), now.getMonth() + i, 1);
+    const opt = document.createElement("option");
+    opt.value = d.getFullYear() + "-" + d.getMonth();
+    opt.textContent = M[d.getMonth()] + " " + d.getFullYear();
+    sel.appendChild(opt);
+  }
+})();
+$("ld-go").addEventListener("click", () => {
+  const v = $("ld-dob").value;
+  if (!v) return showErr("ld-err", "Please enter your date of birth.");
+  hideErr("ld-err");
+  const [y, m] = $("ld-month").value.split("-").map(Number);
+  const r = luckyDates(v, y, m);
+  const M = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  $("ld-out").innerHTML = `
+  <div class="card fade-in">
+    <h3 style="margin-bottom:2px">Your six best dates — ${M[m]} ${y}</h3>
+    <p style="color:var(--text-dim);font-size:.9rem">Ranked by how strongly each day's personal number favours your birth numbers.</p>
+    ${r.best.map((b, i) => `
+    <div class="plane-row">
+      <span class="nm" style="font-family:var(--font-display);font-size:1.25rem;color:var(--accent)">${b.d}</span>
+      <span class="pill ${i === 0 ? "sunny" : "cool"}">${b.tag}</span>
+      <span class="ds">Personal day ${b.pDay} — ${DAILY_GUIDE[b.pDay].split(".")[0].toLowerCase()}.</span>
+    </div>`).join("")}
+    <p style="font-size:.78rem;color:var(--text-dim);margin-top:12px">A lucky date doesn't do the work — it removes friction. Book the interview, send the proposal, or have the conversation on a day your numbers already lean toward.</p>
+  </div>`;
+});
+
+/* ========== LUCKY COLOUR CALCULATOR ========== */
+$("lcol-go").addEventListener("click", () => {
+  const v = $("lcol-dob").value;
+  if (!v) return showErr("lcol-err", "Please enter your date of birth.");
+  hideErr("lcol-err");
+  const c = luckyColours(v);
+  $("lcol-out").innerHTML = `
+  <div class="card fade-in">
+    <h3 style="margin-bottom:4px">Colours that work for ruling number ${c.mul}</h3>
+    <div class="grid grid-2" style="margin-top:12px">
+      <div class="card" style="background:var(--teal-dim)">
+        <h3>Wear these</h3>
+        <p style="margin-top:8px">${c.primary.join(" and ")} — your ruling number's permanent colours, for interviews, first dates and big days.</p>
+      </div>
+      <div class="card" style="background:var(--surface-2)">
+        <h3>Supporting shades</h3>
+        <p style="margin-top:8px">${c.support.join(", ")} — from your harmony numbers; good everyday colours when the primaries feel loud.</p>
+      </div>
+    </div>
+    <div class="card" style="background:var(--gold-dim);margin-top:14px">
+      <h3>Today specifically</h3>
+      <p style="margin-top:8px"><strong>${c.today}</strong> — your personal day ${c.todayFor} colour, layered over ${c.wp.day}'s ${c.wp.planet} favouring ${c.wp.colour.toLowerCase()}. Wear the shade that overlaps both if you can.</p>
+    </div>
+    <div class="card" style="background:var(--surface-2);margin-top:14px">
+      <h3>Use sparingly</h3>
+      <p style="margin-top:8px">${c.avoid.join(" and ")} — colours of your tension numbers. Not forbidden, just not what to reach for when the stakes are high.</p>
+    </div>
+    <p style="font-size:.78rem;color:var(--text-dim);margin-top:12px">You don't have to like your lucky colour — sneak it in as a wallet, a pocket square or a phone case. The point is proximity, not a walking banner.</p>
+  </div>`;
+});
+
+/* ========== BABY NAME NUMEROLOGY ========== */
+$("bn-go").addEventListener("click", () => {
+  const dob = $("bn-dob").value;
+  const names = $("bn-names").value.split(",").map(s => cleanName(s)).filter(s => s.length >= 2).slice(0, 3);
+  const err = $("bn-err");
+  if (!dob) { err.style.display = "block"; err.textContent = "Please enter the baby's date of birth."; return; }
+  if (!names.length) { err.style.display = "block"; err.textContent = "Please enter at least one candidate name."; return; }
+  err.style.display = "none";
+  const al = luckyAlphabets(dob);
+  $("bn-out").innerHTML = `
+  <div class="card fade-in">
+    <h3 style="margin-bottom:4px">Name check — Mulank ${al.mul}, Bhagyank ${al.bha}</h3>
+    <p style="color:var(--text-dim);font-size:.9rem">A name harmonious with both birth numbers supports the child all life; the classical preference also weighs the first letter.</p>
+    ${names.map(nm => {
+      const r = babyNameCheck(dob, nm);
+      return `<div class="stage-card">
+        <div class="n">${r.nameNo}</div>
+        <div>
+          <strong>${esc(nm)}</strong> <span class="pill ${r.verdict === "strong" ? "cool" : r.verdict === "workable" ? "sunny" : "warm"}">${r.verdict}</span>
+          <p style="font-size:.88rem;color:var(--text-dim);margin-top:4px">${r.mulOk ? "Harmonises with Mulank " + r.mul : "Pulls against Mulank " + r.mul}; ${r.bhaOk ? "harmonises with Bhagyank " + r.bha : "pulls against Bhagyank " + r.bha}. ${r.verdict === "strong" ? "A name the birth numbers recognise as their own." : r.verdict === "workable" ? "Fine — one anchor holds; keep spelling consistent." : "The spelling can usually be adjusted to reach harmony — try a variant."}</p>
+        </div>
+      </div>`;
+    }).join("")}
+    <div class="card" style="background:var(--teal-dim);margin-top:16px">
+      <h3>Lucky first letters</h3>
+      <p style="margin-top:8px">${al.groups.map(g => `<span class="pill cool" style="margin:2px 4px 2px 0">${g[1].join(" ")}</span> <span style="font-size:.75rem;color:var(--text-dim)">value ${g[0]}</span>`).join(" &nbsp; ")}</p>
+      <p style="font-size:.78rem;color:var(--text-dim);margin-top:8px">Letters carrying your child's Mulank, Bhagyank or harmony values. Traditionally paired with the nakshatra syllable an astrologer picks — the two systems layer well.</p>
+    </div>
+    ${nextSteps([['Business Name Calculator', '#t-bz'], ['My Namank', '#t-nk'], ['Name Compatibility', '#t-nc']])}
+  </div>`;
+});
+
+/* ========== BUSINESS NAME CALCULATOR ========== */
+$("bz2-go").addEventListener("click", () => {
+  const nm = cleanName($("bz2-name").value);
+  const dob = $("bz2-dob").value;
+  if (nm.length < 2) return showErr("bz2-err", "Please enter a business name.");
+  hideErr("bz2-err");
+  const r = businessAnalysis(nm, dob);
+  const base = m => (m === 11 ? 2 : m === 22 ? 4 : m === 33 ? 6 : m);
+  $("bz2-out").innerHTML = `
+  <div class="card fade-in">
+    <div class="result-hero">
+      <div class="medallion"><span class="big">${r.destiny}</span><span class="cap">Name No</span></div>
+      <div>
+        <h2 style="margin:0 0 4px;font-size:1.3rem">${esc(r.name)}</h2>
+        <p style="color:var(--text-dim);font-size:.9rem">Chaldean name number ${r.destiny}${r.destiny > 9 ? " (reads as base " + base(r.destiny) + " in commerce)" : ""} · Soul Urge ${r.soul} · Personality ${r.face}</p>
+      </div>
+    </div>
+    <div class="grid grid-2" style="margin-top:14px">
+      <div class="card" style="background:${r.moneyVibe ? "var(--teal-dim)" : "var(--surface-2)"}">
+        <h3>Money vibration ${r.moneyVibe ? "— yes" : ""}</h3>
+        <p style="margin-top:8px;font-size:.9rem">${r.moneyVibe ? "The name reduces to a 6, 8 or 9 — the classic commercial numbers (Venus luxury, Saturn power, Mars energy)." : "Not one of the three money numbers (6, 8, 9). Not fatal — plenty of strong brands run on other vibrations — but check the sector fit below."}</p>
+      </div>
+      <div class="card" style="background:var(--surface-2)">
+        <h3>Sector fit</h3>
+        <p style="margin-top:8px;font-size:.9rem">${BIZ_FIT[r.destiny]}</p>
+      </div>
+    </div>
+    ${r.ownerLP ? `
+    <div class="card" style="background:${r.harmony ? "var(--teal-dim)" : "var(--gold-dim)"};margin-top:14px">
+      <h3>Owner fit — ${r.harmony ? "harmonious" : "needs attention"}</h3>
+      <p style="margin-top:8px;font-size:.9rem">The name ${r.harmony ? "sits inside your Life Path " + r.ownerLP + "'s harmony set — the brand and you pull in the same direction." : "falls outside your Life Path " + r.ownerLP + "'s harmony circle. A small spelling change often closes the gap — the full variant tool below finds one."}</p>
+    </div>` : ""}
+    <div style="margin-top:16px;text-align:center">
+      <a class="btn btn-primary" href="business.html">Compare spelling variants for this business →</a>
+    </div>
+    <p style="font-size:.78rem;color:var(--text-dim);margin-top:12px">In Chaldean tradition the name number is read with the sacred 9 held apart — the values stop at 8, and 9 appears only as the total, never on a letter.</p>
+    ${nextSteps([['Full variant comparison', 'business.html'], ['My Namank', '#t-nk'], ['Lucky dates for launch', '#t-ld']])}
+  </div>`;
+});
+
+/* ========== REMEDY FINDER ========== */
+$("rk-go").addEventListener("click", () => {
+  const v = $("rk-dob").value;
+  if (!v) return showErr("rk-err", "Please enter your date of birth.");
+  hideErr("rk-err");
+  const mul = mulankNumber(v);
+  const d = NUMBER_DATA[mul], rk = RUDRAKSHA[mul];
+  $("rk-out").innerHTML = `
+  <div class="card fade-in">
+    <h3 style="margin-bottom:4px">The remedy set for ruling number ${mul} (${d.planet})</h3>
+    <div class="grid grid-2" style="margin-top:12px">
+      <div class="card" style="background:var(--teal-dim)">
+        <h3>Gemstone</h3>
+        <p style="margin-top:8px"><strong>${d.gem}</strong> — worn for ${d.planet}. ${d.colourNames[0].toLowerCase()} tones amplify it; ${d.day}s are the day to start wearing one.</p>
+      </div>
+      <div class="card" style="background:var(--gold-dim)">
+        <h3>Rudraksha</h3>
+        <p style="margin-top:8px"><strong>${rk.mukhi}</strong> — ruled by ${rk.planet}, for ${rk.benefit}. ${mul === 3 ? "The 5-mukhi is the everyday standard for good reason." : ""}</p>
+      </div>
+    </div>
+    <div class="stat-row" style="grid-template-columns:repeat(3,1fr);margin-top:16px">
+      <div class="stat"><div class="v">${d.day.slice(0,3)}</div><div class="k">Power day</div></div>
+      <div class="stat"><div class="v">${d.colourNames[0].split(" ")[0]}</div><div class="k">Lucky colour</div></div>
+      <div class="stat"><div class="v">${HARMONY[mul].filter(x => x !== mul)[0]}</div><div class="k">Friendly digit</div></div>
+    </div>
+    <p style="font-size:.78rem;color:var(--text-dim);margin-top:12px">Informational — we sell nothing. If a remedy resonates, buy from a certified source; in gem and rudraksha markets, authenticity matters more than weight. And no remedy replaces the work your numbers describe.</p>
+  </div>`;
+});
+
+/* ========== SOUL URGE ========== */
+$("su-go").addEventListener("click", () => {
+  const nm = cleanName($("su-name").value);
+  if (nm.length < 2) return showErr("su-err", "Please enter your full birth name.");
+  hideErr("su-err");
+  const n = soulUrgeNumber(nm);
+  const d = NUMBER_DATA[n] || NUMBER_DATA[{ 11: 2, 22: 4, 33: 6 }[n]];
+  const vow = nm.toUpperCase().replace(/[^A-Z]/g, "").split("").filter(c => VOWELS.includes(c)).join(" · ");
+  $("su-out").innerHTML = `
+  <div class="card fade-in">
+    <div class="result-hero">
+      <div class="medallion"><span class="big">${n}</span><span class="cap">Soul Urge</span></div>
+      <div>
+        <h2 style="margin:0 0 4px;font-size:1.3rem">${d.title}</h2>
+        <p style="color:var(--text-dim);font-size:.9rem">Vowels counted: ${vow}</p>
+      </div>
+    </div>
+    <p style="margin-top:12px"><strong>Your heart's desire:</strong> ${d.summary}</p>
+    <p style="font-size:.9rem;margin-top:8px">The Soul Urge is what remains when the world stops watching — the motivation under the career, the image, the résumé. Choices that honour it feel like relief; choices against it feel like slow suffocation, whatever they pay.</p>
+    <p style="font-size:.78rem;color:var(--text-dim);margin-top:10px">Read with your Personality Number (the consonants) for the full picture: what you want vs what strangers see.</p>
+    ${nextSteps([['My Personality Number', '#t-pers'], ['The full Core 5 reading', 'core5.html'], ['Printable full chart', 'chart.html']])}
+  </div>`;
+});
+
+/* ========== PERSONALITY NUMBER ========== */
+$("pers-go").addEventListener("click", () => {
+  const nm = cleanName($("pers-name").value);
+  if (nm.length < 2) return showErr("pers-err", "Please enter your full birth name.");
+  hideErr("pers-err");
+  const n = personalityNumber(nm);
+  const d = NUMBER_DATA[n] || NUMBER_DATA[{ 11: 2, 22: 4, 33: 6 }[n]];
+  const con = nm.toUpperCase().replace(/[^A-Z]/g, "").split("").filter(c => !VOWELS.includes(c)).join(" · ");
+  $("pers-out").innerHTML = `
+  <div class="card fade-in">
+    <div class="result-hero">
+      <div class="medallion"><span class="big">${n}</span><span class="cap">Personality</span></div>
+      <div>
+        <h2 style="margin:0 0 4px;font-size:1.3rem">${d.title}</h2>
+        <p style="color:var(--text-dim);font-size:.9rem">Consonants counted: ${con}</p>
+      </div>
+    </div>
+    <p style="margin-top:12px"><strong>The first impression you give:</strong> ${d.summary}</p>
+    <p style="font-size:.9rem;margin-top:8px">This is the filter strangers meet before they meet you — the energetic handshake. It explains the gap between how you're read in a room and how you feel inside it.</p>
+    <p style="font-size:.78rem;color:var(--text-dim);margin-top:10px">Together with your Soul Urge, it splits the name in two: the vowels are the private you, the consonants the public one.</p>
+    ${nextSteps([['My Soul Urge', '#t-su'], ['The full Core 5 reading', 'core5.html'], ['Printable full chart', 'chart.html']])}
+  </div>`;
+});
+
+/* ========== BIRTHDAY NUMBER ========== */
+$("bday-go").addEventListener("click", () => {
+  const v = $("bday-dob").value;
+  if (!v) return showErr("bday-err", "Please enter your date of birth.");
+  hideErr("bday-err");
+  const day = Number(v.split("-")[2]);
+  const n = birthDayNumber(v);
+  const d = NUMBER_DATA[n] || NUMBER_DATA[{ 11: 2, 22: 4, 33: 6 }[n]];
+  const mul = mulankNumber(v);
+  $("bday-out").innerHTML = `
+  <div class="card fade-in">
+    <div class="result-hero">
+      <div class="medallion"><span class="big">${n}</span><span class="cap">Birthday</span></div>
+      <div>
+        <h2 style="margin:0 0 4px;font-size:1.3rem">Born on the ${day}${day === 1 || day === 21 || day === 31 ? "st" : day === 2 || day === 22 ? "nd" : day === 3 || day === 23 ? "rd" : "th"}</h2>
+        <p style="color:var(--text-dim);font-size:.9rem">Gift: ${DAY_GIFT[day]}</p>
+      </div>
+    </div>
+    <p style="margin-top:12px"><strong>${d.title}.</strong> ${d.summary}</p>
+    ${[11, 22].includes(day) ? `<div class="card" style="background:var(--gold-dim);margin-top:12px"><h3>Master birthday</h3><p style="font-size:.9rem;margin-top:6px">Born on a master day (${day}) — the number stays unreduced. The master vibration is your gift <em>and</em> your homework: more current, more potential, more demand to live up to it.</p></div>` : ""}
+    <div class="card" style="background:var(--surface-2);margin-top:12px">
+      <h3>Birthday vs Mulank</h3>
+      <p style="font-size:.9rem;margin-top:6px">Your Western Birthday Number reads ${n}${n > 9 ? " — the master held whole" : ""}; your Vedic Mulank reduces it to ${mul}. Same day of birth, two traditions: the Mulank is your Vedic root number, this is the Western "gift" reading. ${n === mul ? "For your day, both agree." : "They differ only in how master days are held."}</p>
+    </div>
+    ${nextSteps([['My Mulank — the Vedic view', '#t-mk'], ['My Pinnacles', '#t-pn'], ['My Personal Year', '#t-py']])}
+  </div>`;
+});
+
+/* ========== PERSONAL MONTH & DAY ========== */
+$("pmd-go").addEventListener("click", () => {
+  const v = $("pmd-dob").value;
+  const dt = $("pmd-date").value || new Date().toISOString().slice(0, 10);
+  if (!v) return showErr("pmd-err", "Please enter your date of birth.");
+  hideErr("pmd-err");
+  const date = new Date(dt + "T12:00:00");
+  const py = personalYearNumber(v, date);
+  const pm = personalMonthNumber(v, date);
+  const pd = personalDayNumber(v, date);
+  const dStr = date.toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" });
+  $("pmd-out").innerHTML = `
+  <div class="card fade-in">
+    <h3 style="margin-bottom:4px">Your personal weather — ${dStr}</h3>
+    <div class="stat-row" style="grid-template-columns:repeat(3,1fr);margin-top:12px">
+      <div class="stat"><div class="v">${py}</div><div class="k">Personal Year</div></div>
+      <div class="stat"><div class="v">${pm}</div><div class="k">Personal Month</div></div>
+      <div class="stat"><div class="v">${pd}</div><div class="k">Personal Day</div></div>
+    </div>
+    <div class="card" style="background:var(--teal-dim);margin-top:14px">
+      <h3>The year: ${P_YEAR_DATA[py].title}</h3>
+      <p style="font-size:.9rem;margin-top:6px">${P_YEAR_DATA[py].focus}.</p>
+    </div>
+    <div class="card" style="background:var(--surface-2);margin-top:12px">
+      <h3>The month: ${MONTH_THEME[pm].tag}</h3>
+      <p style="font-size:.9rem;margin-top:6px">${MONTH_THEME[pm].directive}</p>
+    </div>
+    <div class="card" style="background:var(--gold-dim);margin-top:12px">
+      <h3>The day: ${P_DAY_TAG[pd]}</h3>
+      <p style="font-size:.9rem;margin-top:6px">${DAILY_GUIDE[pd]}</p>
+    </div>
+    <p style="font-size:.78rem;color:var(--text-dim);margin-top:12px">Month = personal year + calendar month; day = birth day + birth month + universal day. The full 12-month planner lives on the Forecasts page.</p>
+  </div>`;
+});
+
+/* ========== GEMATRIA ========== */
+$("gm-go").addEventListener("click", () => {
+  const w = $("gm-word").value.trim();
+  const r = gematriaAnalysis(w);
+  if (!r) return showErr("gm-err", "Please enter a word of at least 2 letters.");
+  hideErr("gm-err");
+  const d = NUMBER_DATA[r.root];
+  $("gm-out").innerHTML = `
+  <div class="card fade-in">
+    <div class="result-hero">
+      <div class="medallion"><span class="big">${r.root}</span><span class="cap">Root</span></div>
+      <div>
+        <h2 style="margin:0 0 4px;font-size:1.3rem">${esc(w)} = ${r.total}</h2>
+        <p style="color:var(--text-dim);font-size:.9rem">Reducing to the root number ${r.root} — ${d.title}</p>
+      </div>
+    </div>
+    <div class="grid grid-3" style="margin-top:14px">
+      ${r.letters.map(l => `<div class="stat"><div class="v">${l.ch}</div><div class="k">${l.v}</div></div>`).join("")}
+    </div>
+    <p style="margin-top:14px"><strong>Reading:</strong> In the Hebrew tradition, words sharing a total are said to share a hidden connection. At root ${r.root}, this word vibrates to ${d.title} — ${d.summary.toLowerCase()}</p>
+    <p style="font-size:.78rem;color:var(--text-dim);margin-top:10px">Gematria is a Hebrew mystical method, older than and distinct from Chaldean numerology — included here for comparison, not as a substitute. The letter values run A=1 to I=9, then J=10, S=100 up to Z=800, the way Hebrew alef-bet values map onto Latin letters.</p>
+  </div>`;
+});
+
+/* ========== PI LAB ========== */
+$("pi-go").addEventListener("click", () => {
+  const raw = $("pi-name").value.trim();
+  const s = piSignature(raw);
+  if (!s) return showErr("pi-err", "Please enter a name (at least two letters).");
+  hideErr("pi-err");
+  const d = NUMBER_DATA[s.root];
+  const chaldean = destinyNumber(cleanName(raw));
+  const match = chaldean === s.root;
+  $("pi-out").innerHTML = `
+  <div class="card fade-in">
+    <div class="result-hero">
+      <div class="medallion" style="background:linear-gradient(150deg,var(--teal) 0%,#1e4a40 100%)"><span class="big">${s.root}</span><span class="cap">π Number</span></div>
+      <div>
+        <span class="pill sunny">Experimental result</span>
+        <h2 style="margin:10px 0 6px;font-size:1.5rem">${esc(raw)} reads as ${s.root} — ${d.title}</h2>
+        <p style="color:var(--text-dim)">${match ? "This matches its classical Chaldean Name Number." : "Its Chaldean Name Number is " + chaldean + " — the systems diverge here."}</p>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <h3>The full calculation</h3>
+    <div class="table-wrap" style="margin-top:12px">
+      <table class="nice">
+        <thead><tr><th>Letter</th><th>Chaldean value</th><th>π digit</th><th>Product</th></tr></thead>
+        <tbody>
+        ${s.pairs.map(p => `<tr><td style="font-family:var(--font-display)">${p.ch}</td><td class="num">${p.v}</td><td>${p.p}</td><td>${p.v * p.p}</td></tr>`).join("")}
+        <tr style="background:var(--surface-2)"><td colspan="3"><strong>Sum</strong></td><td class="num">${s.sum}</td></tr>
+        <tr style="background:var(--surface-2)"><td colspan="3"><strong>Digital root</strong></td><td class="num">${s.root}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:.78rem;color:var(--text-dim);margin-top:12px">An original experimental mapping with no classical lineage. Judge it as play, not prediction.</p>
+  </div>`;
+});
+</script>
+</body>
+</html>

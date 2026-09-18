@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Name Numerology Analysis — Numro Anka</title>
+<meta name="description" content="Free Chaldean business name analysis: check your brand name's vibration, money-number strength, industry fit and harmony with the owner's life path. Compare name variants side by side.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Azeret+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .letter-cell { min-width: 40px; text-align: center; border: 1px solid var(--border); border-radius: 10px; background: #fff; padding: 5px 3px; }
+  .letter-cell .ch { font-family: var(--font-display); font-size: 1.05rem; }
+  .letter-cell .v { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); }
+  .letter-strip { display: flex; flex-wrap: wrap; gap: 7px; margin: 12px 0 4px; }
+  .verdict-hero { display: grid; grid-template-columns: auto 1fr; gap: 26px; align-items: center; }
+  .verdict-hero .medallion { width: 130px; }
+  @media (max-width: 960px) { .verdict-hero { grid-template-columns: 1fr; text-align: center; } .verdict-hero .medallion { margin: 0 auto; } }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap nav-row">
+    <a class="brand" href="index.html"><span class="logo">अ</span><span><span class="name">Numro Anka</span><br><span class="tag">Chaldean Numerology</span></span></a>
+    <nav class="main" id="main-nav"></nav>
+    <a href="reports.html" class="btn btn-dark btn-sm nav-cta">Premium Reports</a>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="section-label">Business Numerology</span>
+    <h1>Will your business name make money?</h1>
+    <p class="sub">A century of Indian tycoons and, more recently, consultants across Australia have chosen company names on their Chaldean vibration. Analyse any brand name — and compare up to three spellings side by side before you register it.</p>
+  </div>
+</section>
+
+<section style="padding-top:26px">
+  <div class="wrap" style="max-width:860px">
+    <div class="form-card fade-in">
+      <div class="field">
+        <label for="bz-name">Business or brand name</label>
+        <input type="text" id="bz-name" placeholder="e.g. Meridian Consulting" autocomplete="off">
+        <p class="hint">The trading name customers will say out loud — that's the name that vibrates.</p>
+      </div>
+      <div class="field">
+        <label for="bz-dob">Owner's date of birth <span style="color:var(--text-dim);font-weight:400">(optional — for owner harmony)</span></label>
+        <input type="date" id="bz-dob">
+        <p class="hint">A name that suits the business should also suit the person signing for it.</p>
+      </div>
+      <div class="grid grid-3" style="gap:14px">
+        <div class="field"><label for="bz-alt1">Alternative spelling 1 <span style="color:var(--text-dim);font-weight:400">(optional)</span></label><input type="text" id="bz-alt1" placeholder="e.g. Meridiann"></div>
+        <div class="field"><label for="bz-alt2">Alternative spelling 2 <span style="color:var(--text-dim);font-weight:400">(optional)</span></label><input type="text" id="bz-alt2" placeholder="e.g. Meridian Co"></div>
+        <div class="field"><label for="bz-alt3">Alternative spelling 3 <span style="color:var(--text-dim);font-weight:400">(optional)</span></label><input type="text" id="bz-alt3" placeholder="e.g. MeridianX"></div>
+      </div>
+      <p class="form-error" id="bz-err"></p>
+      <button class="btn btn-primary" id="bz-go" style="width:100%">Analyse this business name</button>
+    </div>
+  </div>
+</section>
+
+<section id="bz-out-wrap" style="display:none;padding-top:34px"></section>
+
+<!-- HOW IT WORKS / guidance -->
+<section style="background:var(--surface-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:40px">
+      <span class="section-label">Choosing well</span>
+      <h2>What a business number should do</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <h3>Vibrate to a money number</h3>
+        <p style="color:var(--text-dim)">In Chaldean practice, commercial names traditionally aim for <strong>8</strong> (power, finance, B2B), <strong>6</strong> (luxury, beauty, food) or <strong>9</strong> (marketplace, energy, mass reach). Other numbers work too — when they fit the industry and the owner.</p>
+      </div>
+      <div class="step">
+        <h3>Harmonise with the owner</h3>
+        <p style="color:var(--text-dim)">The name's vibration sits on the harmony table against the owner's Life Path. A brilliant 8 name for a Life Path 5 owner strains the person running it — the analysis tells you which pairs carry tension.</p>
+      </div>
+      <div class="step">
+        <h3>Say it before you sign it</h3>
+        <p style="color:var(--text-dim)">Test spellings side by side. The classic move is a one-letter adjustment — Kumar to Kumaar, Zen to Zenn — that shifts the vibration without changing what customers hear.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Registering soon?</h2>
+        <p>Get a professional name-vibration report with correction options before the paperwork — part of the Life & Year premium tier.</p>
+      </div>
+      <a class="btn btn-primary" href="reports.html">See premium reports →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="numerology.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+
+$("bz-go").addEventListener("click", () => {
+  const name = $("bz-name").value.trim();
+  const dob = $("bz-dob").value;
+  const err = $("bz-err");
+  if (name.replace(/[^a-zA-Z ]/g, "").length < 2) { err.style.display = "block"; err.textContent = "Please enter a business name (letters only)."; return; }
+  err.style.display = "none";
+
+  const a = businessAnalysis(name, dob || null);
+  const d = NUMBER_DATA[a.destiny];
+  const base = m => (m === 11 ? 2 : m === 22 ? 4 : m === 33 ? 6 : m);
+  const isMoney = a.moneyVibe;
+  const strip = [...a.name.replace(/ /g, "")].map(ch => {
+    const v = CHALDEAN[ch.toUpperCase()];
+    return `<span class="letter-cell"><div class="ch">${ch.toUpperCase()}</div><div class="v">${v}</div></span>`;
+  }).join("");
+
+  // verdict
+  let verdict, tone;
+  if (isMoney && a.harmony === true) { verdict = "Strong commercial choice"; tone = "var(--teal-dim)"; }
+  else if (isMoney && a.harmony === false) { verdict = "Strong name, strained owner"; tone = "var(--gold-dim)"; }
+  else if (isMoney && a.harmony === null) { verdict = "Strong money vibration"; tone = "var(--teal-dim)"; }
+  else if (a.harmony === true) { verdict = "Owner-friendly, lifestyle vibration"; tone = "var(--gold-dim)"; }
+  else if (a.harmony === false) { verdict = "Tension on both sides — test variants"; tone = "var(--accent-dim)"; }
+  else { verdict = "Neutral vibration — works if the offer does"; tone = "var(--surface-2)"; }
+
+  const verdictNote =
+    (isMoney && a.harmony === true) ? "A money number that also sits on your harmony table — the combination consultants look for first."
+    : (isMoney && a.harmony === false) ? "The vibration is commercial, but it strains against the owner's Life Path. Workable — though a spelling variant that harmonises would serve better."
+    : (isMoney && a.harmony === null) ? "The vibration is commercial. Add the owner's date of birth to check it suits the person behind it too."
+    : (a.harmony === true) ? "It harmonises with the owner, which supports lifestyle, consultancy and craft brands beautifully — just don't expect an aggressive money number."
+    : (a.harmony === false) ? "Neither commercial nor owner-harmonious on paper. If the name is exceptional, keep it and compensate elsewhere — otherwise test the variant spellings below."
+    : "A neutral vibration: neither a classic money number nor in tension. If customers love the name, that love outranks the table.";
+
+  // variants table
+  const variants = [$("bz-alt1").value, $("bz-alt2").value, $("bz-alt3").value]
+    .map(v => v.trim()).filter(v => v.replace(/[^a-zA-Z ]/g, "").length >= 2);
+  let variantsHTML = "";
+  if (variants.length) {
+    const rows = [{ label: esc(a.name) + " <em>(current)</em>", a }].concat(variants.map(v => ({ label: esc(v), a: businessAnalysis(v, dob || null) })));
+    variantsHTML = `
+    <h3 style="margin-top:30px">Variants compared</h3>
+    <div class="table-wrap" style="margin-top:12px">
+      <table class="nice">
+        <thead><tr><th>Name</th><th>Number</th><th>Vibration</th><th>Money number</th>${dob ? "<th>Owner harmony</th>" : ""}<th>Industry fit</th></tr></thead>
+        <tbody>
+        ${rows.map(r => `<tr>
+          <td>${r.label}</td>
+          <td class="num">${r.a.destiny}</td>
+          <td>${NUMBER_DATA[r.a.destiny].title}</td>
+          <td>${r.a.moneyVibe ? '<span class="pill cool">Yes</span>' : '<span class="pill warm">No</span>'}</td>
+          ${dob ? `<td>${r.a.harmony === true ? '<span class="pill cool">Harmony</span>' : r.a.harmony === false ? '<span class="pill warm">Tension</span>' : '<span class="pill sunny">—</span>'}</td>` : ""}
+          <td style="font-size:.85rem">${BIZ_FIT[r.a.destiny]}</td>
+        </tr>`).join("")}
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:.8rem;color:var(--text-dim);margin-top:10px">Change one letter, change the number: Meridian, Meridiann and Meridianx all vibrate differently in Chaldean. That is why consultants test spellings before registering.</p>`;
+  }
+
+  $("bz-out-wrap").style.display = "block";
+  $("bz-out-wrap").innerHTML = `
+  <div class="wrap" style="max-width:860px">
+    <div class="card fade-in">
+      <div class="verdict-hero">
+        <div class="medallion"><span class="big">${a.destiny}</span><span class="cap">Business No.</span></div>
+        <div>
+          <span class="pill ${isMoney ? "cool" : "sunny"}">${isMoney ? "Money number" : "Non-commercial vibration"} · ${d.planet}</span>
+          ${a.ownerLP ? `<span class="pill ${a.harmony ? "cool" : "warm"}">Owner: Life Path ${a.ownerLP} ${a.harmony ? "harmony" : "tension"}</span>` : ""}
+          <h2 style="margin:12px 0 4px;font-size:1.8rem">${esc(a.name)}</h2>
+          <p style="color:var(--text-dim)">${d.title} — ${d.keywords.join(", ").toLowerCase()}</p>
+        </div>
+      </div>
+
+      <div class="card" style="background:${tone};margin-top:22px">
+        <h3>Verdict: ${verdict}</h3>
+        <p style="margin-top:8px">${verdictNote}</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <h3>The name, letter by letter</h3>
+      <div class="letter-strip">${strip}</div>
+      <p style="font-size:.85rem;color:var(--text-dim);margin-top:8px">Name Number <strong>${a.destiny}</strong> · Soul Urge (the brand's inner promise) <strong>${a.soul}</strong> · Personality (its public face) <strong>${a.face}</strong>.</p>
+
+      <div class="grid grid-3" style="margin-top:22px">
+        <div class="card" style="background:var(--surface-2)"><h3>What this number sells</h3><p style="margin-top:8px">${BIZ_FIT[a.destiny]}</p></div>
+        <div class="card" style="background:var(--surface-2)"><h3>The number's character</h3><p style="margin-top:8px">${d.summary}</p></div>
+        <div class="card" style="background:var(--surface-2)"><h3>Where to be careful</h3><p style="margin-top:8px">${d.watchOut}</p></div>
+      </div>
+
+      ${variantsHTML}
+    </div>
+  </div>`;
+  $("bz-out-wrap").scrollIntoView({ behavior: "smooth" });
+});
+</script>
+</body>
+</html>
