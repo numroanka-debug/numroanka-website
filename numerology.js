@@ -267,7 +267,7 @@ const WEEKDAY_PLANETS = [
   { day: "Wednesday", planet: "Mercury", num: 5, colour: "Emerald green", gem: "Emerald" },
   { day: "Thursday",  planet: "Jupiter", num: 3, colour: "Saffron yellow", gem: "Yellow Sapphire" },
   { day: "Friday",    planet: "Venus",   num: 6, colour: "Pastel shades", gem: "Diamond" },
-  { day: "Saturday",  planet: "Saturn", num: 8, colour: "Deep blue or black", gem: "Blue Sapphire" }
+  { day: "Saturday",  planet: "Saturn",  num: 8, colour: "Deep blue or black", gem: "Blue Sapphire" }
 ];
 function todayLuckyNumber(dobStr, date = new Date()) {
   const ruling = mulankNumber(dobStr);
@@ -931,11 +931,18 @@ function renderChrome() {
   const here = location.pathname.split("/").pop() || "index.html";
   const nav = document.getElementById("main-nav");
   if (nav) {
+    nav.setAttribute("aria-label", "Primary");
     nav.innerHTML = NAV_LINKS.map(([href, label]) =>
       `<a href="${href}" class="${here === href ? "active" : ""}">${label}</a>`).join("");
   }
   const burger = document.getElementById("nav-burger");
-  if (burger) burger.addEventListener("click", () => nav.classList.toggle("open"));
+  if (burger && nav) {
+    burger.setAttribute("aria-expanded", "false");
+    burger.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  }
   const foot = document.getElementById("site-footer");
   if (foot) {
     foot.innerHTML = `
