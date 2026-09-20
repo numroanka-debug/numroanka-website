@@ -78,6 +78,11 @@ HARMONY (compatibility table), DAILY_GUIDE, P_YEAR_DATA, MONTH_THEME,
 P_DAY_TAG, KARMIC_DEBT_DATA, HOUSE_REMEDY, WEEKDAY_PLANETS, BIZ_FIT,
 MONEY_NUMBERS [6,8,9], GEMATRIA (A=1…Z=800), PI_DIGITS.
 
+**allNumbers() contract (since v1.3):** returns lifePath, destiny,
+expression (alias of destiny — chart.html and core5.html read `n.expression`,
+calculator.html and reports.html read `n.destiny`; both keys are always
+present), soulUrge, personality, birthday.
+
 ## 5. HARD RULES (do not break these)
 
 1. **Brand spelling is load-bearing.** Always "Numro Anka" / "NumroAnka" /
@@ -121,7 +126,10 @@ MONEY_NUMBERS [6,8,9], GEMATRIA (A=1…Z=800), PI_DIGITS.
 Test data that caught real bugs: "Aarav" sums to Chaldean 11 (master) —
 harmony checks must reduce masters to base first. "Meridian Consulting" = 63
 (G=3, not Z's 7) → 9. "LIVE"/"EVIL" both gematria 444. Karmic-debt sums use
-raw totals before reduction.
+raw totals before reduction. **allNumbers() key contract:** chart.html and
+core5.html read `n.expression` while calculator.html and reports.html read
+`n.destiny` — the v1.3 crash ("Every number, one page" generating nothing)
+was exactly this mismatch; both keys must always exist.
 
 ## 7. HOW TO ADD A NEW CALCULATOR (the batch workflow)
 
@@ -145,7 +153,9 @@ PDF delivery of reports).
 - Google Search Console: verify property + submit sitemap.xml (if not done).
 - Analytics (privacy-friendly option fits the site's promise).
 - Favicon (the अ medallion as .ico/.png), Open Graph tags for social share.
-- Netlify: link repo so every git push auto-deploys to numroanka.com.
+- Hostinger Git integration: hPanel → Advanced → Git → link
+ numroanka-debug/numroanka-website so pushes auto-deploy (current sync is
+ manual upload via File Manager to public_html).
 - Optional: numroanka.in domain, PWA manifest for app-store-adjacent install.
 
 ## 9. MARKET & COMPETITOR NOTES (from launch research, Sep 2026)
@@ -173,9 +183,9 @@ honest tone, privacy (client-side), cross-sell journeys.
 - THIS FILE (HANDOFF.md) is committed to the repo and is the single source
   of truth for project memory. Update it whenever a rule or architecture
   fact changes, and log every release in section 12.
-- Netlify: NOT yet linked. To connect: Netlify → Site settings →
-  Build & deploy → Link repository → pick numroanka-debug/numroanka-website.
-  After that, every push to main auto-deploys to numroanka.com.
+- Live host: Hostinger (hPanel). Git integration NOT yet linked — site
+  updates are manual: download changed file(s), hPanel → File Manager →
+  public_html → upload → overwrite.
 - GitHub Issues: use as the update tracker — one issue per feature
   (e.g., "Hindi UI for Mulank", "Wire Razorpay at PAYMENT HOOK").
 - For AI-chat continuity: at the start of any new chat, share the repo or
@@ -184,16 +194,15 @@ honest tone, privacy (client-side), cross-sell journeys.
 
 ## 11. DEPLOYMENT STATE
 
-- Static host: (fill in — Netlify / GitHub Pages / cPanel per the Launch
-  Guide PDF). Domain numroanka.com active with HTTPS.
+- Static host: **Hostinger** (hPanel, domain numroanka.com active with HTTPS).
 - Live-site verification done 18 Sep 2026: index, calculators, style.css,
-  core5 confirmed serving; run one calculator in a browser to confirm
-  numerology.js end-to-end.
-- Repo ↔ live-site sync: MANUAL for now (upload code changes to GitHub
-  separately). Becomes automatic once Netlify is linked (see section 10).
-  NOTE: as of v1.2 the repo is AHEAD of the live site — the v1.2 header
-  fixes exist only in the repo until the changed files are also uploaded
-  to the live host or Netlify is linked.
+  core5 confirmed serving. **Launch bug found 20 Sep 2026:** chart.html
+  ("Every number, one page") and core5.html crashed on generate — pages
+  read `n.expression` but allNumbers() only returned `destiny`. Fixed in
+  v1.3; upload numerology.js to Hostinger to apply.
+- Repo ↔ live-site sync: MANUAL for now (upload code changes to GitHub AND
+  to Hostinger separately). Becomes automatic once Hostinger Git is linked
+  (see section 8).
 
 ## 12. VERSION LOG
 
@@ -202,3 +211,4 @@ honest tone, privacy (client-side), cross-sell journeys.
 | v1.0 | 18 Sep 2026 | f2a9436 | Initial launch: all 17 site files uploaded |
 | v1.1 | 18 Sep 2026 | 106cd12 | Added HANDOFF.md to repo; removed stray empty 'request' file; recorded actual repo details (numroanka-debug/numroanka-website) |
 | v1.2 | 18 Sep 2026 | 7b26795, 4525b1e | Header fixes: added "Free Reading" CTA to chart, compatibility and daily pages (9 of 12 pages now carry it; about/contact/reports deliberately clean); renderChrome a11y — burger now sets aria-expanded, nav gets aria-label="Primary", burger handler guards nav null |
+| v1.3 | 20 Sep 2026 | be07c97 | **Critical fix:** chart.html and core5.html crashed on "Generate" since launch — they read `n.expression` but allNumbers() returned only `destiny`. Engine now returns both keys (expression = destiny alias). Also documented the allNumbers() key contract in section 4 and section 6 |
