@@ -974,7 +974,7 @@ function renderChrome() {
           <a href="reports.html">Pricing</a></div>
       </div>
       <div class="footer-bottom">
-        <span>© ${new Date().getFullYear()} Numro Anka · numroanka.com. For reflection and entertainment.</span>
+        <span>© ${new Date().getFullYear()} Numro Anka · numroanka.com</span>
         <span>Made with the Chaldean tradition · अंक</span>
       </div>
     </div>`;
