@@ -3,6 +3,9 @@
 **Site:** https://numroanka.com (live since 18 Sep 2026)
 **Repo:** https://github.com/numroanka-debug/numroanka-website (public, branch: main)
 **Repo owner:** numroanka-debug <numroanka@gmail.com>
+**Legal owner:** BRAHMA BHOGAR ARKAA PRIVATE LIMITED — CIN U96906DL2026PTC464561,
+incorporated 15 Mar 2026 (see section 13). PAN/TAN NOT recorded here on purpose —
+repo is public; keep them only in the incorporation certificate.
 **This file:** the complete project memory. Any new AI chat or developer who receives this file plus the site files can continue the project without needing the original conversation.
 
 ---
@@ -59,6 +62,8 @@ journeys section closes the page.
 "Free Reading" CTA to calculator.html (on 9 tool/reading pages; deliberately
 absent on about, contact, reports), burger (below 1100px). The burger sets
 aria-expanded; the nav carries aria-label="Primary" (since v1.2).
+- Footer bottom line (since v1.4): "© YEAR Numro Anka · numroanka.com"
+(the "For reflection and entertainment." suffix was removed on owner request).
 
 ## 4. ENGINE (numerology.js) — FUNCTIONS & DATA
 
@@ -156,6 +161,10 @@ PDF delivery of reports).
 - Hostinger Git integration: hPanel → Advanced → Git → link
  numroanka-debug/numroanka-website so pushes auto-deploy (current sync is
  manual upload via File Manager to public_html).
+- **Brand-family cross-linking (planned, later stage):** link all three
+ Brahma Bhogar Arkaa brands to each other — numroanka.com ↔
+ divinemandir.com ↔ dinapanchang.com — footer "Our family" strip on each
+ site, and matching links from the other two sites back here. See section 13.
 - Optional: numroanka.in domain, PWA manifest for app-store-adjacent install.
 
 ## 9. MARKET & COMPETITOR NOTES (from launch research, Sep 2026)
@@ -212,3 +221,35 @@ honest tone, privacy (client-side), cross-sell journeys.
 | v1.1 | 18 Sep 2026 | 106cd12 | Added HANDOFF.md to repo; removed stray empty 'request' file; recorded actual repo details (numroanka-debug/numroanka-website) |
 | v1.2 | 18 Sep 2026 | 7b26795, 4525b1e | Header fixes: added "Free Reading" CTA to chart, compatibility and daily pages (9 of 12 pages now carry it; about/contact/reports deliberately clean); renderChrome a11y — burger now sets aria-expanded, nav gets aria-label="Primary", burger handler guards nav null |
 | v1.3 | 20 Sep 2026 | be07c97 | **Critical fix:** chart.html and core5.html crashed on "Generate" since launch — they read `n.expression` but allNumbers() returned only `destiny`. Engine now returns both keys (expression = destiny alias). Also documented the allNumbers() key contract in section 4 and section 6 |
+| v1.4 | 20 Sep 2026 | 679d1d0 | Footer: removed "For reflection and entertainment." from the site-wide footer (owner request) — footer bottom line is now just "© YEAR Numro Anka · numroanka.com" |
+| v1.5 | 20 Sep 2026 | (this commit) | HANDOFF.md only: recorded corporate owner and brand family (section 13), added cross-brand linking to roadmap |
+
+## 13. CORPORATE & BRAND FAMILY
+
+All three brands below belong to the same legal entity. When any brand
+gets a site update, consider adding/updating the family links (roadmap,
+section 8).
+
+**Legal entity:** BRAHMA BHOGAR ARKAA PRIVATE LIMITED
+- CIN: U96906DL2026PTC464561
+- Incorporated: 15 March 2026 (Certificate of Incorporation, MCA Central
+  Registration Centre — SPICE+ Part B approval letter, ref AC2492193;
+  signed by the Registrar of Companies, Manesar)
+- Registered address: 10 Basement Front Side, Vinobapuri Lajpat Nagar II,
+  Lajpat Nagar (South Delhi), New Delhi-110024, Delhi
+- PAN/TAN: on the incorporation certificate — deliberately NOT recorded in
+  this repo (repo is public; keep tax identity numbers offline).
+
+**Brand family (cross-link all ↔ all, later stage):**
+
+| Brand | Domain | Purpose |
+| --- | --- | --- |
+| Numro Anka | numroanka.com | Chaldean numerology calculators and readings (this site) |
+| Divine Mandir | www.divinemandir.com | Temple / devotional brand |
+| Dina Panchang | www.dinapanchang.com | Panchang / daily almanac brand |
+
+Planned cross-linking pattern: a small "Our family of brands" strip in the
+site footer (renderChrome() — one patch updates every Numro Anka page):
+"A Brahma Bhogar Arkaa brand · Numro Anka · Divine Mandir · Dina Panchang",
+with the matching strip on the other two sites linking back. Do NOT hard-
+code the strip into individual pages — it belongs in renderChrome().
