@@ -8,6 +8,20 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Azeret+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+  /* Steps: number in line with the title, source label beneath */
+  .step::before, .step::after { content: none; }
+  .step { padding-top: 0; }
+  .step h3 .stepnum {
+    font-family: var(--font-mono); font-weight: 500; font-size: 1.02rem;
+    color: var(--accent); letter-spacing: .06em; margin-right: 10px;
+  }
+  .step .stepsrc {
+    font-family: var(--font-mono); font-size: .72rem; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--text-dim);
+    margin: 2px 0 10px; padding-bottom: 12px; border-bottom: 1px solid var(--border);
+  }
+</style>
 </head>
 <body>
 
@@ -76,15 +90,18 @@
     </div>
     <div class="steps">
       <div class="step">
-        <h3>Life Path — from your birthday</h3>
+        <h3><span class="stepnum">01</span>Life Path</h3>
+        <p class="stepsrc">from your birthday</p>
         <p style="color:var(--text-dim)">Every digit of your date of birth is summed and reduced to a single digit (or a master number 11, 22, 33). It is your central lesson — the road, not the vehicle.</p>
       </div>
       <div class="step">
-        <h3>Destiny & Soul Urge — from your name</h3>
+        <h3><span class="stepnum">02</span>Destiny & Soul Urge</h3>
+        <p class="stepsrc">from your name</p>
         <p style="color:var(--text-dim)">All letters of your birth name give the Destiny (what you must become); vowels alone give the Soul Urge (what you privately want); consonants give the Personality (the mask the world meets).</p>
       </div>
       <div class="step">
-        <h3>Cycles — from today's date</h3>
+        <h3><span class="stepnum">03</span>Cycles</h3>
+        <p class="stepsrc">from today's date</p>
         <p style="color:var(--text-dim)">Universal and personal day numbers, personal years and personal months layer time over your fixed chart — this powers the daily forecast and the year-ahead map in premium reports.</p>
       </div>
     </div>
