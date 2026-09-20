@@ -53,6 +53,7 @@ function allNumbers(fullName, dobStr) {
   return {
     lifePath: lifePathNumber(dobStr),
     destiny: destinyNumber(fullName),
+    expression: destinyNumber(fullName), // US-style alias: Core 5 / chart pages read this key
     soulUrge: soulUrgeNumber(fullName),
     personality: personalityNumber(fullName),
     birthday: birthDayNumber(dobStr)
