@@ -1,4 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&display=swap');
+/* Bionca — licensed brand font for the Numro Anka wordmark */
+@font-face {
+  font-family: "Bionca";
+  src: url("fonts/Bionca.woff2") format("woff2"), url("fonts/Bionca.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* ============================================================
    NUMRO ANKA — Chaldean Numerology
@@ -74,7 +81,7 @@ header.site-nav {
   background: url("images/logo-motif.png") center / contain no-repeat;
   font-size: 0;
 }
-.brand .name { font-family: "Bodoni Moda", var(--font-display); font-size: 1.5rem; color: #f8b808; font-weight: 700; letter-spacing: 0.01em; }
+.brand .name { font-family: "Bionca", var(--font-display); font-size: 1.5rem; color: #f8b808; font-weight: 400; letter-spacing: 0.01em; }
 .brand .tag { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.16em; color: #a9c1d4; text-transform: uppercase; }
 nav.main { display: flex; gap: 4px; align-items: center; }
 nav.main a {
