@@ -8,6 +8,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Azeret+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+  /* Number-person cards gallery */
+  .nc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+  .nc { margin: 0; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: var(--surface); box-shadow: var(--shadow-md); }
+  .nc img { display: block; width: 100%; height: auto; }
+  @media (max-width: 720px) { .nc-grid { grid-template-columns: 1fr; } }
+</style>
 </head>
 <body>
 
@@ -68,6 +75,30 @@
       </div>
       <div id="quick-out" style="margin-top:22px;display:none"></div>
     </div>
+  </div>
+</section>
+
+<!-- NUMBER CARDS -->
+<section id="number-cards" style="background:var(--surface-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:36px">
+      <span class="section-label">The numbers</span>
+      <h2>What each number says about a person</h2>
+      <p class="lead">Your day of birth makes you a “number person” — born on the 1st, 10th, 19th or 28th, you are a No 1 person; on the 2nd, 11th, 20th or 29th, a No 2 person — and so on. The classical qualities of each number, in the tradition’s own words.</p>
+    </div>
+    <div class="nc-grid">
+      <figure class="nc"><img src="images/n1-1.jpg" alt="No 1 person: intelligent, hard working, renowned to be a topper in life" width="1600" height="623" loading="lazy"></figure>
+      <figure class="nc"><img src="images/n1-2.jpg" alt="No 1 person: honest, ambitious, very lucky in politics" width="1600" height="623" loading="lazy"></figure>
+      <figure class="nc"><img src="images/n1-3.jpg" alt="No 1 person: strict and straightforward, always rises in whatever profession" width="1600" height="623" loading="lazy"></figure>
+      <figure class="nc"><img src="images/n2-1.jpg" alt="No 2 person: mentally alert, predicts the future by intuition" width="1600" height="623" loading="lazy"></figure>
+      <figure class="nc"><img src="images/n2-2.jpg" alt="No 2 person: never succeeds in making true friends" width="1600" height="623" loading="lazy"></figure>
+      <figure class="nc"><img src="images/n2-3.jpg" alt="No 2 person: sets high goals, cultivates self-confidence to achieve" width="1600" height="623" loading="lazy"></figure>
+      <figure class="nc"><img src="images/n3-1.jpg" alt="No 3 person: never satisfied in subordinate positions" width="1600" height="623" loading="lazy"></figure>
+      <figure class="nc"><img src="images/n3-2.jpg" alt="No 3 person: excellent in the execution of commands" width="1600" height="623" loading="lazy"></figure>
+      <figure class="nc"><img src="images/n3-3.jpg" alt="No 3 person: rises to the very highest position in any business or profession" width="1600" height="623" loading="lazy"></figure>
+      <figure class="nc"><img src="images/n4-1.jpg" alt="No 4 person: sets up new rules and regulations in domestic and public life" width="1600" height="623" loading="lazy"></figure>
+    </div>
+    <p style="text-align:center;color:var(--text-dim);font-size:.85rem;margin-top:26px">Cards for numbers 5 to 9 are coming soon.</p>
   </div>
 </section>
 
