@@ -951,7 +951,7 @@ function renderChrome() {
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="logo">अ</div>
-          <p style="max-width:30ch">Chaldean numerology readings, calculators and daily guidance — computed privately in your browser.</p>
+          <p style="max-width:30ch">Numerology readings, calculators and daily guidance. Computed privately in your browser.</p>
         </div>
         <div><h4>Explore</h4>
           <a href="core5.html">Core 5 Reading</a>
@@ -991,8 +991,8 @@ function fmtDOB(dobStr) {
 function esc(s) {
   return String(s)
     .split("&").join("&" + "amp;")
-    .split("<").join("&" + "lt;")
-    .split(">").join("&" + "gt;")
+    .split("<").join("<" + "lt;")
+    .split(">").join("<" + "gt;")
     .split('"').join("&" + "quot;")
     .split("'").join("&" + "#39;");
 }

@@ -268,7 +268,7 @@ footer h4 { color: #fff; font-family: var(--font-body); font-size: 0.85rem; lett
 footer a { color: #cfc6b8; display: block; padding: 4px 0; font-size: 0.94rem; }
 footer a:hover { color: #fff; }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.12); margin-top: 42px; padding-top: 22px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 0.85rem; color: #8f8474; }
-.footer-brand .logo { width: 42px; height: 42px; border-radius: 50%; background: #fff; color: var(--text); display: grid; place-items: center; font-family: var(--font-display); font-style: italic; font-size: 22px; margin-bottom: 14px; }
+.footer-brand .logo { width: 42px; height: 42px; border-radius: 50%; background: url("images/logo-motif.png") center / contain no-repeat; font-size: 0; margin-bottom: 14px; }
 
 /* ---------- Page hero (inner pages) ---------- */
 .page-hero { padding: 72px 0 40px; }
