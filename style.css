@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600&display=swap');
+
 /* ============================================================
    NUMRO ANKA — Chaldean Numerology
    Design system: warm cream paper, ink text, terracotta + teal
@@ -62,8 +64,8 @@ h3 { font-size: 1.25rem; }
 /* ---------- Nav ---------- */
 header.site-nav {
   position: sticky; top: 0; z-index: 60;
-  background: rgba(250, 246, 239, 0.88); backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
+  background: rgba(8, 56, 88, 0.95); backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(248, 184, 8, 0.35);
 }
 .nav-row { display: flex; align-items: center; justify-content: space-between; height: 68px; }
 .brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none !important; }
@@ -72,16 +74,18 @@ header.site-nav {
   background: url("images/logo-motif.png") center / contain no-repeat;
   font-size: 0;
 }
-.brand .name { font-family: var(--font-display); font-size: 1.45rem; color: var(--text); font-weight: 600; }
-.brand .tag { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.16em; color: var(--text-dim); text-transform: uppercase; }
+.brand .name { font-family: "Bodoni Moda", var(--font-display); font-size: 1.5rem; color: #f8b808; font-weight: 700; letter-spacing: 0.01em; }
+.brand .tag { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.16em; color: #a9c1d4; text-transform: uppercase; }
 nav.main { display: flex; gap: 4px; align-items: center; }
 nav.main a {
-  color: var(--text); padding: 9px 14px; border-radius: 10px; font-size: 0.95rem; font-weight: 500;
+  color: #f2eee4; padding: 9px 14px; border-radius: 10px; font-size: 0.95rem; font-weight: 500;
 }
-nav.main a:hover { background: var(--surface-2); text-decoration: none; }
-nav.main a.active { background: var(--accent-dim); color: var(--accent); }
+nav.main a:hover { background: rgba(255, 255, 255, 0.10); text-decoration: none; }
+nav.main a.active { background: #f8b808; color: #083858; }
 .nav-cta { display: inline-flex; align-items: center; gap: 8px; }
-.nav-burger { display: none; background: none; border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px; font-size: 1.1rem; cursor: pointer; color: var(--text); }
+.site-nav .btn-primary { background: #f8b808; border-color: #f8b808; color: #083858; }
+.site-nav .btn-primary:hover { background: #d99e06; border-color: #d99e06; color: #083858; }
+.nav-burger { display: none; background: none; border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 10px; padding: 8px 12px; font-size: 1.1rem; cursor: pointer; color: #f2eee4; }
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -307,7 +311,7 @@ footer a:hover { color: #fff; }
   /* collapse the top nav to a burger before 8 items overflow */
   nav.main {
     display: none; position: absolute; top: 68px; left: 0; right: 0;
-    background: var(--surface); border-bottom: 1px solid var(--border);
+    background: #083858; border-bottom: 1px solid rgba(248, 184, 8, 0.35);
     flex-direction: column; align-items: stretch; padding: 14px 20px; gap: 2px;
     box-shadow: var(--shadow-md);
   }
@@ -326,7 +330,7 @@ footer a:hover { color: #fff; }
 @media (max-width: 720px) {
   nav.main {
     display: none; position: absolute; top: 68px; left: 0; right: 0;
-    background: var(--surface); border-bottom: 1px solid var(--border);
+    background: #083858; border-bottom: 1px solid rgba(248, 184, 8, 0.35);
     flex-direction: column; align-items: stretch; padding: 14px 20px; gap: 2px;
     box-shadow: var(--shadow-md);
   }
