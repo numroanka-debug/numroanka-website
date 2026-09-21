@@ -991,8 +991,8 @@ function fmtDOB(dobStr) {
 function esc(s) {
   return String(s)
     .split("&").join("&" + "amp;")
-    .split("<").join("<" + "lt;")
-    .split(">").join("<" + "gt;")
+    .split("<").join("&" + "lt;")
+    .split(">").join("&" + "gt;")
     .split('"').join("&" + "quot;")
     .split("'").join("&" + "#39;");
 }
