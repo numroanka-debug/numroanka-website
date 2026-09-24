@@ -41,7 +41,8 @@ Namank comparison).
 | robots.txt         | Allows crawlers, points to sitemap                                                          |
 | README.txt         | File-by-file documentation                                                                  |
 
-Fonts (Google Fonts, OFL license): Fraunces, Plus Jakarta Sans, Azeret Mono.
+Fonts: licensed **Bionca** (wordmark, self-hosted in /fonts) + Google Fonts
+(OFL license): Fraunces, Plus Jakarta Sans, Azeret Mono.
 
 ## 3. SITE ARCHITECTURE
 
@@ -49,8 +50,10 @@ Fonts (Google Fonts, OFL license): Fraunces, Plus Jakarta Sans, Azeret Mono.
 into every page at DOMContentLoaded. Site-wide nav changes = one patch
 there. NAV_LINKS order: Home, Calculators, Core 5, Chart, Business,
 Forecasts, Reports, About, Contact. Burger menu below 1100px.
-- Each page ALSO has a static header brand (the अ medallion + "Numro Anka")
-so pages look right even before JS runs.
+- Each page ALSO has a static header brand so pages look right even before
+JS runs — since v1.11 the visible brand is the full lockup image
+(images/brand-logo.png via CSS ::after; the motif/name/tag spans stay in
+the DOM for SEO but are display:none).
 - calculators.html is a single page with 36 `<section class="tool">`
 blocks, each with a unique id (t-mk, t-bh, t-veh, t-bn, t-bz...) and a
 sequential `<span class="tool-num">NN</span>`. The "Most searched in
@@ -58,7 +61,7 @@ India" strip + "Top searched" pills mark the 5 traffic drivers.
 - Cross-sell system: `nextSteps([...])` helper in calculators.html renders
 a "Where to next?" card after 17 tool results; a "Your numbers, connected"
 journeys section closes the page.
-- Header layout (all 12 pages): brand अ + name, injected nav (#main-nav),
+- Header layout (all 12 pages): brand lockup image, injected nav (#main-nav),
 "Free Reading" CTA to calculator.html (on 9 tool/reading pages; deliberately
 absent on about, contact, reports), burger (below 1100px). The burger sets
 aria-expanded; the nav carries aria-label="Primary" (since v1.2).
@@ -106,6 +109,9 @@ present), soulUrge, personality, birthday.
  backend — do not fake a working checkout.
 6. Honest tone everywhere: numerology framed as a symbolic tradition for
  reflection, not science (kept in about.html — builds trust).
+7. **Bionca font is licensed and purchased.** The webfont files
+ (fonts/Bionca.woff2 + .woff) must not be distributed beyond the site
+ host; the GitHub release copy exists at owner's request.
 
 ## 6. VERIFICATION RECIPE (run after every change)
 
@@ -157,7 +163,7 @@ PDF delivery of reports).
  first — "Anka Jyotish" by Parashara exists in desktop software).
 - Google Search Console: verify property + submit sitemap.xml (if not done).
 - Analytics (privacy-friendly option fits the site's promise).
-- Favicon (the अ medallion as .ico/.png), Open Graph tags for social share.
+- Open Graph tags + social preview image (brand lockup is the candidate).
 - Hostinger Git integration: hPanel → Advanced → Git → link
  numroanka-debug/numroanka-website so pushes auto-deploy (current sync is
  manual upload via File Manager to public_html).
@@ -192,6 +198,10 @@ honest tone, privacy (client-side), cross-sell journeys.
 - THIS FILE (HANDOFF.md) is committed to the repo and is the single source
   of truth for project memory. Update it whenever a rule or architecture
   fact changes, and log every release in section 12.
+- Binary assets (card images, logos, favicon, Bionca webfonts) are NOT in
+  the code tree — they are backed up in the GitHub release
+  "Site Assets Backup v1" (tag site-assets-v1, 24 Sep 2026). The live
+  copies live on Hostinger only.
 - Live host: Hostinger (hPanel). Git integration NOT yet linked — site
   updates are manual: download changed file(s), hPanel → File Manager →
   public_html → upload → overwrite.
@@ -209,9 +219,13 @@ honest tone, privacy (client-side), cross-sell journeys.
   ("Every number, one page") and core5.html crashed on generate — pages
   read `n.expression` but allNumbers() only returned `destiny`. Fixed in
   v1.3; upload numerology.js to Hostinger to apply.
+- Live check 24 Sep 2026: style.css (Bionca + navy header + brand lockup)
+  and index.html gallery confirmed serving latest versions.
 - Repo ↔ live-site sync: MANUAL for now (upload code changes to GitHub AND
   to Hostinger separately). Becomes automatic once Hostinger Git is linked
-  (see section 8).
+  (see section 8). NOTE: Git deploy brings code files only — images and
+  fonts under /images and /fonts are not in the repo tree; Hostinger's
+  existing copies stay (Git deploy does not delete non-repo files).
 
 ## 12. VERSION LOG
 
@@ -223,6 +237,13 @@ honest tone, privacy (client-side), cross-sell journeys.
 | v1.3 | 20 Sep 2026 | be07c97 | **Critical fix:** chart.html and core5.html crashed on "Generate" since launch — they read `n.expression` but allNumbers() returned only `destiny`. Engine now returns both keys (expression = destiny alias). Also documented the allNumbers() key contract in section 4 and section 6 |
 | v1.4 | 20 Sep 2026 | 679d1d0 | Footer: removed "For reflection and entertainment." from the site-wide footer (owner request) — footer bottom line is now just "© YEAR Numro Anka · numroanka.com" |
 | v1.5 | 20 Sep 2026 | (this commit) | HANDOFF.md only: recorded corporate owner and brand family (section 13), added cross-brand linking to roadmap |
+| v1.6 | 21 Sep 2026 | 005475d…bb75f491 | about.html rework: new hero intro, Chaldean/Pythagorean card copy, "Letter values" heading, steps redesign with inline step numbers |
+| v1.7 | 21 Sep 2026 | 94b0fe9, 500b47e, b4e08de, 5517eef | Homepage "number person" gallery: all 27 custom cards (No 1–9, three each) served as optimized JPEGs from /images on Hostinger |
+| v1.8 | 21 Sep 2026 | 4847f6a, ec5632c | Header: brand motif logo replaces the अ medallion; brand navy header (#083858) with gold accents and brand-colored nav |
+| v1.9 | 21 Sep 2026 | a1a4966 | Licensed Bionca font self-hosted (fonts/Bionca.woff2 + .woff via @font-face) for the wordmark |
+| v1.10 | 21 Sep 2026 | cf379a1, 61288ce | Footer: new description sentence ("Numerology readings…"); footer अ replaced by motif logo; esc() helper typo fix |
+| v1.11 | 24 Sep 2026 | 4f34433 | Header: full brand lockup image (images/brand-logo.png, navy background removed at upload) replaces motif + text |
+| v1.12 | 24 Sep 2026 | release site-assets-v1 | GitHub release "Site Assets Backup v1": numro-cards.zip, logos, favicon, Bionca webfonts. Binary assets are kept out of the code tree by design — Hostinger holds the live copies |
 
 ## 13. CORPORATE & BRAND FAMILY
 
